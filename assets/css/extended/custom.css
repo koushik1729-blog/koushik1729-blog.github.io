@@ -209,6 +209,18 @@ samp {
     gap: 2.4rem;
     align-items: start;
   }
+
+  .post-math .math-layout.math-layout-no-toc {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .post-math .math-layout:has(#math-generated-toc:empty) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .post-math .math-layout:has(#math-generated-toc:empty) .math-toc-shell {
+    display: none;
+  }
 }
 
 .post-math .math-toc-shell {
