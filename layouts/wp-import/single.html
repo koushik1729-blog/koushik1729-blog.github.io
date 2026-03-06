@@ -1,6 +1,6 @@
 {{- define "main" }}
 
-<article class="post-single post-math">
+<article class="post-single">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
     <h1 class="post-title entry-hint-parent">{{ .Title }}</h1>
@@ -16,21 +16,13 @@
     </div>
     {{- end }}
   </header>
+  {{- if (.Param "ShowToc") }}
+  {{- partial "toc.html" . }}
+  {{- end }}
 
-  <section class="math-layout">
-    {{- if (.Param "showMathToc") | default true }}
-    <aside class="math-toc-shell" aria-label="Article contents">
-      <h2 class="math-toc-title">Contents</h2>
-      <nav id="math-generated-toc" class="math-generated-toc"></nav>
-    </aside>
-    {{- end }}
-
-    <div class="post-content math-content">
-      <div class="math-article" data-math-article>
-        {{- .Content -}}
-      </div>
-    </div>
-  </section>
+  <div class="post-content">
+    {{- .Content -}}
+  </div>
 
   <footer class="post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
