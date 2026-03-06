@@ -1,0 +1,72 @@
+---
+title: "Morphism of Sheaves - Morphism of Stalks"
+slug: "morphism-of-sheaves-morphism-of-stalks"
+date: 2017-07-28T11:55:19
+url: "/2017/07/28/morphism-of-sheaves-morphism-of-stalks/"
+categories: ["Sheaves and Schemes", "Algebraic geometry"]
+tags: ["sheaves"]
+---
+<strong>Definition : </strong>Let \(X\) be a topological space, \(\mathcal{F},\mathcal{G}\) be presheaves on \(X\). A morphism  \(\varphi:\mathcal{F}\rightarrow \mathcal{G}\) is a collection \(\{\varphi(U):\mathcal{F}(U)\rightarrow \mathcal{G}(U)\}\) indexing over all open \(U\subseteq X\) such that the following diagram is commutative for open \(U\subseteq V\subseteq X\).
+
+<img class=" size-full wp-image-1226 aligncenter" src="/wp-media/2017/07/9d75150cbd-ql_9e6a39093afc407e385bb7497c06f5ea_l3.png" alt="ql_9e6a39093afc407e385bb7497c06f5ea_l3" width="137" height="94" />
+
+<strong>Morphism of sheaves inducing Morphism of stalks : </strong>We  see that any morphism of sheaves \(\varphi:\mathcal{F}\rightarrow \mathcal{G}\) induces morphism of stalks \(\varphi_p:\mathcal{F}_p\rightarrow \mathcal{G}_p\) for each \(p\in X\).
+
+Fix \(p\in X\). Let us define \(\varphi_p:\mathcal{F}_p\rightarrow \mathcal{G}_p\) i.e., for \((U,s)\in \mathcal{F}_p\) we  give an open set \(V\) containing \(p\) and a section \(t\in \mathcal{G}(V)\) giving an element \((V,t)\in \mathcal{G}_p\). One obvious choice of an open set containing \(p\) is \(U\). For this \(U\), we have \(\varphi(U):\mathcal{F}(U)\rightarrow \mathcal{G}(U)\) sending \(s\) to \(\varphi(U)(s)\in \mathcal{G}(U)\). Define \(\varphi_p:\mathcal{F}_p\rightarrow \mathcal{G}_p\)  as \((U,s)\mapsto (U,\varphi(U)(s))\).
+
+<strong>Map is well defined : </strong>We prove \((U,s) \sim (V,t)\) implies \((U,\varphi(U)(s))\sim (V,\varphi(V)(t))\).
+
+As \((U,s) \sim (V,t)\) there exists an open subset \(W\subseteq U\cap V\) containing \(p\) such that \(s|_W=t|_W\). We prove that \(\varphi(U)(s)|_W=\varphi(V)(t)|_W\) which implies \((U,\varphi(U)(s))\sim (V,\varphi(V)(t))\).
+
+The commutative diagram<img class=" size-full wp-image-1227 aligncenter" src="/wp-media/2017/07/744a42c726-ql_7816294aa49414ddfd513a4b26251a36_l3.png" alt="ql_7816294aa49414ddfd513a4b26251a36_l3" width="144" height="94" />
+
+gives \(\varphi(U)(s)|_W=\varphi(W)(s|_W)\).
+
+Similar diagram in which \(U\) is replaced by \(V\) gives that \(\varphi(V)(t)|_W=\varphi(W)(t|_W)\).
+
+As \(s|_W=t|_W\) we have \(\varphi(W)(s|_W)=\varphi(W)(t|_W)\), concluding that \(\varphi(U)(s)|_W=\varphi(V)(t)|_W\).
+
+So, given a morphism of sheaves \(\varphi:\mathcal{F}\rightarrow \mathcal{G}\) we have well defined morphism \(\varphi_p:\mathcal{F}_p\rightarrow\mathcal{G}_p\) for each \(p\in X\).
+
+<strong>Theorem : A morphism of sheaves \(\varphi:\mathcal{F}\rightarrow \mathcal{G}\) is an isomorphism of sheaves iff the induced map \(\varphi_p:\mathcal{F}_p\rightarrow\mathcal{G}_p\) is an isomorphism for each \(p\in X\).</strong>
+
+Proof : Let \(\varphi:\mathcal{F}\rightarrow \mathcal{G}\) is an isomorphism of sheaves i.e., \(\varphi(U):\mathcal{F}(U)\rightarrow \mathcal{G}(U)\) is an isomorphism of groups for each open  \(U\subseteq X\). Fixing \(p\in X\) we prove that \(\varphi_p:\mathcal{F}_p\rightarrow\mathcal{G}_p\) is an isomorphism.
+
+Let \((U,s)\in \mathcal{F}_p\) be such hat \((U,\varphi(U)(s))=0\in \mathcal{G}_p\) i.e., \(\varphi(U)(s)|_W=0\) for some open \(W\subseteq U\). We thus have \(\varphi(W)(s|_W)=\varphi(U)(s)|_W=0\). As \(\varphi(W):\mathcal{F}(W)\rightarrow \mathcal{G}(W)\) is injective, this means \(s|_W=0\). Thus, \(\varphi_p:\mathcal{F}_p\rightarrow\mathcal{G}_p\) is an injective map.
+
+Let \((V,t)\in \mathcal{G}_p\) i.e., \(p\in V\) and \(t\in \mathcal{F}(V)\). As \(\varphi(V):\mathcal{F}(V)\rightarrow \mathcal{G}(V)\) is surjective, there exists \(s\in \mathcal{F}(V)\) such that \(\varphi(V)(s)=t\). So, \(\varphi_p((V,s))=(V,\varphi(V)(s))=(V,t)\). Thus, \(\varphi_p\) is surjective.
+
+So, \(\varphi:\mathcal{F}\rightarrow \mathcal{G}\) is an isomorphism of sheaves implies \(\varphi_p:\mathcal{F}_p\rightarrow\mathcal{G}_p\) is an isomorphism for each \(p\in X\).
+
+Conversely, suppose that \(\varphi_p:\mathcal{F}_p\rightarrow\mathcal{G}_p\) is an isomorphism for each \(p\in X\). We prove \(\varphi(U):\mathcal{F}(U)\rightarrow \mathcal{G}(U)\) is an isomorphism for each open \(U\subseteq X\).
+
+Fix \(U\subseteq X\) and consider \(\varphi(U):\mathcal{F}(U)\rightarrow\mathcal{G}(U)\). Let \(s\in \mathcal{F}(U)\) be such that \(\varphi(U)(s)=0\). Fix \(p\in U\) and consider \(\varphi_p:\mathcal{F}_p\rightarrow \mathcal{G}_p\). We have \((U,s)\in \mathcal{F}_p\) with \(\varphi_p((U,s))=(U,\varphi(U)(s))=0\). As \(\varphi_p\) is injective, this means that \(s|_{W_p}=0\) for some  \(W_p\subseteq U\) containing \(p\). This is true for all \(p\in U\). So, we have an open cover \(\{W_p\}_{p\in U}\) of \(U\) and \(s\in \mathcal{F}(U)\) such that \(s|_{W_p}=0\). Identity axiom of sheaf implies that \(s=0\). So, \(\varphi(U):\mathcal{F}(U)\rightarrow \mathcal{G}(U)\) is injective.
+
+Let \(s\in \mathcal{G}(U)\). Fix \(p\in U\) and consider \(\varphi_p:\mathcal{F}_p\rightarrow \mathcal{G}_p\). As \((U,s)\in \mathcal{G}_p\) and \(\varphi_p\) is surjective, there exists \((V,t_p)\in \mathcal{F}_p\) such that \(\varphi_p((V,t_p))=(U,s)\) i.e., \((V,\varphi(V)(t_p))=(U,s)\in \mathcal{F}_p\) i.e., \(s|_{W_p}=\varphi(V)(t_p)|_{W_p}\) for some \(p\in W_p\subseteq U\cap V\). Idea is to glue the sections \(t_p|_{W_p}\in \mathcal{F}(W_p)\) to get a section \(t\in \mathcal{F}(U)\). For that we show that \(t_p|_{W_p\cap W_q}=t_q|_{W_p\cap W_q}\).
+
+We have the following commuative diagram,<img class=" size-full wp-image-1229 aligncenter" src="/wp-media/2017/07/9fa15c49b4-ql_a5b08531149147e84f9fe543a6476896_l3.png" alt="ql_a5b08531149147e84f9fe543a6476896_l3" width="238" height="96" />which says that
+<p style="text-align:center;">\(\varphi(W_p)(t_p|_{W_p})|_{W_p\cap W_q}=\varphi(W_p\cap W_q)(t_p|_{W_p\cap W_q}).\)</p>
+Similarly, we have
+<p style="text-align:center;">\(\varphi(W_q)(t_q|_{W_q})|_{W_p\cap W_q}=\varphi(W_p\cap W_q)(t_q|_{W_p\cap W_q}).\)</p>
+
+As \(s|_{W_p}=\varphi(V)(t_p)|_{W_p}=\varphi(W_p)(t_p|_{W_p})\), we have
+<p style="text-align:center;">
+\(s|_{W_p\cap W_q}=(s|_{W_p})|_{W_p\cap W_q}=\varphi(W_p)(t_p|_{W_p})|_{W_p\cap W_q}=\varphi(W_p\cap W_q)(t_p|_{W_p\cap W_q})\)</p>
+and
+<p style="text-align:center;">\(s|_{W_p\cap W_q}=(s|_{W_q})|_{W_p\cap W_q}=\varphi(W_q)(t_q|_{W_q})|_{W_p\cap W_q}=\varphi(W_p\cap W_q)(t_q|_{W_p\cap W_q}).\)</p>
+So, we have
+<p style="text-align:center;">\(\varphi(W_p\cap W_q)(t_p|_{W_p\cap W_q})=s|_{W_p\cap W_q}=\varphi(W_p\cap W_q)(t_q|_{W_p\cap W_q}).\)</p>
+
+<strong>As \(\varphi(W_p\cap W_q):\mathcal{F}(W_p\cap W_q)\rightarrow \mathcal{G}(W_p\cap W_q)\) is injective </strong>we have \(t_p|_{W_p\cap W_q}=t_q|_{W_p\cap W_q}\). So,  sections, \(t_p|_{W_p}\in \mathcal{F}(W_p)\) glue together and gives a section \(t\in \mathcal{F}(U)\) such that \(t|_{W_p}=t_p|_{W_p}\). We have
+<p style="text-align:center;">
+\(\varphi(U)(t)|_{W_p}=\varphi(W_p)(t|_{W_p})=\varphi(W_p)(t_p|_{W_p})=s|_{W_p}.\)</p>
+
+As \(\varphi(U)(t)|_{W_p}=s|_{W_p}\) for all $p\in U$ and as \(\{W_p\}_{p\in U}\) is an open cover for \(U\), identitiy axiom of sheaves says that \(\varphi(U)(t)=s\). Thus, \(\varphi(U):\mathcal{F}(U)\rightarrow \mathcal{G}(U)\) is surjective.
+
+So, \(\varphi_p:\mathcal{F}_p\rightarrow\mathcal{G}_p\) is an isomorphism for each \(p\in X\) implies that \(\varphi:\mathcal{F}\rightarrow \mathcal{G}\) is an isomorphism.
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;

@@ -1,0 +1,40 @@
+---
+title: "Limit of a diagram/functor preserved by Hom functor"
+slug: "limit-of-a-diagram-functor-preserved-by-hom-functor"
+date: 2019-01-23T16:48:25
+url: "/2019/01/23/limit-of-a-diagram-functor-preserved-by-hom-functor/"
+categories: ["Category theory"]
+---
+Let \(F:\mathcal{I}\rightarrow \mathcal{C}\) is a functor. This is also called as diagram indexed by \(\mathcal{I}\).
+
+By the Limit of this diagram, we mean an object (universal) \(L\) of \(\mathcal{C}\) and a collection of arrows (universal again) \(\pi_i:L\rightarrow F(i)\) such that, for each arrow \(m:i\rightarrow j\) in \(\mathcal{I}\) the following diagram is commutative.
+
+<img class="alignnone size-full wp-image-1356" src="/wp-media/2019/01/0bfac22033-screenshot-from-2019-01-23-02-04-50.png" alt="screenshot from 2019-01-23 02-04-50" width="398" height="194" />
+
+This is usually denoted by \(\varprojlim_{\mathcal{I}}F(i)\) or simply by \(\varprojlim_{\mathcal{I}}F\).
+
+Fixing an object \(X\) in \(\mathcal{C}\), I want to prove that
+<p style="text-align:center;">\(\varprojlim_{\mathcal{I}}(\text{Hom}_{\mathcal{C}}(X,F(i)))
+=\text{Hom}_{\mathcal{C}}(X,\varprojlim_{\mathcal{I}}F(i))\)</p>
+i.e., an isomorphism
+<p style="text-align:center;">\(\varprojlim_{\mathcal{I}}(\text{Hom}_{\mathcal{C}}(X,F(i)))
+=\text{Hom}_{\mathcal{C}}(X,L)\)</p>
+Let \((A,(p_i))\) be cone for the functor \(\mathcal{I}\rightarrow \text{Set}\) given by \(i\mapsto \text{Hom}_{\mathcal{C}}(X,F(i))\) i.e., we have following commutative diagrams
+
+<img class="alignnone size-full wp-image-1357" src="/wp-media/2019/01/3529f8b7f6-screenshot-from-2019-01-23-00-55-34.png" alt="screenshot from 2019-01-23 00-55-34" width="697" height="201" />
+
+To prove that \(\text{Hom}_{\mathcal{C}}(X,L)\) is equal to \(\varprojlim_{\mathcal{I}}(\text{Hom}_{\mathcal{C}}(X,F(i)))\) it suffices to prove that there exists unique arrow \(p:A\rightarrow \text{Hom}_{\mathcal{C}}(X,L)\) such that the following diagram is commutative.
+
+<img class="alignnone size-full wp-image-1358" src="/wp-media/2019/01/d113b9e025-screenshot-from-2019-01-23-02-04-54.png" alt="screenshot from 2019-01-23 02-04-54" width="857" height="288" />
+
+So, we define an arrow \(p:A\rightarrow \text{Hom}_{\mathcal{C}}(X,L)\) i.e., given \(a\in A\) we define arrow \(p(a):X\rightarrow L\) in \(\mathcal{C}\). How to one get such arrow? See above diagram.
+
+For each \(a\in A\), we have \(p_i(a):X\rightarrow F(i)\) such that \(F(m)\circ p_i(a)=p_j(a)\) giving following diagram which gives an arrow \(X\rightarrow L\) by universal property
+
+<img class="alignnone size-full wp-image-1359" src="/wp-media/2019/01/cd071865f9-screenshot-from-2019-01-23-02-04-56.png" alt="screenshot from 2019-01-23 02-04-56" width="470" height="280" />
+
+This is the \(p(a):X\rightarrow L\) that we associate for each \(a\in L\).
+
+This gives the map \(p:A\rightarrow \text{Hom}_{\mathcal{C}}(X,L)\) satisfying conditions mentioned above. Thus, we have
+<p style="text-align:center;">\(\varprojlim_{\mathcal{I}}(\text{Hom}_{\mathcal{C}}(X,F(i)))
+=\text{Hom}_{\mathcal{C}}(X,L)=\text{Hom}_{\mathcal{C}}(X,\varprojlim_{\mathcal{I}}F(i))\)</p>

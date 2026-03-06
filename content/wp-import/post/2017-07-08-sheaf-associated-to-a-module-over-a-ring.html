@@ -1,0 +1,42 @@
+---
+title: "Sheaf associated to a Module over a ring"
+slug: "sheaf-associated-to-a-module-over-a-ring"
+date: 2017-07-08T03:46:15
+url: "/2017/07/08/sheaf-associated-to-a-module-over-a-ring/"
+categories: ["Sheaves of Modules", "algebraic-geometry", "category-theory"]
+tags: ["schemes", "sheaves"]
+---
+Let \(A\) be a ring and \(M\) be an \(A\) module.
+
+We associate a sheaf of modules \(\widetilde{M}\)  on \(X= \text{Spec(A)}\) with this module \(M\). These modules are our models for quasi-coherent sheaves.
+
+For an open subset \(U\subseteq \text{Spec(A)}\) we define<img class=" size-full wp-image-620 aligncenter" src="/wp-media/2017/07/8c822dc158-ql_9405d0bdb2b92f4edcef95865429d34f_l3.png" alt="ql_9405d0bdb2b92f4edcef95865429d34f_l3" width="389" height="64" />where the condition \(\dagger\) says that given \(p\in U\) we have \(s(p)\in M_p\) and that \(s\) is locally a fraction i.e., given \(p\in U\) there exists an open set \(U(p)\subseteq U\) and \(m\in M, f\in A\) such that \(s(q)=\frac{m}{f}\in M_q\) for all \(q\in U(p)\). With obvious restriction maps this defines a sheaf \(\widetilde{M}\) on \(X= \text{Spec(A)}\) called the sheaf associated with \(M\).
+
+This should remind you something similar we have done before. We have defined structure sheaf on \(X=\text{Spec(A)}\) in exactly same way where \(M\) in this definition is replaced by ring \(A\). Just to confirm, we have<img class=" size-full wp-image-621 aligncenter" src="/wp-media/2017/07/85383b043a-ql_95ea6db253a445248fdc006fdfabc129_l3.png" alt="ql_95ea6db253a445248fdc006fdfabc129_l3" width="392" height="64" />where the condition \(\dagger\) says that given \(p\in U\) we have \(s(p)\in A_p\) and that \(s\) is locally a fraction i.e., given \(p\in U\) there exists an open set \(U(p)\subseteq U\) and \(a\in A, f\in A\) such that \(s(q)=\frac{a}{f}\in A_q\) for all \(q\in U(p)\).
+
+This should suggest some relation between \(\widetilde{M}(U)\) and \(\mathcal{O}_X(U)\).  It turns out that \(\widetilde{M}(U)\) is an \(\mathcal{O}_X(U)\) module for every open \(U\subseteq \text{Spec(A)}\). So, \(\widetilde{M}\) is a sheaf of \(\mathcal{O}_X\) modules.
+
+<strong>In case of structure sheaf \(\mathcal{O}_X\) on \(X=\text{Spec (A)}\) we have following proposition.</strong>
+
+<strong>Proposition : </strong>Let \(A\) be a ring, and \((\text{Spec A},\mathcal{O})\) its spectrum.
+<ol>
+	<li>For any \(\mathfrak{p}\in \text{Spec A}\), the stalk \(\mathcal{O}_{\mathfrak{p}}\) of the sheaf \(\mathcal{O}_{}\) is isomorphic to the local ring \(A_{\mathfrak{p}}\) i.e., \(\mathcal{O}_{\mathfrak{p}}\cong A_{\mathfrak{p}}\).</li>
+	<li>For any element \(f\in A\), the ring \(\mathcal{O}(D(f))\) is isomorphic to the localized ring \(A_f\) i.e., \(\mathcal{O}(D(f))\cong A_f\).</li>
+	<li>In particular, \(\Gamma(\text{Spec A}, \mathcal{O})\cong A\).</li>
+</ol>
+<strong>In case of associated sheaf \(\widetilde{M}\) on \(X=\text{Spec A}\) we have same results with \(A\) replaced by \(M\) and \(\mathcal{O}\) replaced by \(\widetilde{M}\). Precisely, we have following proposition.</strong>
+
+<strong>Proposition : </strong>Let \(A\) be a ring, \(M\) be an \(A\) module and and \(\widetilde{M}\) be the associated sheaf on \(X=\text{Spec A}\).
+<ol>
+	<li>For any \(\mathfrak{p}\in \text{Spec A}\), the stalk \(\widetilde{M}_{\mathfrak{p}}\) of the sheaf \(\widetilde{&lt;}\) is isomorphic to the localization \(M_{\mathfrak{p}}\) i.e., \(\widetilde{M}_{\mathfrak{p}}\cong M_{\mathfrak{p}}\).</li>
+	<li>For any element $f\in A$, the ring \(\widetilde{M}(D(f))\) is isomorphic to the localization \(M_f\) i.e., \(\widetilde{M}(D(f))\cong M_f\).</li>
+	<li>In particular, \(\Gamma(\text{Spec A}, \widetilde{M})\cong M\).</li>
+</ol>
+<strong>Proposition : </strong>Let \(A\) be a ring and let \(X=\text{Spec}(A)\). Also let \(A\rightarrow B\) be a ring homomorphism, and let \(f:\text{Spec}(B)\rightarrow \text{Spec}(A)\) be the correpsonding morphism of spectra. Then :
+<ol>
+	<li>the map \(M\mapsto \widetilde{M}\) gives an exact, fully faithful functor from category of \(A\) modules to the category of \(\mathcal{O}_X\) modules.</li>
+	<li>\(\widetilde{M\otimes_A N}=\widetilde{M}\otimes_{\mathcal{O}_X}\widetilde{N}\).</li>
+	<li>\(\widetilde{\bigoplus M_i}=\bigoplus \widetilde{M_i}\).</li>
+	<li>For a \(B\) module \(N\), we have \(f_*(\widetilde{N})=\widetilde{~_A N}\) where \(~_A N\) is \(N\) considered as an \(A\) module.</li>
+	<li>For a \(A\) module \(M\), we have \(f^*(\widetilde{M})=\widetilde{M\otimes_A B}\).</li>
+</ol>

@@ -1,0 +1,35 @@
+---
+title: "Lie groupoids"
+slug: "lie-groupoids"
+date: 2019-01-16T18:37:08
+url: "/2019/01/16/lie-groupoids/"
+categories: ["stacks"]
+tags: ["stacks"]
+---
+This post is based on (wanted to write after reading) <a href="https://arxiv.org/abs/1212.6714">Lie Groupoids and Differentiable stacks </a> by Matias L. del Hoyo. I would suggest this for any one who wants to know about Lie groupoids and Differentiable stacks. This is well written.
+
+By a manifold, we always mean a smooth manifold. A Groupoid is a category where every arrow is invertible. A Lie groupoid is a groupoid with additional smooth structures on object set/morphism set and maps between them.
+<blockquote><strong>Definition</strong> : A Lie groupoid consists of a  manifold \(\mathcal{G}_0\) of objects, a manifold \(\mathcal{G}_1\) of arrows and  following maps :
+<ul>
+	<li>\(s:\mathcal{G}_1\rightarrow \mathcal{G}_0\), a submersion, called the source map.</li>
+	<li>\(t:\mathcal{G}_1\rightarrow \mathcal{G}_0\), a submersion, called the target map.</li>
+	<li>\(m:\mathcal{G}_1\times_{s,\mathcal{G}_0,t}\mathcal{G}_1\rightarrow \mathcal{G}_1\), a smooth map, called the multiplication map.</li>
+	<li>\(u:\mathcal{G}_0\rightarrow \mathcal{G}_1\), a smooth map, called the unit map.</li>
+	<li>\(i:\mathcal{G}_1\rightarrow \mathcal{G}_1\), a smooth map, called the inverse map.</li>
+</ul>
+with some compatibility conditions. We denote this Lie groupoid by \(\mathcal{G}_1\rightrightarrows \mathcal{G}_0\).
+
+<strong>Definition</strong> : Let \(\mathcal{G}_1\rightrightarrows \mathcal{G}_0\) be a Lie groupoid and \(x\in \mathcal{G}_0\).
+<ul>
+	<li>The set \(s^{-1}(x)=:G(x,-)\) is called  the \(s\)-fibre of \(x\) .</li>
+	<li>The set \(t^{-1}(x)=:G(x,-)\) is called  the \(s\)-fibre of \(x\)</li>
+	<li>The set \(s^{-1}(x)\cap t^{-1}(x)=:G_x\) is called the Isotropy group of \(x\).</li>
+	<li>The set \(t(s^{-1}(x))=\{y:x\rightarrow y\in \mathcal{G}_1\}=:O_x\) is called the orbit of \(x\).</li>
+</ul>
+</blockquote>
+<strong>Proposition</strong> :  Given a Lie groupoid \(\mathcal{G}_1\rightrightarrows \mathcal{G}_0\) and \(x,y\in \mathcal{G}_0\),
+<ul>
+	<li>the subset \(G(y,x)\subseteq G\) is <b> an embedded submanifold. </b>In particular, <strong>\(G_x\) is a Lie group</strong>.</li>
+	<li>the subset \(O_x\) is a (<strong>may not be embedded</strong>) submanifold in   a canonical way.</li>
+</ul>
+By a morphism of Lie groupoids \(\phi: (\mathcal{G}_1\rightrightarrows \mathcal{G}_0)\rightarrow (\mathcal{H}_1\rightrightarrows \mathcal{H}_0)\) we mean a pair of smooth maps \(\phi^{ar}:\mathcal{G}_1\rightarrow \mathcal{H}_1\) and \(\phi^{ob}:\mathcal{G}_0\rightarrow \mathcal{H}_0\) compatible with structure maps \(s,t,m,u,i\). We write \(\phi\) for both \(\phi^{ar}\) and \(\phi^{ob}\).

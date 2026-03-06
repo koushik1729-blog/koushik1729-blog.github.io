@@ -1,0 +1,48 @@
+{{- define "main" }}
+
+<article class="post-single post-math">
+  <header class="post-header">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="post-title entry-hint-parent">{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">{{ .Description }}</div>
+    {{- end }}
+    {{- if not (.Param "hideMeta") }}
+    <div class="post-meta">
+      {{- partial "post_meta.html" . -}}
+      {{- partial "translation_list.html" . -}}
+      {{- partial "edit_post.html" . -}}
+      {{- partial "post_canonical.html" . -}}
+    </div>
+    {{- end }}
+  </header>
+
+  <section class="math-layout">
+    {{- if (.Param "showMathToc") | default true }}
+    <aside class="math-toc-shell" aria-label="Article contents">
+      <h2 class="math-toc-title">Contents</h2>
+      <nav id="math-generated-toc" class="math-generated-toc"></nav>
+    </aside>
+    {{- end }}
+
+    <div class="post-content math-content">
+      <div class="math-article" data-math-article>
+        {{- .Content -}}
+      </div>
+    </div>
+  </section>
+
+  <footer class="post-footer">
+    {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+    <ul class="post-tags">
+      {{- range ($.GetTerms $tags) }}
+      <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+      {{- end }}
+    </ul>
+    {{- if (.Param "ShowPostNavLinks") }}
+    {{- partial "post_nav_links.html" . }}
+    {{- end }}
+  </footer>
+</article>
+
+{{- end }}

@@ -1,0 +1,859 @@
+---
+title: "Connection on vector bundle (Introduction)"
+slug: "connection-on-vector-bundle-introduction"
+date: 2026-02-06T06:24:52
+url: "/2026/02/06/connection-on-vector-bundle-introduction/"
+categories: ["differential-geometry"]
+tags: ["connections"]
+---
+<!-- wp:paragraph -->
+<p>We will understand the notion of a connection on a vector bundle in the following steps:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li>Give the&nbsp;<strong>definition of a connection</strong></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Explain the&nbsp;<strong>objects appearing in the definition</strong>&nbsp;(sections and their algebraic structure)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Study the&nbsp;<strong>trivial bundle case</strong>, which motivates the axioms</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Examine the&nbsp;<strong>tangent bundle case</strong>&nbsp;and test familiar operations</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Explain why the&nbsp;<strong>usual differential of a section</strong>&nbsp;does not give what we want</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator has-alpha-channel-opacity" />
+<!-- /wp:separator -->
+
+<!-- wp:paragraph -->
+<p> Let \(E\rightarrow M\) be a vector bundle.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>A connection on \(E\rightarrow M\) is defined to be a map </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\nabla:\Gamma(M,TM)\times \Gamma(M,E)\rightarrow \Gamma(M,E)\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>satisfying the following conditions</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li>\(\nabla\) is \(\mathbb{R}\)-bilinear when \(\Gamma(M,TM)\) and \(\Gamma(M,E)\) are seen as \(\mathbb{R}\)-vector spaces; that is,<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>\(\nabla(aX_1+bX_2,s)=a\nabla(X_1,s)+b\nabla(X_2,s)\)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\nabla(X,as_1+bs_2)=a\nabla(X,s_1)+b\nabla(X,s_2)\)</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\nabla\) is \(C^\infty(M)\)-compatible when \(\Gamma(M,TM)\) and \(\Gamma(M,E)\) are seen as \(C^\infty(M)\)-modules; that is, <!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>\(\nabla(fX,s)=f\nabla(X,s)\)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\nabla(X,fs)=f\nabla(X,s)+X(f)s\)</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>for all \(a,b\in \mathbb{R}\), all \(f\in C^\infty(M)\), all \(X,X_1,X_2\in \Gamma(M,TM)\), all \(s,s_1,s_2\in \Gamma(M,E)\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Many books define connection in a different way. This version of connection definition is taken from the book  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>Differential Geometry -- Connections Curvature and Characteristic Classes by Loring W Tu</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>For more details about references and equivalent definitions of connections, you may see</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><a href="/2026/02/14/equivalent-definitions-of-connections-on-vector-bundle/">/2026/02/14/equivalent-definitions-of-connections-on-vector-bundle/</a></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Before this definition becomes meaningful, let us recall what sections are and what algebraic structure their space carries.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator has-alpha-channel-opacity" />
+<!-- /wp:separator -->
+
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">Sections of vector bundle</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Recall that, a section of a vector bundle \(\pi: E\rightarrow M\) is a smooth map \(s:M\rightarrow E\) satisfying the condition \(\pi\circ s=1_M\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When learning for the first time, there may be some confusion regarding order of composition.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Does it ask for \(\pi\circ s=1_M\) or \(s\circ \pi=1_E\)??</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Suppose it is \(s\circ \pi=1\), that would mean that \(\pi\) is injective. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let \(a_1,a_2\in E\) be such that \(\pi(a_1)=\pi(a_2)\). This implies \(s(\pi(a_1))=s(\pi(a_2)\). The assumption \(s\circ \pi=1\) along with the observation \(s(\pi(a_1))=s(\pi(a_2))\) implies \(a_1=a_2\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The condition of \(\pi\) being injective is equilavelnt to the condition of fibers being singletons, which are far from being an (interesting) vector spaces.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, for a section we are asking for \(\pi\circ s=1_M\) and not the other way.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>That is all ok, but, what does it mean to ask for the condition \(\pi\circ s=1_M\)?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When we see a section \(s:M\rightarrow E\) as a collection \(\{s(m)\}_{m\in M}\) the condition \(\pi\circ s=1_M\) means that \(\pi(s(m))=1\); in other words \(s(m)\in \pi^{-1}(m)=E_m\) for all \(m\in M\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, a section \(s:M\rightarrow E\) can be seen as a collection \(\{s(m)\}_{m\in M}\) with the property that \(s(m)\in E_m\) for all \(m\in M\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>At this point it should be reminded that, not any random collection \(\{t(m)\}_{m\in M}\) of elements \(E\) would assure that the associated map \(t:M\rightarrow E\) is smooth.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Now, we know what is a section of a vector bundle. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As mentioned before, the set of sections of a vector bundle \(E\rightarrow M\) is denoted by \(\Gamma(M,E)\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It is mentioned that connection \(\nabla\) is \(\mathbb{R}\)-bilinear.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let us unravel what is the \(\mathbb{R}\)-vector space structure on \(\Gamma(M,E)\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As \(E_m\) is a vector space for each \(m\in M\) there is a distinguished element in it, the zero element \(0_m\in E_m\). This gives a map \(s:M\rightarrow E\) defined by \(m\mapsto 0_m\) for \(m\in M\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once you check this assignment is a smooth function, this gives an example of a section, which usually goes by the name of ''zero section of vector bundle \(E\rightarrow M\)''. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, there is no confusion about zero element of "vector space".</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li>Let \(s,t:M\rightarrow E\) be two sections of \(\pi:E\rightarrow M\). As mentioned before, we can see these sections as collections \(\{s(m)\}_{m\in M}\) and \(\{t(m)\}_{m\in M}\), with \(s(m),t(m)\in E_m\) for all \(m\in M\).<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>Fix \(m\in M\). The vector space structure on \(E_m\) allows us to add two elements of \(E_m\). In particular, the elements \(s(m),t(m)\in E_m\) adds up to give \(s(m)+t(m)\in E_m\). This collection \(\{s(m)+t(m)\}_{m\in M}\) combines to give (no need to believe, you may prove) a smooth section \(s+t:M\rightarrow E\).</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>Let \(a\in \mathbb{R}\) and \(s:M\rightarrow E\) be a section of \(\pi:E\rightarrow M\). As mentioned before, we can see this as a collection \(\{s(m)\}_{m\in M}\) with \(s(m)\in E_m\) for all \(m\in M\).<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>Fix \(m\in M\). The vector space structure on \(E_m\) allows us to consider scalar multiplication of an element of \(E_m\) with a real number. In particular, the elements \(a\in \mathbb{R}\) and \(s(m)\in E_m\) gives \(as(m)\in E_m\). This collection \(\{as(m)\}_{m\in M}\) combines to give (no need to believe, you may prove) a smooth section \(as:M\rightarrow E\).</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>With this, \(\Gamma(M,E)\) is seen as an \(\mathbb{R}\)-vector space. In particular (as we knew before), \(\Gamma(M,TM)\) is also seen as an \(\mathbb{R}\)-vector space.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Note that, there is no reason to restrict multiplication of elements of \(\{s(m)\}_{m\in M}\) by one fixed real number. As \(s(m)\) is sitting in different vector space for different \(m\), we may as well choose different scalar for different \(m\in M\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Given a collection \(\{f(m)\}_{m\in M}\) of real numbers and a section \(\{s(m)\}_{m\in M}\) we get a collection \(\{f(m)s(m)\}_{m\in M}\). This gives a map \(fs:M\rightarrow E\). But, there is no guarantee why this function \(fs:M\rightarrow E\) is smooth. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It would be an interesting exercise to see that if the collection \(\{f(m)\}_{m\in M}\) is a smoothly varying family of real numbers, in other words, the associated map \(f:M\rightarrow E\) is smooth, then, the map \(fs:M\rightarrow E\) is a smooth map.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This gives an action of \(C^\infty(M)\) on \(\Gamma(M,E)\) with \((f,s)\mapsto fs\) for \(f\in C^\infty(M)\) and \(s\in \Gamma(M,E)\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>With this, \(\Gamma(M,E)\) becomes a \(C^\infty(M)\)-module. In particular, \(\Gamma(M,TM)\) also becomes a \(C^\infty(M)\)-module.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It would be useful to recall/prove that,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li>sections \(\Gamma(M,M\times \mathbb{R})\) of trivial bundle \(M\times \mathbb{R}\rightarrow M\) are precisely the smooth functions on \(M\).</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>sections \(\Gamma(M,TM)\) of tangent bundle \(TM\rightarrow M\) are precisely the smooth vector field on \(M\).</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>With these \(\mathbb{R}\)-vector space structures on \(\Gamma(M,TM)\) and \(\Gamma(M,E)\) we are asking that \(\nabla\) is \(\mathbb{R}\)-blinear.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>With these \(C^\infty(M)\)-module structures on \(\Gamma(M,TM)\) and \(\Gamma(M,E)\) we are asking that \(\nabla\) to be \(C^\infty(M)\)-compatible.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For anything related to sections of vector bundles that we are going to see from now, we keep asking if there is "compatibility" with \(C^\infty(M)\)-module structure.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Ok.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Before asking bigger questions, let us ask a simple question.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator has-alpha-channel-opacity" />
+<!-- /wp:separator -->
+
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">What does connection mean in trivial vector bundles??</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Let us look at the basic example of trivial bundle and see what does connection mean in that and what does it remind? </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Consider trivial bundle \(M\times \mathbb{R}\rightarrow M\). A connection on this would be a map </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\Gamma(M,TM)\times \Gamma(M, M\times \mathbb{R})\rightarrow \Gamma(M,M\times \mathbb{R})\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>in other words</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\Gamma(M,TM)\times C^\infty(M)\rightarrow C^\infty(M)\].</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The requirement of such map should not to be confused with \(C^\infty(M)\) action on \(\Gamma(M,TM)\) which is a map \(\Gamma(M,TM)\times C^\infty(M)\rightarrow  \Gamma(M,TM)\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Given a vector field \(\Gamma(M,TM)\) and an element \(f\in C^\infty(M)\), is there a way to get an element in \(C^\infty(M)\)?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We do know that vector fields evaluated on smooth functions gives smooth functions, right?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Given \(X\in \Gamma(M,TM)\) and \(f\in C^\infty(M)\) we have \(Xf:M\rightarrow \mathbb{R}\) defined as \((Xf)(m)=f_{*,m}(X(m))\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This gives a map </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\nabla: \Gamma(M,TM)\times C^\infty(M)\rightarrow C^\infty(M)\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>with \((X,f)\mapsto Xf\). But, the notation \(Xf\) is not saying immediately what it means. What we are doing in this case is looking at differential of \(f\) and evaluating at \(X\). We do have a different notation for that, namely \(df(X)\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, we have a map </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><code>\(d:\Gamma(M,TM)\times C^\infty(M)\rightarrow C^\infty(M)\)</code></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>with \((X,f)\mapsto (df)(X)\) for \(X\in \Gamma(M,TM)\) and \(f\in C^\infty(M)\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let us ask if there is any similarity with properties of \((X,f)\mapsto (df)(X)\) with the properties mentioned for the connection on vector bundle.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li>linearity in first variable; that is, \(df(aX_1+bX_2)=a(df)(X_1)+b(df)(X_2)\) follows from linearity of the differential \(f_{*,-}\).</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>linearity in second variable; that is, \(d(af+bg)(X)=a (df)(X)+b(dg)(X)\) follows from linearity of differentiation operation \(f'+g'=(f+g)'\).</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>So, this is matching with \(\mathbb{R}\)-bilinearity conditions of connection. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let us look at \(C^\infty(M)\)-compatibility.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Given \(g\in C^\infty(M)\), \(f\in \Gamma(M,M\times \mathbb{R})=C^\infty(M)\) and \(X\in \Gamma(M,TM)\) let us look at</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li>\(df(gX)\),</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(d(gf)(X)\).</li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>We have, </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[df(gX)(m)=f_{*,m}((gX)(m))=f_{*,m}(g(m)X(m))=g(m)f_{*,m}(X(m))=g(df)(X)(m)\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We have </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[d(gf)(X)=X(gf)=X(g)f+gX(f)=X(g)f+g(df)(X)\].</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This is exactly what we are asking for connection to satisfy. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Note that, we are not concluding the equation </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[d(gf)(X)=X(gf)=X(g)f+gX(f)=X(g)f+g(df)(X)\].</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>with \(f(dg)(X)+g(df)(X)\) because, here we are seeing \(g\) as element of \(C^\infty(M)\) and we want to put \(dg\) for only elements \(g\) of \(\Gamma(M,M\times \mathbb{R})\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If you dont understand what I said just now, give it sometime, you will get. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, what ever we are asking for differentiation of smooth maps (sections on trivial bundle) to satisfy, we are asking them as conditions for connection on vector bundle.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator has-alpha-channel-opacity" />
+<!-- /wp:separator -->
+
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">What is a connection in simple terms?</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In this way, a connection on a vector bundle \(E\rightarrow M\) can be seen</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>as a prescription</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>for differentiation</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>of sections of vector bundle</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>along sections of tangent bundle (vector fields)</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">What does connection mean in case of tangent bundle?</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>Consider tangent bundle \(TM\rightarrow M\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let \(X:M\rightarrow TM\) be a section of the vector bundle \(TM\rightarrow M\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We said connection will prescribe "derivative of \(X\)."</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The question now is, how to think about this notion of derivative of \(X\)? </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let us recall derivative of section of trivial bundle \(M\times \mathbb{R}\rightarrow M\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let \(f:M\rightarrow \mathbb{R}\) be a section of trivial bundle \(M\times \mathbb{R}\rightarrow M\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Given a point \(m\in M\), the function \(f\) evaluated at \(m\in M\) is a real number. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For such, the derivative of \(f\) at \(m\) evaluated at a tangent vector \(v\) is also a real number (under standard identification).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Same we expect in the case of vector field \(X:M\rightarrow TM\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Given a point \(m\in M\), the function \(X\) evaluated at \(m\) is a tangent vector at \(m\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, we expect similar behaviors from "derivative of \(X\)".</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We ask "derivative of \(X\)" at point \(m\) evaluated at a tangent vector \(v\) to be also a tangent vector at the point \(m\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In other words, given a vector field \(X:M\rightarrow TM\), we are looking for a map </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\{v\in T_mM\}_{m\in M}\rightarrow \{v'\in T_mM\}_{m\in M}\].</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But, this collection \(\{v\in T_mM\}_{m\in M}\) reminds us of a vector field on \(M\), where this collection is asked to vary smoothly.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As the vector field \(X\) is smooth, it is reasonable to ask the associated map</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\{v\in T_mM\}_{m\in M}\rightarrow \{v'\in T_mM\}_{m\in M}\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>takes a smoothly varying collection to a smoothly varying collection.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Given \(X\in \Gamma(M,TM)\) we are asking for a map</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\tilde{X}:\Gamma(M,TM)\rightarrow \Gamma(M,TM)\].</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This is precisely what we asked in definition of connection.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>A connection on the tangent bundle \(TM\rightarrow M\) would be a map</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\nabla:\Gamma(M,TM)\times \Gamma(M,TM)\rightarrow \Gamma(M,TM)\].</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We have already come across such a map; the Lie bracket.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But, we do not know if Lie bracket satisfies requirements of connection.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let us check.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let \(a,b\in \mathbb{R}\) and \(X,X_1,X_2,Y,Y_1,Y_2\in \Gamma(M,TM)\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We have </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[[aX_1+bX_2,Y](f)=(aX_1+bX_2)(Y(f))-Y ((aX_1+bX_2)(f))=--=a[X_1,Y](f)+b[X_2,Y](f)\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As Lie bracket is skew-symmetric, checking linearity in one coordinate is sufficient to conclude linearity in the other variable.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, there is a hope that Lie bracket operation </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\nabla:\Gamma(M,TM)\times \Gamma(M,TM)\rightarrow \Gamma(M,TM)\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>with \(\nabla(X,Y)=[X,Y]\) for \(X,Y\in \Gamma(M,TM)\) is a connection.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let us see for the \(C^\infty(M)\) compatibility.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let \(f\in C^\infty(M)\) and \(Y\in \Gamma(M,TM)\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We have</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[[X,fY](g)=X(fY)(g)-fY(X)(g)=X(f Y(g))-fYX(g)=X(f) Y(g)+fX(Y(g))-fY(X(g))=X(f)Y(g)+f [XY-YX](g)=X(f)Y(g)+f[X,Y](g)\].</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As this is true for all \(g\in C^\infty(M)\), we have </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[[X,fY]=X(f)Y+f[X,Y]\],</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This observation makes us both happy and sad at the same time. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We can be happy because this is one of the conditions for connections, namely,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\nabla(X,fs)=f\nabla(X,s)+X(f)s\].</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But, due to skew-symmetric nature of Lie bracket, this would mean that, </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\nabla (fX,s)=-\nabla(s,fX)=-f\nabla(s,X)-***=f\nabla(X,s)+***\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>which is not what we ask in second \(C^\infty(M)\)-compatibility. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Thus, \(\nabla:\Gamma(M,TM)\times \Gamma(M,TM)\rightarrow \Gamma(M,TM)\) defined by \((X,Y)\mapsto [X,Y]\) is <strong>not a connection.</strong></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">Why cant we use same differential idea in tangent bundle?</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>In case of trivial bundle \(M\times M\times \mathbb{R}\), given a section \(f:M\rightarrow M\times \mathbb{R}\) (seen as \(f:M\rightarrow \mathbb{R}\)) we just took differential. This gave an example of connection on bundle \(M\times \mathbb{R}\rightarrow M\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Why cant we do the same thing in case of tangent bundle \(TM\rightarrow M\)?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Given a section \(X:M\rightarrow TM\), ignoring that it is a section of tangent bundle, why can't we just consider it as a smooth function and look at the differential \(dX\)?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We have \(dX:TM\rightarrow T(TM)\) with \((dX)(Y)(m)=X_{*,m}(Y(m))\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Forget about this being \(\mathbb{R}\)-bilinear or \(C^\infty(M)\) compatible.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We do not even have the right candidate. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We wanted a map </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\Gamma(M,TM)\times \Gamma(M,TM)\rightarrow \Gamma(M,TM)\],</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>but, here, with this "usual differential'' idea, we are getting a map</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\Gamma(M,TM)\times \Gamma(M,TM)\rightarrow \Gamma(M,T(TM))\].</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Thus, usual derivative operation that we did in case of sections of trivial bundle, that we used to get a connection on trivial bundle, can not be used to get a connection on tangent bundle. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, it looks like a genuinely extra structure on tangent bundle (and more generally on any vector bundle).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It should be noted that, in case of section \(f\in \Gamma(M,M\times \mathbb{R})\), we asked for a map</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\tilde{f}:\Gamma(M,TM)\rightarrow \Gamma(M,M\times \mathbb{R})\].</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, the domain of \(\nabla(X)\) in the above case should not be seen as section of the vector bundle in the consideration; instead, they should be seen as sections of tangent bundle.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In other words, what ever may be the vector bundle, the domain of differential of section should always be \(\Gamma(M,TM)\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:separator -->
+<hr class="wp-block-separator has-alpha-channel-opacity" />
+<!-- /wp:separator -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">Why \(ds\) is not a connection on vector bundle?</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>I think it is already clear why differential of \(X:M\rightarrow TM\) is not the one we are looking for.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For more clarity, let us look at the case of sections of an arbitrary vector bundle \(E\rightarrow M\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Given a function \(s:M\rightarrow E\), consider the usual differential \(ds:TM\rightarrow TE\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This map \(ds\) acts on \(\Gamma(M,TM)\), similar to that of \(\nabla(s)(X)\). Then, where is the issue?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The issue is, \(ds(X)\) is a map \(M\rightarrow TE\), where as \(\nabla(s)(X)\) is a map \(M\rightarrow E\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Our intention is to assign a map \(\nabla(s)\) for \(s:M\rightarrow E\) which when evaluated on vector fields behaves like section \(M\rightarrow E\) "of same type as that of \(s:M\rightarrow E\)".</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, \(ds\) is not a correct candidate for this purpose.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>That's ok, but, why not compose with the projection \(TE\rightarrow E\) to land in \(E\)?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let us look at that as well.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Fix \(m\in M\). Consider \((\pi_E\circ (ds)(X))(m)\). This gives, </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[(\pi_E\circ (ds)(X))(m)=\pi_E(s_{*,m}(X(m))=s(m)\].</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>What ever may be \(X(m)\in T_mM\) is, the image \(s_{*,m}(X(m))\) is always in \(s(m)\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, \(\pi_E(s_{*,m}(X(m))=s(m)\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, when composed with \(TE\rightarrow E\), we get \(\pi_E\circ ds(X)=s\); for all \(X\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When there is no relevance of \(X\), may be we are going in wrong diretcion or we are going to hit something boring. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, this also is a bad choice. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We just can not do anything interesting to land in \(E\). There is no obvious choice.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When it is not obvious and happens sometimes, it becomes important and gets a name. The name about to appear here is : "connection on vector bundle".</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">Definition of connection on vector bundle</h1>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>A connection on \(E\rightarrow M\) is defined to be a map</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\nabla:\Gamma(M,TM)\times \Gamma(M,E)\rightarrow \Gamma(M,E)\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>satisfying the following conditions</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li>\(\nabla\) is \(\mathbb{R}\)-blinear when \(\Gamma(M,TM)\) and \(\Gamma(M,E)\) are seen as \(\mathbb{R}\)-vector spaces; that is, <!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>\(\nabla(aX_1+bX_2,s)=a\nabla(X_1,s)+b\nabla(X_2,s)\)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\nabla(X,as_1+bs_2)=a\nabla(X,s_1)+b\nabla(X,s_2)\)</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\nabla\) is \(C^\infty(M)\)-compatible when \(\Gamma(M,TM)\) and \(\Gamma(M,E)\) are seen as \(C^\infty(M)\)-modules; that is, <!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>\(\nabla(fX,s)=f\nabla(X,s)\)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\nabla(X,fs)=f\nabla(X,s)+X(f)s\)</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list --></li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>for all \(a,b\in \mathbb{R}\), all \(f\in C^\infty(M)\), all \(X,X_1,X_2\in \Gamma(M,TM)\), all \(s,s_1,s_2\in \Gamma(M,E)\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Of course there will be some differences in notation with other books. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Some books may call this with other names. Some books says connection as something else.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In next session, we will try to address some of those questions and ask some more questions (and answer some of them).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>By the way, when we say something is connection, is it connecting any thing? What does it connect?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>See you later.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list {"ordered":true} -->
+<ol class="wp-block-list"><!-- wp:list-item -->
+<li></li>
+<!-- /wp:list-item --></ol>
+<!-- /wp:list -->

@@ -1,0 +1,16 @@
+---
+title: "Trivializations and sections in Principal bundle"
+slug: "trivializations-and-sections-in-principal-bundle"
+date: 2019-01-24T19:02:12
+url: "/2019/01/24/trivializations-and-sections-in-principal-bundle/"
+categories: ["Differential geometry"]
+---
+Given a section \(\sigma:N\rightarrow P\) we produce a smooth map (trivialization) \(\Phi_P:N\times G\rightarrow P\) given by \((n,g)\mapsto \sigma(n)g\). This is smooth for obvious reasons. The map \(N\rightarrow P\) given by \(n\mapsto \sigma(n)\) is smooth so is the map \(N\times G\rightarrow P\times G\) given by \((n,g)\mapsto (\sigma(n),g)\). The multiplication map \(P\times G\rightarrow P\) given by \((p,g)\mapsto pg\) is smooth. Thus the composition
+<p style="text-align:center;">\(N\times G\rightarrow P\times G\rightarrow P\)</p>
+is smooth which is simply the map \(\Phi_P:N\times G\rightarrow P\) is smooth. We see that this map is a diffeomorphism. What obvious map can you think of \(P\rightarrow N\times G\)? Given \(p\in P\) we need to associate an element \((n,g)\in N\times G\). For first coordinate, obvious choice is  \(\pi(p)\in N\). Remember that we are already with a <strong>guess</strong> that \(\Phi\) is a bijection and this map \(P\rightarrow N\times G\) has to be inverse of \(\Phi:N\times G\rightarrow P\). So, given \(p\in P\) we choose \(g\in G\) such that \(\Phi(\pi(p),g)=p\) i.e., \(\sigma(\pi(p)).g=p\). The point is, we can always choose such \(g\) and it is unique as action is free.
+
+See that \(\sigma(\pi(p))\in \pi^{-1}(\pi(p))\) and \(p\in \pi^{1}(p)\). So, as any two elements in fibre are related by an element in \(G\) we have \(g\in G\) such that \(\sigma(\pi(p)).g=p\). Thus, we have an obvious map \(P\rightarrow N\times G\) given by \(p\mapsto (\pi(p),g)\) where \(g\in G\) is the unique such \(g\) satisfying \(\sigma(\pi(p))g=p\). It is upto you to see that this map is a smooth map. This is smooth on first projection to \(N\) being just the map \(\pi\). It needs some work to see the projectionto \(G\) is smooth. It is by definition that this map is actually inverse of \(\Phi_P:N\times G\rightarrow P\) and thus we have a diffeomorphism. This diffeomorphism is \(G\)-equivariant if you know what it means. Thus, knowing that \(P\rightarrow N\) is a principal \(G\) bundle,   a section \(\sigma:N\rightarrow P\) gives a trivialization \(N\times G\rightarrow P\).
+
+Given a trivialization \(N\times G\xrightarrow{\Phi} P\), we have a section \(\sigma:N\rightarrow P\) given by \(\sigma(n)=\Phi(n,1)\).
+
+Thus, giving a section is same thing as giving local trivialization.

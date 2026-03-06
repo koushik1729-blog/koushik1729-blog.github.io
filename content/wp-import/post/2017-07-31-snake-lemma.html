@@ -1,0 +1,39 @@
+---
+title: "Snake Lemma"
+slug: "snake-lemma"
+date: 2017-07-31T18:05:04
+url: "/2017/07/31/snake-lemma/"
+categories: ["Commutative Algebra", "homological-algebra"]
+---
+In an exercise on Flasque sheaves, I used Snake lemma. So, I thought it is better to mention it separately with proof.
+
+<strong>Lemma : </strong>Given a commutative diagram as below
+
+<strong><img class=" size-full wp-image-1243 aligncenter" src="/wp-media/2017/07/f4f548d154-ql_ee3435353bba304f57df87cb8181252d_l3.png" alt="ql_ee3435353bba304f57df87cb8181252d_l3" width="287" height="85" /></strong>
+
+we have exact sequence
+
+<img class=" size-full wp-image-1245 aligncenter" src="/wp-media/2017/07/03166f5879-ql_853a410f14c77599c146e77c4ca3fded_l3.png" alt="ql_853a410f14c77599c146e77c4ca3fded_l3" width="471" height="81" />
+
+<strong>Proof : </strong>This is just question of diagram chasing. It is good if one can prove this on their own with out looking for proof from some other source.
+
+Let \(a\in \text{Ker}(f)\) i.e., \(f(a)=0\) which then imply \(v_1(f(a))=0\) which is same as saying \(g(u_1(a))=0\) (as the first square is commutative) i.e., \(u_1(a)\in \text{Ker}(g)\). So, we have map \(\tilde{u}_1:\text{Ker}(f)\rightarrow \text{Ker}(g)\) given by \(a\mapsto u_1(a)\). For similar reasons, \(b\mapsto u_2(b)\) gives map \(\tilde{u}_2:\text{Ker}(g)\rightarrow \text{Ker}(h)\). As \(\tilde{u}_1\) and \(\tilde{u}_2\) are just restrictions of \(u_1\) and \(u_2\), it follows that the sequence  \(0\rightarrow \text{Ker(f)}\xrightarrow{\tilde{u}_1} \text{Ker(g)}\xrightarrow{\tilde{u}_2} \text{Ker(h)}\) is an exact sequence.
+
+Define \(\tilde{v}_1:\text{Coker(f)}\rightarrow \text{Coker(g)}\) by \(a+f(M_1)\rightarrow v_1(a)+g(M_2)\). Let \(a_1+f(M_1)=a_2+f(M_2)\), then, \(a_1-a_2\in f(M_1)\) i.e., \(a_1-a_2=f(m)\) for some \(m\in M_1\). So, we have \(v_1(a_1-a_2)=v_1(f(m))=g(u_1(m))\in g(M_2)\), thus, \(v_1(a_1)-v_1(a_2)\in g(M_2)\) i.e., \(v_1(a_1)+g(M_2)=v_1(a_2)+g(M_2)\) i.e., \(\tilde{v}_1(a_1+f(M)_1)=\tilde{v}_1(a_2+f(M_2))\). Thus, \(\tilde{v}_1:\text{Coker(f)}\rightarrow\text{Coker(g)}\) given by \(a+f(M_1)\rightarrow v_1(a)+g(M_2)\) is well defined. Similarly, \(\tilde{v}_2:\text{Coker(g)}\rightarrow \text{Coker(h)}\) given by \(b+g(M_2)\rightarrow v_2(b)+h(M_3)\) is a well defined map. As these are coming from \(v_1,v_2\) the sequence \(\text{CoKer}(f) \xrightarrow{\tilde{v}_1} \text{CoKer}(g) \xrightarrow{\tilde{v}_2} \text{CoKer(h)}\rightarrow 0\) is an exact sequence.
+
+Now, we define (connecting map) \(d:\text{Ker(h)}\rightarrow \text{Coker(f)}\) and show that this map connects the two exat sequences  \(0\rightarrow \text{Ker(f)}\xrightarrow{\tilde{u}_1} \text{Ker(g)}\xrightarrow{\tilde{u}_2} \text{Ker(h)}\) and
+\(\text{CoKer}(f) \xrightarrow{\tilde{v}_1} \text{CoKer}(g) \xrightarrow{\tilde{v}_2} \text{CoKer(h)}\rightarrow 0\) giving the required exact sequence
+
+<img class=" size-full wp-image-1245 aligncenter" src="/wp-media/2017/07/03166f5879-ql_853a410f14c77599c146e77c4ca3fded_l3.png" alt="ql_853a410f14c77599c146e77c4ca3fded_l3" width="471" height="81" />
+
+Let \(a\in \text{Ker(h)}\) i.e., \(h(a)=0\). As <strong>\(u_2\) is surjective, </strong>\(a=u_2(m_2)\) for some \(m_2\in M_2\). So, \(0=h(a)=h(u_2(m_2))=v_2(g(m_2))\).
+So, \(g(m_2)\in \text{Ker}(v_2)=\text{Im}(v_1)\). So, \(g(m_2)=v_1(n_1)\) for some \(n_1\in N_1\). Define \(d:\text{Ker(h)}\rightarrow \text{Coker(f)}\) as \(a\mapsto n_1+f(M_1)\) chosen as above. We prove that this is well defined.
+Let \(a=u_2(m_2)=u_2(m_2')\). Then, \(m_2-m_2'\in \text{Ker}(u_2)=\text{Im}(u_1)\). So,  \(m_2-m_2'=u_1(m_1)\). Then, \(g(m_2)-g(m_2')=g(u_1(m_1))=v_1(f(m_1))\) i.e., \(v_1(n_1)-v_1(n_1')=v_1(f(m_1))\). As <strong>\(v_1\) is injective,</strong> this means \(n_1-n_1'=f(m_1)\in f(M_1)\) i.e., \(n_1+f(M_1)=n_1'+f(M_1)\). Thus, \(d:\text{Ker(h)}\rightarrow \text{Coker(f)}\) defined as \(a\mapsto n_1+f(M_1)\) is well defined.
+
+We have used surjectivity of \(u_2\) to define the map \(d\) and used injectivity of \(v_1\) to prove that it is well defined. I will write proof  some other time that the resulting map
+
+<img class=" size-full wp-image-1245 aligncenter" src="/wp-media/2017/07/03166f5879-ql_853a410f14c77599c146e77c4ca3fded_l3.png" alt="ql_853a410f14c77599c146e77c4ca3fded_l3" width="471" height="81" />is exact at \(\text{Ker}(h)\) and \(\text{Coker}(f)\).
+
+&nbsp;
+
+&nbsp;

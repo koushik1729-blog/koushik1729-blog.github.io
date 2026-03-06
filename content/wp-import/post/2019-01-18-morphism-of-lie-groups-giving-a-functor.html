@@ -1,0 +1,18 @@
+---
+title: "Morphism of Lie groups giving a functor"
+slug: "morphism-of-lie-groups-giving-a-functor"
+date: 2019-01-18T20:46:30
+url: "/2019/01/18/morphism-of-lie-groups-giving-a-functor/"
+categories: ["category-theory", "differential-geometry"]
+tags: ["principal-bundles"]
+---
+Given a morphism of Lie groups \(\theta:G\rightarrow H\)  and a principal \(G\) bundle \(\pi:P\rightarrow M\) there are (at least) two ways to assign a principal \(H\) bundle.
+<ol>
+	<li>See that the morphism of Lie groups \(\theta:G\rightarrow H\) gives an action of \(G\) on \(H\) by \(g.h=\theta(g).h\). Given an action of \(G\) on manifold (Lie group in this case) \(H\) there is an associated fibre bundle \(P\times_G H\rightarrow M\) with fibre \(H\). This gives a principal \(H\) bundle.</li>
+	<li>For principal bundle \(\pi:P\rightarrow M\), we can find an open cover \(\{U_\alpha\}\) of \(M\) and  (transition) maps \(g_\alpha g_\beta:U_{\alpha\beta}\rightarrow G\) satifsying the cocycle condition \(g_{\alpha\beta}g_{\beta\gamma}=g_{\alpha\gamma}\) on \(U_\alpha\cap U_\beta\cap U_\gamma\). Then the compositions \(\tau_{\alpha\beta}=\theta\circ g_{\alpha\beta}:U_{\alpha\beta}\rightarrow G\rightarrow H\) also satifies the cocycle condition \(\tau_{\alpha\beta}\tau_{\beta\gamma}=\tau_{\alpha\gamma}\) on \(U_\alpha\cap U_\beta\cap U_\gamma\). One can then produce a principal \(H\) bundle over \(M\) given this open cover \(\{U_\alpha\}\) of \(M\) and smooth maps \(\tau_{\alpha\beta}:U_\alpha\cap U_\beta\rightarrow H\) satisfying the cocycle condition. This gives a principal \(H\) bundle.</li>
+</ol>
+It is a good exercise (that I have not tried) to check that principal \(H\) bundles obtained from above two methods are (naturally) isomorphic i.e., one and the same.
+
+Given a Lie group \(G\), let \(BG\) denote the category of principal \(G\) bundles. Objects are principal \(G\) bundles and morphisms are \(G\)-equivariant morphisms.
+
+Given a morphism of Lie groups \(\theta:G\rightarrow H\), above construction gives a functor (at the level of objects) \(B\theta:BG\rightarrow BH\). It is not difficult to see that, a \(G\)-equivarint map induce a \(H\)-equivariant map. This gives a functor \(BG\rightarrow BH\).

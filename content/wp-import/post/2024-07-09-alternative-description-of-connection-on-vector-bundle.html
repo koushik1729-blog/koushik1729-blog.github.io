@@ -1,0 +1,107 @@
+---
+title: "(Alternative description of) Connection on vector bundle"
+slug: "alternative-description-of-connection-on-vector-bundle"
+date: 2024-07-09T18:36:12
+url: "/2024/07/09/alternative-description-of-connection-on-vector-bundle/"
+categories: ["differential-geometry"]
+tags: ["connections", "tensor-product"]
+---
+<!-- wp:paragraph -->
+<p>Let \(M\) be a smooth manifold and \(E\rightarrow M\) a vector bundle over \(M\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:group {"layout":{"type":"constrained"}} -->
+<div class="wp-block-group"><!-- wp:paragraph -->
+<p>A connection on the vector bundle \(E\rightarrow M\) is usually defined as a map </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\nabla : \Gamma(M,TM)\times \Gamma(M,E)\rightarrow \Gamma(M,E)\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>satisfying the following conditions:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul class="wp-block-list"><!-- wp:list-item -->
+<li>\(\nabla\) behaves very well with the \(\mathbb{R}\)-vector space structure on \(\Gamma(M,TM)\) and \(\Gamma(M,E)\); in the sense that, \(\nabla\) is an \(\mathbb{R}\)-bilinear map,</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\nabla\) behaves reasonably well with the \(C^\infty(M)\)-module structure on \(\Gamma(M,TM)\) and \(\Gamma(M,E)\); in the sense that, </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\nabla(fX,s)=f\nabla(X,s)\]  for \(X\in \Gamma(M,TM)\) and \(s\in\Gamma(M,E)\)</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\nabla(X,fs)=f\nabla (X,s)+X(f)s\]  for \(X\in \Gamma(M,TM)\) and \(s\in \Gamma(M,E)\)</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>The \(C^\infty(M)\)-linearity of the map \(\nabla(-,s):\Gamma(M,TM)\rightarrow \Gamma(M,E)\) for each section \(s\in \Gamma(M,E)\) implies we have an \(\mathbb{R}\)-linear map </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\Gamma(M,E)\rightarrow \hom_{C^\infty(M)}(\Gamma(M,TM),\Gamma(M,E))\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>We know that \(\hom (V,W)\cong V^*\otimes W\) for vector spaces \(V,W\). More generally, \(\hom_R(V,W)=V^*\otimes_RW\) for \(R\)-modules \(V,W\) for a commutative ring \(R\).</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:paragraph -->
+<p>In the case of \(R=C^\infty(M)\), we have </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\hom_{C^\infty(M)}(\Gamma(M,TM),\Gamma(M,E))\cong \Gamma(M,TM)^*\otimes_{C^\infty(M)}\Gamma(M,E)\],</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>equivalently, </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\hom_{C^\infty(M)}(\Gamma(M,TM),\Gamma(M,E))\cong \Gamma(M,T^*M)\otimes_{C^\infty(M)}\Gamma(M,E)\].</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>We also have a relation between "tensor product of sections" and section of tensor product of vector bundles; given by </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\Gamma(M,T^*M)\otimes_{C^\infty(M)}\Gamma(M,E)\cong \Gamma(M,T^*M\otimes E)\]. </p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>For this reason, some people write a connection on a vector bundle \(E\rightarrow M\) as an \(\mathbb{R}\)-linear map  \(\nabla:\Gamma(M,E)\rightarrow \Gamma(M,T^*M\otimes E)\) satisfying the condition </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\nabla(fs)=(df)\otimes s+f\nabla(s)\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>for all \(f\in C^\infty(M)\) and \(s\in \Gamma(M,E)\).</p>
+<!-- /wp:paragraph -->

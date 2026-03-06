@@ -1,0 +1,29 @@
+---
+title: "Equivariant maps are Isomorphisms"
+slug: "equivariant-maps-are-isomorphisms"
+date: 2019-01-23T17:49:33
+url: "/2019/01/23/equivariant-maps-are-isomorphisms/"
+categories: ["Lie groupoids", "Lie groups", "differential-geometry", "stacks"]
+tags: ["principal-bundles", "stacks"]
+---
+<strong>Let \(G\) be a Lie group and \(\pi_P:P\rightarrow M, \pi_Q:Q\rightarrow M\) be principal \(G\) bundles. Then, any \(G\)-equivariant map \(f:P\rightarrow Q\) inducing identity on \(M\) is a diffeomorphism. </strong>
+
+The same holds when we have Lie groupoids instead of Lie groups.
+
+<strong>Let \(\mathcal{G}\) be a Lie groupoid and \(P\rightarrow M, Q\rightarrow M\) be principal \(\mathcal{G}\) bundles. Then, any \(\mathcal{G}\)-equivariant map \(f:P\rightarrow Q\) inducing identity on \(M\) is a diffeomorphism. </strong>
+
+Above result is very basic thing when defining a stack associated for a Lie groupoid \(\mathcal{G}\). Given a Lie groupoid \(\mathcal{G}\), we define a category fibered in <strong>groupoids </strong>\(B\mathcal{G}\rightarrow \text{Man}\) by associating for each manifold \(U\) a category \(B\mathcal{G}(U)\) whose objects are principal \(\mathcal{G}\) bundles whose base space is \(U\) i.e., of the form \(P\rightarrow U\) and morphism from an object \(P\rightarrow U\) to another object \(Q\rightarrow U\) is a \(\mathcal{G}\)-equivariant map \(P\rightarrow Q\) that induces \(Id:U\rightarrow U\) on base space of those principal bundles. Thus, to say  \(B\mathcal{G}(U)\) is a Lie groupoid, we need to prove that every arrow \((P\rightarrow U)\rightarrow (Q\rightarrow U)\) is an isomorphism which is what we are trying to prove.
+
+Let us see the proof for the case of Lie groups. See the set up as following diagram. <img class=" size-full wp-image-1365 aligncenter" src="/wp-media/2019/01/c90b6dbb9e-screenshot-from-2019-01-24-20-14-48.png" alt="screenshot from 2019-01-24 20-14-48" width="272" height="224" />Let \(p,p'\in P\) are such that \(f(p)=f(p')\), thus, \(\pi_Q(f(p))=\pi_Q(f(p'))\). As \(\pi_Q\circ f=\pi_P\), we have \(\pi_P(p)=\pi_P(p')\) i.e., there exists \(g\in G\) such that \(p'=p.g\). Thus, \(f(p')=f(pg)\). As \(f\) is \(G\)-equivariant, we have \(f(pg)=f(p)g\). Thus, we have \(f(p')=f(p)g\). As the action of \(G\) on \(Q\)  is free, \(f(p')=f(p),f(p')=f(p)g\) implies \(g=1\). Thus, \(p'=p\). So, \(f\) is one to one mapping.
+
+Let \(q\in Q\). We have \(\pi_Q(q)\in M\). As \(\pi_P\) is surjective, there exists \(p\in P\) such that \(\pi_P(p)=\pi_Q(q)\). As \(\pi_Q\circ f=\pi_P\), we have \(\pi_Q(f(p))=\pi_P(p)=\pi_Q(q)\). As \(\pi_Q(f(p))=\pi_Q(q)\), there exists \(g\in G\) such that \(f(p)g=q\). As \(f\) is \(G\)-equivariant, we have \(f(p)g=f(pg)\). Thus, we have \(q=f(pg)\) which implies that \(f\) is an onto mapping.
+
+Suppose that \(\pi_P:P\rightarrow M\) is <strong>trivial</strong> \(G\) bundle, not for simplicity but because every principal \(G\) bundle is locally trivial and diffeomorphism is something that needs to be checked locally.
+
+As \(\pi_P:P\rightarrow M\) is <strong>trivial, </strong>it has <strong>a global section</strong> for \(\pi_P\) i.e., a <strong>smooth map </strong>  \(\sigma:M\rightarrow P\) such that \(\pi_P\circ \sigma=1\).  This <a href="https://koushik1729.wordpress.com/2019/01/24/trivializations-and-sections-in-principal-bundle/" target="_blank" rel="noopener">gives a trivialization</a> \(M\times G\xrightarrow{\Phi} P\) i.e., an isomorphism. Consider the cimposition \(f\circ \pi:M\rightarrow Q\). This is again a smooth map such that
+<p style="text-align:center;">\(\pi_Q\circ (f\circ \sigma)=(\pi_Q\circ f)\circ \sigma=\pi_P\circ \sigma=1\)</p>
+i.e., the composition \(f\circ \sigma:M\rightarrow Q\) is a <strong>global section </strong>for \(\pi_Q:Q\rightarrow M\). This again <a href="https://koushik1729.wordpress.com/2019/01/24/trivializations-and-sections-in-principal-bundle/" target="_blank" rel="noopener">gives a trivialization</a> \(Q\xrightarrow{\Psi} M\times G\). Check that \(\Psi\circ f\circ \Phi=1\), which is fun (no difficult) to check.  As both \(\Psi, \Phi\) are diffeomorphism, \(\Psi\circ f\circ \Phi=1\) says that \(f=\Psi^{-1}\circ \Phi^{-1}\). Being a composition of diffeomorphisms \(\Psi^{-1}\) and \(\Phi^{-1}\), the map \(f:P\rightarrow Q\) is a diffeomorphism.
+
+If you consider local trivialization \(U\times G\rightarrow \pi^{-1}(U)\), above procedure says that \(f|_{\pi^{-1}(U)}\) is a diffeomorphism. See that \(P\) is covered by \(\pi^{-1}(U)\). Thus, \(f\) is a diffeomorphism.
+
+&nbsp;

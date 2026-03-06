@@ -1,0 +1,197 @@
+---
+title: "Lie-Rinehart algebras : Morphism of Lie-Rinehart algebras"
+slug: "lie-rinehart-algebras-morphism-of-lie-rinehart-algebras"
+date: 2024-04-26T17:37:25
+url: "/2024/04/26/lie-rinehart-algebras-morphism-of-lie-rinehart-algebras/"
+categories: ["algebraic-geometry"]
+tags: ["schemes"]
+---
+<!-- wp:paragraph -->
+<p>Once we have a reasonably good notion of an object, we would look at a notion of morphisms.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let \((L,A,\rho,\tau)\) to \((L',A',\rho',\tau')\) be Lie-Rinehart algebras. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Our experience suggests that the data of a morphism of Lie-Rinehart algebras from \((L,A,\rho,\tau)\) to \((L',A',\rho',\tau')\) should at least have two morphisms, one a morphism of Lie algebras \(\Phi:L\rightarrow L'\) and a morphism of associative algebras \(\Psi:A\rightarrow A'\) such that the following diagram commute,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":1519,"width":"669px","height":"auto","sizeSlug":"large","linkDestination":"media"} -->
+<figure class="wp-block-image size-large is-resized"><a href="/wp-media/2024/04/f6959929d4-screenshot-2024-04-26-at-5.58.21e280afpm.png"><img src="/wp-media/2024/04/36f2b2491a-screenshot-2024-04-26-at-5.58.21e280afpm.png" alt="" class="wp-image-1519" style="width:669px;height:auto" /></a></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>if someone tells us what the vertical arrows with ?? are defined as. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Given a morphism \(A\rightarrow A'\) there is no obvious way to get a morphism of derivations \(Der(A)\rightarrow Der(A')\) and similarly, a morphism \(L\rightarrow L'\) does not suggest a natural choice of morphisms of Endomorphisms \(End(L)\rightarrow End(L')\). So, may be we are going in a wrong direction.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If you remember the way the notion of morphism of (affine) schemes is defined, it would give a clue that we are not thinking correctly. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Note that, a morphism of ringed spaces from \((X,\mathcal{O}_X)\) to \((Y,\mathcal{O}_Y)\) consists of a morphism of topological spaces \(f:X\rightarrow Y\) and a morphism of sheaves of rings \(\mathcal{O}_Y\rightarrow f_*\mathcal{O}_X\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In the same sense, one can think of bring the "structures" on same set up. This is where the notion of "pullback" comes into picture. This idea is taken from Madeline Jotz Lean's work <a href="https://www.uni-math.gwdg.de/mjotz/JotzLean18c.pdf">On ideals in Lie-Rinehart algebras</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let \((L,A,\rho,\tau)\) to \((L',A',\rho',\tau')\) be Lie-Rinehart algebras. A morphism of Lie-Rinehart algebras from \((L,A)\) to \((L',A')\) comes with a morphism of algebras \(\varphi: A'\rightarrow A\), along with certain conditions. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Note that this reminds the notion of morphism of schemes; the ring map is in the opposite direction of what we expect. If you are not familiar with the notion of morphism of schemes, one can justify this from the notion of morphism of Lie algebroids. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Given Lie algebroids \((L,M)\) and \((L',M')\) a morphism of Lie algebroids from \((L,M)\) to \((L',M')\) is a vector bundle morphism \((\Phi,f):(L,M)\rightarrow (L',M')\) satisfying certain (not so nice) conditions. This data comes with a map \(f:M\rightarrow M'\). This in turn gives a map \(C^\infty(M')\rightarrow C^\infty (M)\) given by \(\theta:M'\rightarrow \mathbb{R}\) being mapped to \(f\circ \theta:M\rightarrow \mathbb{R}\). So, if we think of Lie-Rinehart algebras associated to the Lie algebroids, we should be having the map \(A'=C^\infty(M') \rightarrow A=C^\infty(M)\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Note that, this morphism \(\varphi:A'\rightarrow A\) would make \(A\) into an \(A'\)-module. One can use this to construct an \(A\)-module from an \(A'\)-module, in particular, \(A\otimes_{A'}L'\) would be an \(A\)-module. Then, the author consider a subset of \(Der(A)\times (A\otimes_{A'}L')\), denote it as \(Der(A)\times_{\varphi}L'\), call it the "pullback".</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let \((L,A,\rho,\tau)\) to \((L',A',\rho',\tau')\) be Lie-Rinehart algebras. A morphism of Lie-Rinehart algebras from \((L,A)\) to \((L',A')\) comes with a morphism of algebras \(\varphi: A'\rightarrow A\), along with a morphism of Lie algebras \(L\rightarrow Der(A)\times_{\varphi}L'\) satisfying certain conditions. It is more technical and needs sometime to digest.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The construction is natural, but, I am of the opinion that this should be called as push forward and not pull back as we are pushing a structure from \(A'\) to get a structure on \(A\) through the map \(\varphi:A'\rightarrow A\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It is not justifiable to expect the definition of morphism of Lie-Rinehart algebras to be straightforward.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Once you recall the notion of morphism of Liealgebroids, you would get convinced that, it is not justifiable to expect the definition of morphism of Lie-Rinehart algebras to be any more straightforward than what is mentioned by Madeline Jotz Lean in <a href="https://www.uni-math.gwdg.de/mjotz/JotzLean18c.pdf">On ideals in Lie-Rinehart algebras</a>.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Along with the idea mentioned above, there is another notion of morphism of Lie-Rinehart algebras, given by Camille Laurent-Gengoux and Ruben Louis in <a href="https://hal.science/hal-03462506/document">Lie-Rinehart algebras \(\simeq\) acyclic Lie \(\infty\)-algebroids</a>. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Consider the same diagram that we mentioned above,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":1519,"width":"669px","height":"auto","sizeSlug":"large","linkDestination":"media"} -->
+<figure class="wp-block-image size-large is-resized"><a href="/wp-media/2024/04/f6959929d4-screenshot-2024-04-26-at-5.58.21e280afpm.png"><img src="/wp-media/2024/04/36f2b2491a-screenshot-2024-04-26-at-5.58.21e280afpm.png" alt="" class="wp-image-1519" style="width:669px;height:auto" /></a></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>There may be no obvious options for the maps \(End(L)\rightarrow End(L')\) and \(Der(A)\rightarrow Der(A')\), but, there is a way to bypass that path. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let \(a\in A\) and \(l\in L\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We have </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>\(\Phi(l)\in L'\), </li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\rho'(\Phi(l))\in Der(A')\),</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\rho'(\Phi(l))(\Psi(a))\in A'\).</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>We have </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>\(\rho(l)\in Der(A)\),</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\rho(l)(a)\in A\),</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\Psi(\rho(l)(a))\in A'\).</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>We ask that \(\rho'(\Phi(l))(\Psi(a))=\Psi(\rho(l)(a))\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We did not yet mention the condition relating to the maps \(\tau, \tau'\). Let us do that now. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We have </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>\(\tau(a)\in End(L)\),</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\tau(a)(l)\in L\),</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\Phi(\tau(a)(l))\in L'\). </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>We have</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>\(\Psi(a)\in A'\),</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\tau'(\Psi(a))\in End(L')\),</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\tau'(\Psi(a))(\Phi(l))\in L'\). </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>We ask that, \(\Phi(\tau(a)(l))=\tau'(\Psi(a))(\Phi(l))\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This idea is slightly easier to follow than that of Madeline Jotz Lean's idea of morphism of Lie-Rinehart algebras.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>Question : Is the notion of morphism of Lie-Rinehart algebra mentioned in <a href="https://hal.science/hal-03462506/document">Lie-Rinehart algebras \(\simeq\) acyclic Lie \(\infty\)-algebroids</a> is equivalent to the notion mentioned in <a href="https://www.uni-math.gwdg.de/mjotz/JotzLean18c.pdf">On ideals in Lie-Rinehart algebras</a>?  </p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For a better understanding of the above two notions of "morphisms of Lie-Rinehart algebras" and other interesting ideas about Lie-Rinehart algebras, please see the talk <a href="https://youtu.be/SMBriA04EOw?feature=shared">Paths in Lie-Rinehart algebras</a> by Joel Villatoro. The words used are "morphism" and "comorphism." </p>
+<!-- /wp:paragraph -->

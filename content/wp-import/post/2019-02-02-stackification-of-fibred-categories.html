@@ -1,0 +1,25 @@
+---
+title: "Stackification of fibred categories"
+slug: "stackification-of-fibred-categories"
+date: 2019-02-02T13:50:32
+url: "/2019/02/02/stackification-of-fibred-categories/"
+categories: ["algebraic-geometry", "category-theory", "stacks"]
+tags: ["hartshorne", "sheaves", "stacks"]
+---
+I understood most of this from <a href="https://arxiv.org/pdf/math/0212266.pdf"> Introduction to the language of stacks and gerbes</a> (section 2)  by Ieke Moerdijk and from stacks project <a href="https://stacks.math.columbia.edu/tag/02ZM">Stackification of fibred categories</a>.
+
+It is necessary to know what is the sheafification of a presheaf to understand what is the stackification. I studied sheafification from Hartshorne's Algebraic geometry book. You can choose what you are comfortable with.
+
+I will mention the result first as <a href="https://stacks.math.columbia.edu/tag/02ZM">in</a> Lemma \(8.8.1\).
+
+<hr />
+
+<strong>Lemma</strong> : Let \(\mathcal{C}\) be a site.  Let \(p:\mathcal{S}\rightarrow \mathcal{C}\) be a fibred category over \(\mathcal{C}\). There exists a <strong>stack</strong> \(p':\mathcal{S}'\rightarrow \mathcal{C}\) and a morphisms \(G:\mathcal{S}\rightarrow \mathcal{S}'\) of fibred categories over \(\mathcal{C}\) such that
+<ol>
+	<li>for every \(U\in \text{Ob}(\mathcal{C})\) and \(x,y\in \mathcal{S}(U)\),  the map \(\text{Mor}(x,y)\rightarrow \text{Mor}(G(x),G(y))\) induced by \(G\) identifies the right hand side with the sheafification of the left hand side.</li>
+	<li>For \(U\in \mathcal{C}_0\) and \(x'\in \mathcal{S}'(U)\) there exists a covering \(\{U_i\rightarrow U\}\) such that each \(x'|_{U_i}\) is in the essential image of the functor \(G:\mathcal{S}(U)\rightarrow \mathcal{S}'(U)\).</li>
+</ol>
+
+<hr />
+
+We recall what is \(\text{Mor}(a,b)\). This is a presheaf on \(U\) defined as follows. Given an inclusion \(i : V\hookrightarrow U\) we have \(i^*(a),i^*(b)\in \mathcal{S}(V)\).

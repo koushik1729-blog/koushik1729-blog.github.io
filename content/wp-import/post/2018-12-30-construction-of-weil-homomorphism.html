@@ -1,0 +1,47 @@
+---
+title: "Construction of Weil homomorphism"
+slug: "construction-of-weil-homomorphism"
+date: 2018-12-30T14:31:22
+url: "/2018/12/30/construction-of-weil-homomorphism/"
+categories: ["differential-geometry", "Algebraic geometry"]
+tags: ["connections"]
+---
+Given a principal \(G\) bundle \(P\rightarrow M\) we associate what is called a Weil homomorphism \(I(G)\rightarrow H^*(M,\mathbb{R})\).
+
+Given \(f\in I^k(G)\) i.e., \(f:\underbrace{\mathfrak{g}\times\cdots\times\mathfrak{g}}_{k\text{ times}}\rightarrow \mathbb{R}\) we associate an element in \(H^{2k}(M,\mathbb{R})\) as follows. This is only an outline. It is useful if you can fill the gaps by your self.
+<ul>
+	<li>Fix a connection \(\Gamma\) on \(P(M,G)\) and let \(\Omega\) denote the curvature form associated to \(\Gamma\).</li>
+	<li>The element \(f\in I^k(G)\) gives a \(2k\)-form \(f(\Omega):P\rightarrow \Lambda^{2k}T^*P\) on \(P\) as follows.</li>
+</ul>
+<p style="text-align:center;">\(f(\Omega)(v_1,\cdots,v_{2k})=\frac{1}{(2k)!}\sum_{\sigma\in S_{2k}} f(\Omega(v_{\sigma(1)}.v_{\sigma(2)}),\cdots\Omega(v_{\sigma(2k-1)},v_{\sigma(2k)}))\)</p>
+Given a smooth map \(\pi:P\rightarrow M\) there is a notion of pull back of forms along \(\pi\) usually denoted by \(\pi^*:H^*(M)\rightarrow H^*(P)\).
+
+A form \(\omega:P\rightarrow \Lambda^k T^*P\) on \(P\) is called <strong>horizantal </strong>if \(\omega(p)(v_1,\cdots,v_k)=0\) if atleast one of \(v_i\) is <strong>vertical.  </strong>
+<ul>
+	<li>Check that the right invariant (i.e., \(R_g^*\omega=\omega\) for every \(g\in G\)) horizantal forms on \(P\) with coefficients in \(\mathbb{R}\) are exactly forms in the image of \(\pi^*:H^*(M)\rightarrow H^*(P)\).</li>
+	<li>Check that \(f(\Omega):P\rightarrow \Lambda^{2k}T^*P\) is right invarinat, horizantal form.</li>
+</ul>
+Thus, \(f(\Omega)\) is in the image of \(\pi^*:H^*(M)\rightarrow H^*(P)\). So, there exists a \(2k\)-form \(\tilde{f}(\Omega)\) on \(M\) such that \(\pi^*(\tilde{f}(\Omega))=f(\Omega)\).
+<ul>
+	<li>Check that \(f(\Omega)\) is closed \(2k\)-form on \(P\).</li>
+	<li>As \(\pi^*(\tilde{f}(\Omega))=f(\Omega)\), \(f(\Omega)\) being  closed \(2k\)-form on \(P\) implies that \(\tilde{f}(\Omega)\) is a closed \(2k\)-form on \(M\) which gives an element in \(H^{2k}(M,\mathbb{R})\).</li>
+</ul>
+Thus, given a connection \(\Gamma\) on \(P(M,G)\) we have \(I^k(G)\rightarrow H^{2k}(M,\mathbb{R})\) which induces a map \(I(G)\rightarrow H^*(M,\mathbb{R})\) which we call the Weil homomorphism.
+
+We then see that this construction does not depend on the connection \(\Gamma\) that we have chosen.
+
+Suppose \(\Gamma_0\) and \(\Gamma_1\) be connections on \(P(M,G)\) with curvature forms \(\Omega_0\) and \(\Omega_1\) respectively.
+<ul>
+	<li>We see that \(\tilde{f}(\Omega_0)\) and \(\tilde{f}(\Omega_1)\) defines same cohomology class in \(H^{2k}(M,\mathbb{R})\) i.e., \(\tilde{f}(\Omega_0)-\tilde{f}(\Omega_1)\) is an exact \(2k\)-form on \(M\).</li>
+</ul>
+This says that the map \(I(G)\rightarrow H^*(M,\mathbb{R})\) is independent of connection we used to define.
+
+We have \(\pi^*(\tilde{f}(\Omega_0)-\tilde{f}(\Omega_1))=\pi^*(\tilde{f}(\Omega_0))-\pi^*(\tilde{f}(\Omega_1))=f(\Omega_0)-f(\Omega_1)\).
+
+Suppose \(f(\Omega_0)-f(\Omega_1)=d\tau\) for some \(2k-1\) form \(\tau\) on \(P\) then,  \(\pi^*(\tilde{f}(\Omega_0)-\tilde{f}(\Omega_1))=d\tau\). Suppose  that \(\tau=\pi^*\tau'\) for some \(2k-1\) form \(\tau'\) on \(M\). We the  have \(d\tau =d(\pi^*(\tau'))=\pi^*(d\tau')\).
+
+As \(\pi^*(\tilde{f}(\Omega_0)-\tilde{f}(\Omega_1))= d\tau=\pi^*(d\tau')\) we see that \(\tilde{f}(\Omega_0)-\tilde{f}(\Omega_1)=d\tau'\) (because \(\pi:P\rightarrow M\) is a submersion) which proves that \(\tilde{f}(\Omega_0)-\tilde{f}(\Omega_1)\) is exact form on \(M\) which further says that, \([\tilde{f}(\Omega_0)]=[\tilde{f}(\Omega_1)]\in H^{2k}(M,\mathbb{R})\).
+<ul>
+	<li>Check  that \(f(\Omega_0)-f(\Omega_1)=d\tau\) and \(\tau=\pi^*\tau'\) for some \(2k-1\) form \(\tau'\) on \(M\).</li>
+</ul>
+Thus, given a principal \(G\) bundle \(P\rightarrow M\) we have Weil homomorphism \(I(G)\rightarrow H^*(M,\mathbb{R})\).

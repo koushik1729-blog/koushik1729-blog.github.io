@@ -1,0 +1,139 @@
+---
+title: "Multilinear algebra : Tensor product"
+slug: "multilinear-algebra-tensor-product"
+date: 2024-05-16T05:40:21
+url: "/2024/05/16/multilinear-algebra-tensor-product/"
+categories: ["Linear algebra"]
+tags: ["tensor-product"]
+---
+<!-- wp:paragraph -->
+<p>Let us look at the first class of multilinear maps; the bilinear maps. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We want to study bilinear maps. The notion of "study" will have different meanings as we move forward (or backward) in the course.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let \(V,W,T\) be vector spaces and \(\varphi:V\times W\rightarrow T\) be a bilinear map. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The feeling that "we are good at linear algebra" suggests us to ask the question :</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>Can we associate a linear map for the bilinear map \(\varphi:V\times W\rightarrow T\), so that (almost) all the information in the bilinear map is included in the linear map; in which case we can take some help from the (very little) linear algebra we knew?</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>We need to make it clear : </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Are we going to associate a linear map \(P\rightarrow M\) for each bilinear map \(\varphi:V\times W\rightarrow T\)?  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It would be useful to remind ourselves the phrase "less luggage more comfort". </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When trying to construct a new structure, it is good to start with least luggage. If we consider \(V\times W\rightarrow T\) as the data, we will have four components in that: three vector spaces \(V, W,T\) and a map \(V\times W\rightarrow T\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Vector spaces as such was not of issue for us; not in linear algebra. It is the product that is creating a discomfort for us. The product comes with just two vector spaces \(V,W\) and "nothing else". </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, we ask the question again, with a small change:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Can we associate a single vector space \(P\) for the product \(V\times W\) (note that the word product starts with letter p), hoping that, it will help us to construct a linear map out of the bilinear map?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>One can of course, look at the inclusion map \(V\rightarrow V\times W, W\rightarrow V\times W\) and consider the compositions \(V\rightarrow V\times W\rightarrow T, W\rightarrow V\times W\rightarrow T\); giving us two linear maps \(V\rightarrow T\) and \(W\rightarrow T\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><strong>This is not what we want. </strong> We want one single vector space, one single linear map to gather the information of the bilinear map.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let us recall some of the constructions you have seen in your previous courses. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Construction of a quotient space \(X/\sim\) from a topological space \(X\). We may not even acknowledge, but, the data of quotient space is not just a topological space, it is a topological space along with a map \(X\rightarrow X/\sim\). This is because the topology on the set \(X/\sim\) is constructed from topology on \(X\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Construction of a quotient space \(V/W\) from a vector space \(V\). As in the above case, the data of quotient space is not just a vector space, it is a vector space along with a map $V\rightarrow V/W$. This is because the vector space structure on the set \(V/W\) is constructed from the vector space structure on \(V\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In similar way, in our construction, the data should not be just a vector space \(P\), it should be a vector space \(P\) along with a map \(V\times W\rightarrow P\). In case of topological space, any map between two topological spaces is understood to be a continuous map. Similarly, in case of vector spaces, any map between two vector spaces is understood to be a linear map. The last sentence is not quite correct; as in this very setup we are discussing about bilinear maps between two from a product vector space to another vector space. This raises the following question.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>Question : Do we want this map \(V\times W\rightarrow P\) to be a linear map or a bilinear map?</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>It looks like asking for a bilinear map is the opposite of what we should be doing. It is due to bilinear maps we are searching for a comfortable play ground where we can play making use of our previous experience in the play ground of linear algebra. But, it is not what we are after.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p> Let us see what was the property of quotients maps mentioned above. The basic property of the map \(V\rightarrow V/W\) is that, every element in \(W\)  is mapped to the zero element of \(V/W\). Not just that. If we take any other linear map \(V\rightarrow N\) in which every element in \(W\) is mapped to the zero element in \(N\), then, we can get a linear map \(V/W\rightarrow N\) giving </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":1649,"sizeSlug":"large","linkDestination":"media"} -->
+<figure class="wp-block-image size-large"><a href="/wp-media/2024/05/36122f9255-screenshot-2024-05-19-at-8.22.38e280afpm.png"><img src="/wp-media/2024/05/a0ffba5974-screenshot-2024-05-19-at-8.22.38e280afpm.png" alt="" class="wp-image-1649" /></a></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>a commutative diagram.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The same can be taken as a reference point for our construction. In our case, we are looking for one single bilinear map, \(V\times W\rightarrow P\) that works as a necessary passage for all bilinear maps from \(V\times W\). More precisely, we have the following description.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>A vector space \(P\) along with a bilinear map \(V\times W\rightarrow P\) such that, for any other vector space \(N\) and any other bilinear map \(V\times W\rightarrow N\) there exists a linear map \(P\rightarrow N\) giving</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":1651,"sizeSlug":"large","linkDestination":"media"} -->
+<figure class="wp-block-image size-large"><a href="/wp-media/2024/05/7da10ffed7-screenshot-2024-05-19-at-8.24.28e280afpm.png"><img src="/wp-media/2024/05/e1de2bd967-screenshot-2024-05-19-at-8.24.28e280afpm.png" alt="" class="wp-image-1651" /></a></figure>
+<!-- /wp:image --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>a commutative diagram.</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>There are many questions.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Does such space always exists? Is it unique? Is the map \(P\rightarrow N\) unique? Does it have a name? </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The best we can do in this post is to answer the last question. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The name is "Tensor product".  </p>
+<!-- /wp:paragraph -->

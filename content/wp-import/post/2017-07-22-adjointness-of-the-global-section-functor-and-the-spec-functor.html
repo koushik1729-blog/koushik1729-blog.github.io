@@ -1,0 +1,48 @@
+---
+title: "Adjointness of the global section functor and the Spec functor"
+slug: "adjointness-of-the-global-section-functor-and-the-spec-functor"
+date: 2017-07-22T17:38:23
+url: "/2017/07/22/adjointness-of-the-global-section-functor-and-the-spec-functor/"
+categories: ["algebraic-geometry", "category-theory"]
+tags: ["schemes"]
+---
+Let \(A\) be a ring and let \((X,\mathcal{O}_X)\) be a scheme. Given a morphism \(f:X\rightarrow \text{Spec}(A)\) we have an associated map on sheaves \(f^{\#}:\mathcal{O}_{\text{Spec}(A)}\rightarrow f_* \mathcal{O}_X\). Taking global sections, we obtain a homomorphism \(A\rightarrow \mathcal{O}_X(X)\). Thus there is a natural map
+<p style="text-align:center;">\(\alpha: \text{Hom}_{\text{Schemes}}(X,\text{Spec}(A))\rightarrow \text{Hom}_{\text{Rings}}(A,\mathcal{O}_X(X)).\)</p>
+Then, \(\alpha\) is bijective.
+
+We will try to understand this adjointness of Global section functor and Spec functor.
+
+Suppose we are given a scheme \((X,\mathcal{O}_X)\) and a ring homomoprhism \(\varphi: A\rightarrow \mathcal{O}_X(X)\). We construct a morphism of schemes \((f,f^{\#}):(X,\mathcal{O}_X)\rightarrow (\text{Spec}(A),\mathcal{O}_{\text{Spec}(A)})\).
+
+We first define morphism of topological spaces \(f:X\rightarrow \text{Spec}(A)\). Let \(x\in X\), we want to assign a prime ideal \(P\) in \(A\).
+
+Let \(X=\text{Spec}(B)\) and \(x=\mathfrak{P}\in X=\text{Spec}(B)\), as we have a ring homomorphism
+<p style="text-align:center;">\(\varphi : A\rightarrow \mathcal{O}_X(X)=O_{\text{Spec}(B)}(\text{Spec}(B))=B\)</p>
+\(\varphi^{-1}(\mathfrak{P})\) is a prime ideal in \(A\) and we define \(f(x)=\varphi^{-1}(\mathfrak{P})\). This defines a morphism of topological spaces \(\text{Spec}(B)\rightarrow \text{Spec}(A)\).
+
+Suppose \(X\) is an arbitrary scheme, given \(x\in X\) there is no natural choice of prime ideal in \(\mathcal{O}_X(X)\) whose inverse in \(A\) defines a function \(X\rightarrow \text{Spec}(A)\).
+
+Given \(x\in X\) we have local ring \(\mathcal{O}_x\) which has unique maximal ideal \(\mathfrak{m}_x\) which is in particular a prime ideal. We have canonical ring homomorphism \(O_X(X)\xrightarrow{\pi} \mathcal{O}_x\) with \(s\mapsto s_x\). So, \(\pi^{-1}(\mathfrak{m}_x)\) is a prime ideal in \(\mathcal{O}_X(X)\), and its inverse image under \(\varphi\) namely \(\varphi^{-1}(\pi^{-1}(\mathfrak{m}_x))\) is a prime ideal in \(A\). We thus have a map \(f:X\rightarrow \text{Spec}(A)\) with \(x\rightarrow \varphi^{-1}(\pi^{-1}(\mathfrak{m}_x))\).
+
+We prove that \(f:X\rightarrow \text{Spec}(A)\) is a continuous map. It suffices to prove \(f^{-1}(D(a))\) is an open set in \(X\) for each \(a\in A\) as \(\{D(a)\}_{a\in A}\) is a basis for topology on \(\text{Spec}(A)\). We have<img class=" size-full wp-image-1128 aligncenter" src="/wp-media/2017/07/ad30f4003d-ql_a3c1ab0b2df590215e17d38cebdcd140_l3.png" alt="ql_a3c1ab0b2df590215e17d38cebdcd140_l3" width="336" height="161" />
+
+<strong>Result</strong> : Let \(Y\) be a scheme, and \(f\in \mathcal{O}_Y(Y)\). Then \(Y_f=\{x\in Y : f_x\notin \mathfrak{m}_x\}\) is open in \(Y\).
+Here, \(\varphi(a)\in \mathcal{O}_X(X)\). Thus, \(X_{\varphi(a)}\) is an open subset of \(X\) i.e., \(f^{-1}(D(a))\) is an open subset of \(X\). So, \(f\) is a continuous function.
+
+We now construct morphism of schemes \(f^{\#}:\mathcal{O}_{\text{Spec}(A)}\rightarrow f_*\mathcal{O}_X\). It suffices to define morphisms
+<p style="text-align:center;">\(f^{\#}(D(a)):\mathcal{O}_{\text{Spec}(A)}(D(a))\rightarrow f_*\mathcal{O}_X(D(a))=\mathcal{O}_X(f^{-1}(D(a)))=\mathcal{O}_X(X_{\varphi(a)}).\)</p>
+As \(\mathcal{O}_{\text{Spec}(A)}(D(a))=A_a\), it boils down to defining morphism \(f^{\#}(D(a)):A_a\rightarrow \mathcal{O}_X(X_{\varphi(a)})\). Considering the isomorphism \(\mathcal{O}_X(X_{\varphi(a)})\cong (\mathcal{O}_X)_{\varphi(a)}\) (which is natural to expect and happens most of the times, in particular when \(X\) is quasi compact and quasi separated) where the right side component is localization of the ring \(\mathcal{O}_X(X)\) at \(\varphi(a)\), it boils down to defining morphism \(f^{\#}(D(a)):A_a\rightarrow \mathcal{O}_X(X)_{\varphi(a)}\).
+
+Given \(\varphi: A\rightarrow \mathcal{O}_X(X)\), we have induced map \(A_a\rightarrow \mathcal{O}_X(X)_{\varphi(a)}\) for each \(a\in A\). Set \(f^{\#}(D(a)): A_a\rightarrow \mathcal{O}_X(X)_{\varphi(a)}\) to be the composition
+<p style="text-align:center;">\(A_a\rightarrow \mathcal{O}_X(X)_{\varphi(a)} \xrightarrow{\cong} (\mathcal{O}_X)_{\varphi(a)}\)</p>
+While proving isomorphism \(\mathcal{O}_X(X_{\varphi(a)})\cong (\mathcal{O}_X)_{\varphi(a)}\), we need the condition that \(X\) is quasi compact and quasi separated only to show that the map is surjective. We always have natural map \(\mathcal{O}_X(X_{\varphi(a)})\rightarrow (\mathcal{O}_X)_{\varphi(a)}\). So, composition \(A_a\rightarrow \mathcal{O}_X(X)_{\varphi(a)} \rightarrow (\mathcal{O}_X)_{\varphi(a)}\) gives maps \(f^{\#}(D(a))\) for each \(a\in A\). These maps glue to give morphism of schemes
+<p style="text-align:center;">\((f,f^{\#}):(X,\mathcal{O}_X)\rightarrow (\text{Spec}(A),\mathcal{O}_{\text{Spec}(A)})\).</p>
+Thus, \(\alpha\) is surjective and thus an isomorphism.
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;

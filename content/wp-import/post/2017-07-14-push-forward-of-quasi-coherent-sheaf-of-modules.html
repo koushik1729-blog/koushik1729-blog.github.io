@@ -1,0 +1,25 @@
+---
+title: "Push forward of quasi coherent sheaf of modules"
+slug: "push-forward-of-quasi-coherent-sheaf-of-modules"
+date: 2017-07-14T21:07:28
+url: "/2017/07/14/push-forward-of-quasi-coherent-sheaf-of-modules/"
+categories: ["algebraic-geometry"]
+tags: ["schemes", "sheaves"]
+---
+Let \(f:X\rightarrow Y\) be an affine morphism and \(\mathcal{F}\) is a quasi coherent sheaf of \(\mathcal{O}_X\) modules. Then, \(f_*\mathcal{F}\) is a quasi coherent sheaf of \(\mathcal{O}_Y\) modules.
+
+We have the following result :
+
+<strong>Let \(X\) be a scheme. Then, an \(\mathcal{O}_X\) module \(\mathcal{F}\) is quasi coherent iff for every open affine subset \(U=\text{Spec}(A)\) of \(X\), there is an \(A\) module \(M\)  such that \(\mathcal{F}|_U=\tilde{M}\).</strong>
+
+Let \(U\subseteq Y\) be an open affine subset say \(U=\text{Spec}(A)\). As \(f\) is affine, \(f^{-1}(U)\) is affine open, say  \(f^{-1}(U)=\text{Spec}(B)\subseteq X\).
+
+As \(\mathcal{F}\) is quasi coherent sheaf of \(\mathcal{O}_X\) modules and \(f^{-1}(U)=\text{Spec}(B)\) is open affine subset of \(X\), there exists a \(B\) module \(M\) such that \(\mathcal{F}|_{f^{-1}(U)}\cong \widetilde{M}\). As \(f^{-1}(U)=\text{Spec}(B)\) we have \(f:\text{Spec}(B)\rightarrow \text{Spec}(A)\) which also gives a ring morphsim \(A\rightarrow B\). The isomorphism \(\mathcal{F}|_{f^{-1}(U)}\cong \widetilde{M}\) implies
+<p style="text-align:center;">\(f_*(\mathcal{F}|_{f^{-1}(U)})\cong f_*\widetilde{M}\).</p>
+As \(f_*(\mathcal{F}|_{f^{-1}(U)})\cong f_*\mathcal{F}|_U\) we have
+<p style="text-align:center;">\(f_*\mathcal{F}|_U\cong f_*\widetilde{M}\).</p>
+From <a href="https://koushik1729.wordpress.com/2017/07/08/sheaf-associated-to-a-module-over-a-ring/">previous observation</a> we see that \(f_*\widetilde{M}\cong (_A M)\) where \(_A M\) is \(M\) considered as a \(A\) module under ring morphism \(A\rightarrow B\) defined above. So, we have
+<p style="text-align:center;">\(f_*\mathcal{F}|_U\cong \widetilde{_A M}\).</p>
+So, given an open affine \(U=\text{Spec}(A)\subseteq X\) there exists an \(A\) module \(_A M\) such that
+<p style="text-align:center;">\((f_*\mathcal{F})|_U\cong \widetilde{_A M}\).</p>
+Thus, \(f_*\mathcal{F}\) is a quasi coherent sheaf of \(\mathcal{O}_Y\) modules.

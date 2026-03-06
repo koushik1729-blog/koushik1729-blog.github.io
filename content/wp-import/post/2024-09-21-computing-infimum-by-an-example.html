@@ -1,0 +1,344 @@
+---
+title: "computing infimum by an example"
+slug: "computing-infimum-by-an-example"
+date: 2024-09-21T15:25:30
+url: "/2024/09/21/computing-infimum-by-an-example/"
+categories: ["Analysis"]
+---
+<!-- wp:paragraph -->
+<p>Let us consider a problem where you are asked to find infimum of the set</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\{\int_0^{1}\sqrt{1+f'(x)^2}dx\}_{f\in S}\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>where \(S\) is the set of all \(f\in C^1(\mathbb{R})\) with the property that \(f(0)=10\) and \(f(1)=0\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>When we see integral and differential together, that should remind us the famous fundamental theorem of calculus, which says that </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\int_a^b g'(x)dx=g(b)-g(a)\].</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>It is unfortunate (yet interesting) that the integrand \(\sqrt{1+f'(x)^2}\) is not (immediately) of the form \(g'(x)\) for some \(g\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If it is just \(f'(x)\) instead of \(\sqrt{1+f'(x)^2}\), we could have just applied the fundamental theorem of calculus directly. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But, that is not the case here. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Nevertheless, there is an obvious relation between \(f'(x)\) and \(\sqrt{1+(f'(x))^2}\), namely,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[f'(x)\leq \sqrt{1+(f'(x))^2}\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which implies that</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\int_0^1f'(x)dx\leq \int_0^1\sqrt{1+(f'(x))^2} dx,\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which, when applied fundamental theorem of calculus, gives us</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[f(1)-f(0)\leq \int_0^1\sqrt{1+(f'(x))^2} dx,\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>that is,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[-10\leq \int_0^1\sqrt{1+(f'(x))^2} dx,\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which is one of the most useless observations one can ever make.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The function \(\sqrt{1+(f'(x))^2}\) is non-negative and so the corresponding integral \(\int_0^1\sqrt{1+(f'(x))^2} dx\). So, observing </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\int_0^1\sqrt{1+(f'(x))^2} dx\geq -10\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p> is of no use for us; we already know that.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Instead of \(f(0)=10\) and \(f(1)=0\), if we had \(f(0)=0\) and \(f(1)=10\), we would have realized that </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[f(1)-f(0)\leq \int_0^1\sqrt{1+(f'(x))^2} dx,\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which implies</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[10\leq \int_0^1\sqrt{1+(f'(x))^2} dx,\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which may be treated as a non-trivial observation in our situation.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Instead of crying for what we do not have, we can focus on what other things can we do with what we have. It is only a matter of plus/minus. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Instead of starting with the observation \(f'(x)\leq \sqrt{1+(f'(x))^2}\), we can start with the observation \(-f'(x)\leq \sqrt{1+(f'(x))^2}\) which implies that</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[-\int_0^1f'(x)dx\leq \int_0^1\sqrt{1+(f'(x))^2} dx,\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which, when applied fundamental theorem of calculus, gives us</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[-(f(1)-f(0))\leq \int_0^1\sqrt{1+(f'(x))^2} dx,\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>that is,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[10\leq \int_0^1\sqrt{1+(f'(x))^2} dx,\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which is a reasonably non-trivial observation we have made from the given data.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>After patting your back for this wonderful observation, we will proceed to the next step.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As \(10\leq \int_0^1\sqrt{1+(f'(x))^2} dx\) for all \(f\in S\), we can conclude that</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[10\leq \inf\{\int_0^{1}\sqrt{1+f'(x)^2}dx\}_{f\in S}.\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>If we able to do some magic and show</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[11\leq \int_0^1\sqrt{1+(f'(x))^2} dx\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>for all \(f\in S\), we can conclude that </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[11\leq \inf\{\int_0^{1}\sqrt{1+f'(x)^2}dx\}_{f\in S},\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which is better than saying </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[10\leq \inf\{\int_0^{1}\sqrt{1+f'(x)^2}dx\}_{f\in S}.\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>I am assuming you know why it is better? Do not prove me wrong. Give an attempt, you will figure out.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Keeping that aside, we have not computed what is \(\int_0^1\sqrt{1+(f'(x))^2} dx\) for a fixed \(f\in S\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Forget about computing integral, do we know atleast one concrete example of a function \(f\in C^1(\mathbb{R})\) with the property that \(f(0)=10\) and \(f(1)=0\)? </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It may be the case that \(S\) is an empty set and we are just looking for infimum of an empty set.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Forget about \(C^1\) function and all that. Can we find a function \(f\) with the property that \(f(0)=10\) and \(f(1)=0\); in other words, a function whose graph has the points \((0,10)\) and \((1,0)\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>High school mathematics suggest us that there is a line passing through \((0,10)\) and \((0,10)\) given by \(y=mx+c\) with \(c=10\) and \(m=-10\); that is the line \(y=10-10x\). I need not highlight this function is \(C^1\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let us compute \(\int_0^1\sqrt{1+(f'(x))^2} dx\) for \(f(x)=10-10x\). Note that, \(f'(x)=-10\). So, </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\sqrt{1+(f'(x))^2}=\sqrt{101}.\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>Which implies that,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\int_0^1\sqrt{1+(f'(x))^2} dx=\int_0^{1}\sqrt{101}dx=\sqrt{101}\int_0^1dx=\sqrt{101}(1-0)=\sqrt{101}.\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>It is unfortunate to realize that, <strong>we do not have</strong> \(11\leq \int_0^1\sqrt{1+(f'(x))^2} dx\) for all \(f\in S\). So, </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[11&gt; \inf\{\int_0^{1}\sqrt{1+f'(x)^2}dx\}_{f\in S}.\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>As we have got one function \(f\) with the property that \(\int_0^{10}\sqrt{1+f'(x)^2}dx=\sqrt{101}\), we see that,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\inf\{\int_0^{1}\sqrt{1+f'(x)^2}dx\}_{f\in S}\leq \sqrt{101}\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>Adding the previous observation </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[10\leq \inf\{\int_0^{1}\sqrt{1+f'(x)^2}dx\}_{f\in S}\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>to the current observation, we see that,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[10\leq \inf\{\int_0^{1}\sqrt{1+f'(x)^2}dx\}_{f\in S}\leq \sqrt{101},\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which can be seen as</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\sqrt{100}\leq \inf\{\int_0^{10}\sqrt{1+f'(x)^2}dx\}_{f\in S}\leq \sqrt{101}\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>The gap between \(100\) and \(101\) is \(1\) and the gap between \(\sqrt{100}\) and \(\sqrt{101}\) is much less than \(1\). So, our area of search is reduced to the area between \(10=\sqrt{100}\) and \(\sqrt{101}\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As the question is asked to you and not to me, it is not fair for me to finish it for you. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, I will stop it here. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>You may want to enjoy finishing this step.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Apologies for spoiling your fun in attempting this problem. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>See you in next problem.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

@@ -1,0 +1,108 @@
+---
+title: "Is it true that eigenvalues of skew-symmetric matrices are always zero?"
+slug: "is-it-true-that-eigenvalues-of-skew-symmetric-matrices-are-always-zero"
+date: 2025-05-18T10:20:47
+url: "/2025/05/18/is-it-true-that-eigenvalues-of-skew-symmetric-matrices-are-always-zero/"
+categories: ["Algebraic geometry"]
+---
+<!-- wp:paragraph -->
+<p>Let \(M\) be a skew-symmetric matrix (with real entries). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let \(\lambda\) be an eigenvalue of \(M\). This means, there exists vector \(v\) such that \(Mv=\lambda v\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To relate with ``skew-symmetricness'' of \(M\), we apply transpose on both sides of previous equation, to get \(v^TM^T=\lambda v^T\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As \(M\) is skew-symmetric, we see that \(v^TM^T=\lambda v^T\) is equivalent to \(-v^TM=\lambda v^T\). <br><br>Now, multiply by \(v\) on both sides of the above equation to get \(-v^TMv=\lambda v^Tv\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As \(v\) is eigenvector associated to eigenvalue \(\lambda\), we get \(-v^T\lambda v=\lambda v^Tv\) which is samething as \(-\lambda v^Tv=\lambda v^Tv\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But, we know \(v^Tv\neq 0\). So, cancelling \(v^Tv\) of both sides tells that \(-\lambda=\lambda\) which means \(\lambda =0\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p> There is no assurance that \(\lambda\) is a real number to begin with, but, it turns out \(\lambda\) has to be real number. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>But, we have heard multiple times and repeated multiple times in high pitch that skew-symmetric matrices has eigenvalues as \(0\) or purely imaginary number.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>What went wrong here??</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Even if we start with \(\lambda\) is a complex eigenvalue, the above observation can be used line by line.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Is it? </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Are we sure that \(v^Tv\neq 0\) irrespective of what kind of \(v\) is, as long as \(v\neq 0\)? </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let \(v=(1,i)\). Then, \(v^Tv=1+i^2=0\). So, we can not cancel the component \(v^Tv\) as per our interest. That is the issue in above discussion.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We can not say that \(v^Tv\) is nonzero if \(v\neq 0\), but, we can always say \(\bar{v}^Tv\neq 0\) as far as \(v\neq 0\). So, instead of applying \(v^T\), it may be smart idea to apply \(\bar{v}^T\). This is done by considering conjugate and transport. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As \(M\) is a real matrix, conjugate does not any effect. We have </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[Mv=\lambda v\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\bar{v}^T\bar{M}^T=\bar{\lambda}\bar{v}^T\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\bar{v}^TM^T=\bar{\lambda}\bar{v}^T\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[\bar{v}^T(-M)=\bar{\lambda}\bar{v}^T\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[-\bar{v}^TM=\bar{\lambda}\bar{v}^T\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[-\bar{v}^TMv=\bar{\lambda}\bar{v}^Tv\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[-\bar{v}^T\lambda v=\bar{\lambda}\bar{v}^T\]</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\[-\lambda \bar{v}^Tv=\bar{\lambda}\bar{v}^T\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>As \(v\) is such that \(\bar{v}^Tv\neq 0\). So, we have \(\lambda =-\bar{\lambda}\) that is, real part of \(\lambda\) is zero. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, any eigenvalues of real skew symmetric matrix is zero or with a complex number with real part zero (purely imaginary complex number). </p>
+<!-- /wp:paragraph -->

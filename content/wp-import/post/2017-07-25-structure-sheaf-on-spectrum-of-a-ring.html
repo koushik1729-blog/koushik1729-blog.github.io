@@ -1,0 +1,49 @@
+---
+title: "Structure sheaf on spectrum of a ring"
+slug: "structure-sheaf-on-spectrum-of-a-ring"
+date: 2017-07-25T20:04:23
+url: "/2017/07/25/structure-sheaf-on-spectrum-of-a-ring/"
+categories: ["Sheaves and Schemes", "algebraic-geometry"]
+tags: ["schemes", "sheaves"]
+---
+Let \(A\) be a ring. We have corresponding topological space \(X=\text{Spec}(A)\), the collection of all prime ideals of \(A\) with Zariski Topology. We now define a sheaf on \(X\) called the structure sheaf, denoted by \(\mathcal{O}_X\). This \(X\) with this structure sheaf \(\mathcal{O}_X\) is called an affine scheme,  These affine schemes  are building blocks of what is called an arbitrary scheme.
+
+To define a sheaf on \(X\) we need to associate a ring for each \(U\) open in \(X\). We do that as follows :<img class=" size-full wp-image-621 aligncenter" src="/wp-media/2017/07/85383b043a-ql_95ea6db253a445248fdc006fdfabc129_l3.png" alt="ql_95ea6db253a445248fdc006fdfabc129_l3" width="392" height="64" />where the condition \(\dagger\) says that given \(p\in U\) we have \(s(p)\in A_p\) and that \(s\) is locally a fraction i.e., given \(p\in U\) there exists an open set \(U(p)\subseteq U\) and \(a\in A, f\in A\) such that \(s(q)=\frac{a}{f}\in A_q\) for all \(q\in U(p)\).
+
+The verification that this gives a sheaf on \(X\) is same as that of the verification that sheafification of a sheaf is a sheaf. We can see the similarity between the definitions. <a href="https://mathoverflow.net/questions/80548/affine-scheme-on-speca-of-a-ring-a-as-the-sheafification-of-a-pre-sheave-on-sp">More details can be found here about the similarity</a>. So, \((X,\mathcal{O}_X)\) forms a ringed space, which we call an affine scheme.
+
+We will now see results about the global sections, stalks of structure sheaf and what does structure sheaf give on basic open subsets of \(X=\text{Spec}(A)\).
+
+<strong>Proposition : </strong>Let \(A\) be a ring, and \((\text{Spec A},\mathcal{O})\) its spectrum.
+<ol>
+	<li>For any \(\mathfrak{p}\in \text{Spec A}\), the stalk \(\mathcal{O}_{\mathfrak{p}}\) of the sheaf \(\mathcal{O}_{}\) is isomorphic to the local ring \(A_{\mathfrak{p}}\) i.e., \(\mathcal{O}_{\mathfrak{p}}\cong A_{\mathfrak{p}}\).</li>
+	<li>For any element \(f\in A\), the ring \(\mathcal{O}(D(f))\) is isomorphic to the localized ring \(A_f\) i.e., \(\mathcal{O}(D(f))\cong A_f\).</li>
+	<li>In particular, \(\Gamma(\text{Spec A}, \mathcal{O})\cong A\).</li>
+</ol>
+<strong>Proof : </strong>Let \(\mathfrak{p}\in X\). We define a map \(\mathcal{O}_{\mathfrak{p}}\rightarrow A_{\mathfrak{p}}\) and show that this is a bijection.
+
+<strong>Defining the map - </strong>Let \([(U,s)]\in \mathcal{O}_{\mathfrak{p}}\) i.e., \(U\) is an open set in \(X\) containing \(p\) and \(s\in \mathcal{O}(U)\). By definition, \(s:U\rightarrow \bigsqcup_{\mathfrak{q}\in U}A_{\mathfrak{q}}\). To get an element in \(A_{\mathfrak{p}}\) given \(s\), its only natural to consider image of \(\mathfrak{p}\) under \(s\) namely \(s(\mathfrak{p})\in A\). Defining \(s\mapsto s(\mathfrak{p})\) gives a map \(\mathcal{O}_{\mathfrak{p}}\rightarrow A_{\mathfrak{p}}\).
+
+<strong>Showing that the map is well defined</strong> -  Suppose \([(U,s)]=[(V,t)]\in \mathcal{O}_{\mathfrak{p}}\) i.e., there is an open set \(W\subset U\cap V\) containing \(\mathfrak{p}\) such that \(s|_{W}=t|_W\). As \(\mathfrak{p}\in W\), we have in particular \(s(\mathfrak{p})=t(\mathfrak{p})\). So, there is a well defined map \(\mathcal{O}_{\mathfrak{p}}\rightarrow A_{\mathfrak{p}}\).
+
+<strong>Showing that the map is Injective -</strong> For \([(U,s)],[(V,t)]\in \mathcal{O}_{\mathfrak{p}}\) with \(s(\mathfrak{p})=t(\mathfrak{p})\), we show that \([(U,s)]=[(V,t)]\in \mathcal{O}_{\mathfrak{p}}\).
+
+As \(\mathfrak{p}\in U\), for \(s: U\rightarrow\bigsqcup_{\mathfrak{q}\in U}A_{\mathfrak{q}}\) there exists open \(U(\mathfrak{p})\subset U\) containing \(\mathfrak{p}\) and \(a,f\in A\) such that  \(s(\mathfrak{q})=\frac{a}{f}\) for all \(\mathfrak{q}\in U(\mathfrak{p})\). Similarly, for \(t:V\rightarrow\bigsqcup_{\mathfrak{q}\in V}A_{\mathfrak{q}}\) there exists open \(V(\mathfrak{q})\subseteq V\) and  \(b,g\in A\) such that \(t(\mathfrak{q})=\frac{b}{g}\) for all \(\mathfrak{q}\in V(\mathfrak{p})\).  In particular, \(\frac{a} {f}=s(\mathfrak{p})=t(\mathfrak{p})=\frac{b}{g}\).
+
+Let \(\mathfrak{q}\in U(\mathfrak{p})\cap V(\mathfrak{p})\). Then, \(s(q)=\frac{a}{f}=\frac{b}{g}=t(q)\). Thus,  we have \(s|_{U(\mathfrak{p})\cap V(\mathfrak{q})}=t|_{U(\mathfrak{p})\cap V(\mathfrak{q})}\). Thus, \([(U,s)]=[(V,t)]\). So, \(s\mapsto s(\mathfrak{p})\) is injective.
+
+<strong>Showing that the map is surjective - </strong>Let \(\frac{a}{f}\in A_{\mathfrak{p}}\), we want to choose an open set \(U\) containing \(\mathfrak{p}\) and \(s:U\rightarrow \bigsqcup_{\mathfrak{q}\in U}A_{\mathfrak{q}}\) such that \(s(\mathfrak{p})=\frac{a}{f}\). One choice for \(s\) is sending \(q\) to image of \(\frac{a}{f}\) in \(A_{\mathfrak{q}}\). For this, we need \(f\notin\mathfrak{q}\) i.e., \(\mathfrak{q}\in D(f)\). Let \(U=D(f)\) and consider \(s:U\rightarrow \bigsqcup_{\mathfrak{q}\in U}A_{\mathfrak{q}}\) sending \(\mathfrak{q}\) to image of \(\frac{a}{f}\) in \(A_{\mathfrak{q}}\). We then have \(s(\mathfrak{p})=\frac{a}{f}\in A_{\mathfrak{p}}\). Thus, the map is surjective.
+
+So, we have isomorphism \(\mathcal{O}_{\mathfrak{p}}\rightarrow A_{\mathfrak{p}}\) given by \(s\mapsto s(\mathfrak{p})\).
+
+Let \(f\in A\). We define a map \(A_f\rightarrow \mathcal{O}(D(f))\) and show that this is a bijection.
+
+<strong>Defining the map -</strong> Given \(\frac{a}{f}\in A_f\) we assign  \(s\in \mathcal{O}(D(f))\) where \(s:D(f)\rightarrow \bigsqcup_{q\in D(f)}A_q\). Let \(q\in D(f)\) then, \(f\notin q\). So, \(\frac{a}{f}\) is defined in \(A_q\). So, define \(s(q)\) to be the image of \(\frac{a}{f}\) in \(A_q\) for each \(q\in D(f)\). It is clearly a well defined function. Similarly we define for \(\frac{a}{f^n}\in A_f\) a map \(s:D(f^n)=D(f)\rightarrow \bigsqcup_{q\in D(f)}A_q\) as \(q\mapsto \frac{a}{f^n}\in A_q\).
+
+<strong>Showing that the map is injective - </strong>Suppose \(\frac{a}{f^n},\frac{b}{f^m}\in A_f\) is such that the corresponding maps \(s,t\) are equal i.e., \(\frac{a}{f^n}=\frac{b}{f^m}\in A_q~\forall q\in D(f)\) i.e., given \(q\in D(f)\) there exists \(t_q\notin q\) such that \(t_q(af^m-bf^n)=0\).
+
+Consider the case when \(D(f)=\{q\}\). As \(t\notin q\), we have \(q\in D(t)\) i.e., \(D(f)\subseteq D(t)\)  i.e., \(V(t)\subseteq V(f)\) i.e., \(\sqrt{(f)}\subseteq \sqrt{(t)}\). As \(f\in \sqrt{(f)}\) we have \(f^l=td\) for some \(d\in A\). We have \(t(af^m-bf^n)=0\) which implies \(td(af^m-bf^n)=0\) i.e., \(f^l(af^m-bf^n)=0\) i.e., \(\frac{a}{f^n}=\frac{b}{f^m}\in A_f\) and we are done.
+
+Suppose \(D(f)=\{q_i\}_{i\in \Lambda}\). As \(t_i\notin q_i\) we have \(q_i\in D(t_i)\) i.e., \(D(f)\subseteq \bigcup_{i\in \Lambda} D(t_i)\). As in previous observation, this means \(f^l\) is in the ideal generated by \(\{t_i\}\) for some \(l\in \mathbb{N}\). So,  we have (after rearranging indices in \(\Lambda\)) \(f^l=a_1t_1+\cdots+a_nt_n\)  for some \(a_i\in A\). As \(t_i(af^m-bf^n)=0\), we have \(a_it_i(af^m-bf^n)=0\) for all \(i\). So, \(\sum_{i=1}^na_it_i(af^m-bf^n)=0\) i.e., \(f^l(af^m-bf^n)=0\). Thus, \(\frac{a}{f^n}=\frac{b}{f^m}\in A_f\). Thus, the map \(A_f\rightarrow \mathcal{O}(D(f))\) is injective.
+
+&nbsp;

@@ -1,0 +1,115 @@
+---
+title: "Vector bundle associated to a principal bundle"
+slug: "vector-bundle-associated-to-a-principal-bundle"
+date: 2026-02-10T08:43:42
+url: "/2026/02/10/vector-bundle-associated-to-a-principal-bundle/"
+categories: ["differential-geometry"]
+tags: ["mathematics", "physics", "principal-bundles"]
+---
+<!-- wp:paragraph -->
+<p>Let \(\pi:P\rightarrow M\) be a principal \(G\) bundle.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let \(F\) be a smooth manifold with an action of \(G\) from left (note that action of \(G\) on \(P\) is from right). Given this we want to associate a fiber bundle over \(M\). This action is same thing as giving a smooth map \(G\times F\rightarrow F\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We look for a fiber bundle with fibre \(G\times F\) and see if we can construct another fibre bundle with fibre \(F\) from the map \(G\times F\rightarrow F\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Given a principal \(G\) bundle \(P\rightarrow M\), a smooth manifold \(F\) with an action of \(G\), we want to associate a fiber bundle whose fiber is \(F\) and base is \(M\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Action of \(G\) on \(P, F\) induce action of \(G\) on \(P\times F\) with \((g,(p,f)\mapsto (pf, gf)\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The map \(P\rightarrow M\) induce map \(P\times F\rightarrow M\) with \((p,f)\mapsto \pi(p)\) for \((p,f)\in P\times F\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This further induce map \(\pi_F:(P\times F)/G\rightarrow M\) with \(([p,f])\mapsto \pi(p)\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Is this well defined?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If \((p,f)\sim (q,f')\) then, is \(\pi(p)=\pi(q)\)?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>\((p,f)\sim (q,f')\) when there is a \(g\in G\) such that \(q=pg, f'=fg\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In that case of \(q=pg\), we know that \(\pi(p)=\pi(q)\) (property of principal bundle). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, the map is well defined.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Now, what is the fiber of an element \(m\in M\) via the map \((P\times F)/G\rightarrow M\)?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>An element in fiber is \([(p,f)]\) such that \(\pi(p)=m\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Fix \(p\in \pi^{-1}(m)\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Take \(f\in F\) and assign \([(p,f)]\). This gives a map \(\psi:F\rightarrow \pi_F^{-1}(m)\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>let us check one-one nature.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Suppose \(f_1,f_2\in F\) be such that \([(p,f_1)]=[(p,f_2)]\) that means, there exists \(g\in G\) such that \(pg=p\) and \(f_2=f_1g\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Free action of \(G\) on \(P\) says \(g=1\) which in turn says \(f_2=f_1\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let us check onto nature.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let \([(q,f)]\in \pi_F^{-1}(m)\). We need to find \(f'\in F\) such that, \(\psi(f')=[(q,f)]\); that is, \([(p,f')]=[(q,f)]\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The condition \(q\in \pi^{-1}(m)\) says that, there exists \(g\in G\) such that, \(p=qg\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Consider \(f'=gf\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For this, we have \([(p,f')]=[(q,f)]\), concluding that \(\psi\) is surjective.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Thus, the map \(\psi:F\rightarrow \pi_F^{-1}(m)\) is a bijection. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It is more than a bijection. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>More details about this we will see some other time.</p>
+<!-- /wp:paragraph -->

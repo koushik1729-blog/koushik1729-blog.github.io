@@ -1,0 +1,472 @@
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("/fonts/lmroman10-regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("/fonts/lmroman10-italic.otf") format("opentype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("/fonts/lmroman10-bold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("/fonts/lmroman10-bolditalic.otf") format("opentype");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Latin Modern Mono";
+  src: url("/fonts/lmmono10-regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --main-width: 1160px;
+  --nav-width: 1160px;
+  --math-toc-width: 240px;
+}
+
+.list {
+  background:
+    linear-gradient(180deg, rgba(247, 245, 240, 0.96) 0%, rgba(255, 255, 255, 1) 240px),
+    linear-gradient(90deg, rgba(125, 108, 72, 0.05), rgba(125, 108, 72, 0));
+}
+
+html[data-theme="dark"] .list {
+  background: var(--theme);
+}
+
+html,
+body,
+.main,
+.post-content,
+.entry-content,
+.post-entry,
+.home-info,
+.logo,
+#menu {
+  font-family: "Latin Modern Roman", "CMU Serif", "Times New Roman", Georgia, serif;
+  line-height: 1.66;
+  font-size: 1.06rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo a {
+  font-family: "Latin Modern Roman", "CMU Serif", "Times New Roman", Georgia, serif;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: "Latin Modern Mono", "CMU Typewriter Text", "Courier New", monospace;
+}
+
+.logo a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  position: relative;
+  top: 7px;
+}
+
+.site-title-main {
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: inherit;
+}
+
+.site-title-sub {
+  font-size: 0.92rem;
+  color: var(--secondary);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.post-math {
+  max-width: 1280px;
+}
+
+.list .main {
+  max-width: 860px;
+}
+
+.home-info {
+  min-height: auto;
+  margin: 0 0 2.4rem;
+  padding: 2.8rem 0 1.6rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.home-info .entry-header h1 {
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+}
+
+.home-title-main {
+  color: var(--primary);
+}
+
+.home-title-muted {
+  color: var(--secondary);
+  font-style: italic;
+  font-weight: 400;
+  margin-left: 0.35rem;
+  font-size: 0.9em;
+}
+
+.home-info .entry-content {
+  margin: 1rem 0 0;
+  max-width: 44rem;
+  color: var(--content);
+  font-size: 1.03rem;
+  line-height: 1.85;
+}
+
+.home-info .entry-footer {
+  display: none;
+}
+
+.post-entry {
+  margin-bottom: 0;
+  padding: 1.35rem 0 1.5rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  transition: background-color 0.16s ease, transform 0.16s ease;
+}
+
+.post-entry:hover {
+  background: rgba(125, 108, 72, 0.035);
+  transform: translateY(-1px);
+}
+
+.post-entry:active {
+  transform: translateY(0);
+}
+
+.entry-header h2 {
+  font-size: 1.52rem;
+  line-height: 1.25;
+}
+
+.entry-content {
+  margin: 0.7rem 0 0;
+  max-width: 44rem;
+  color: var(--content);
+  font-size: 0.98rem;
+  line-height: 1.8;
+  -webkit-line-clamp: 3;
+}
+
+.entry-footer {
+  margin-top: 0.85rem;
+  color: var(--secondary);
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.post-math .math-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 1360px) {
+  .post-math .math-layout {
+    grid-template-columns: var(--math-toc-width) minmax(0, 1fr);
+    gap: 2.4rem;
+    align-items: start;
+  }
+}
+
+.post-math .math-toc-shell {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--theme);
+  padding: 1rem;
+}
+
+@media (min-width: 1360px) {
+  .post-math .math-toc-shell {
+    position: sticky;
+    top: 90px;
+    max-height: calc(100vh - 120px);
+    overflow: auto;
+  }
+}
+
+.post-math .math-toc-title {
+  margin: 0 0 0.75rem;
+  font-size: 0.98rem;
+  letter-spacing: 0.02em;
+}
+
+.post-math .math-generated-toc a {
+  display: block;
+  color: var(--secondary);
+  text-decoration: none;
+  line-height: 1.35;
+  margin: 0.32rem 0;
+}
+
+.post-math .math-generated-toc a.toc-h2 {
+  padding-left: 0.5rem;
+}
+
+.post-math .math-generated-toc a.toc-h3 {
+  padding-left: 1rem;
+}
+
+.post-math .math-generated-toc a:hover,
+.post-math .math-generated-toc a.active {
+  color: var(--primary);
+}
+
+.post-math .math-content {
+  min-width: 0;
+}
+
+.post-math .math-article {
+  overflow: visible;
+}
+
+.post-math .math-article h1,
+.post-math .math-article h2,
+.post-math .math-article h3,
+.post-math .math-article h4 {
+  scroll-margin-top: 100px;
+}
+
+.post-math .math-article .ltx_biblist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.post-math .math-article .ltx_bibitem {
+  margin: 0.75rem 0;
+}
+
+.post-math .math-article .ltx_document {
+  font: inherit;
+}
+
+.post-math .math-article .ltx_title_document {
+  display: none;
+}
+
+.post-math .math-article .ltx_authors,
+.post-math .math-article .ltx_dates,
+.post-math .math-article .ltx_TOC,
+.post-math .math-article .ltx_pagination {
+  display: none;
+}
+
+.post-math .math-article .ltx_abstract,
+.post-math .math-article .ltx_keywords,
+.post-math .math-article .ltx_classification {
+  margin: 0.9rem 0 1.1rem;
+}
+
+.post-math .math-article .ltx_title_abstract,
+.post-math .math-article .ltx_title_keywords,
+.post-math .math-article .ltx_title_classification {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.post-math .math-article .ltx_theorem {
+  margin: 0.95rem 0;
+}
+
+.post-math .math-article .ltx_title_theorem {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.post-math .math-article .ltx_tag_section,
+.post-math .math-article .ltx_tag_subsection,
+.post-math .math-article .ltx_tag_subsubsection {
+  color: var(--secondary);
+}
+
+.post-math .math-article .ltx_page_footer {
+  display: none;
+}
+
+.post-math .math-article .ltx_itemize,
+.post-math .math-article .ltx_enumerate {
+  margin: 0.9rem 0 1.1rem;
+  padding-left: 0;
+}
+
+.post-math .math-article .ltx_itemize .ltx_item,
+.post-math .math-article .ltx_enumerate .ltx_item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.75rem;
+  align-items: start;
+  list-style: none;
+  margin: 0.45rem 0;
+}
+
+.post-math .math-article .ltx_itemize .ltx_tag_item,
+.post-math .math-article .ltx_enumerate .ltx_tag_item {
+  grid-column: 1;
+  min-width: 1.2rem;
+  color: var(--primary);
+  line-height: 1.6;
+}
+
+.post-math .math-article .ltx_itemize .ltx_item > :not(.ltx_tag_item),
+.post-math .math-article .ltx_enumerate .ltx_item > :not(.ltx_tag_item) {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.post-math .math-article .ltx_itemize .ltx_para,
+.post-math .math-article .ltx_enumerate .ltx_para,
+.post-math .math-article .ltx_itemize .ltx_p,
+.post-math .math-article .ltx_enumerate .ltx_p {
+  margin: 0;
+}
+
+.post-math .math-article .ltx_itemize .ltx_item > .ltx_itemize,
+.post-math .math-article .ltx_itemize .ltx_item > .ltx_enumerate,
+.post-math .math-article .ltx_enumerate .ltx_item > .ltx_itemize,
+.post-math .math-article .ltx_enumerate .ltx_item > .ltx_enumerate {
+  margin-top: 0.5rem;
+}
+
+.post-math .math-article math,
+.post-math .math-article .ltx_Math,
+.post-math .math-article mjx-container {
+  font-size: 1.04em;
+}
+
+.post-math .math-article mjx-container[jax="SVG"] {
+  font-family: inherit;
+}
+
+.post-math .math-article mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  margin: 0.9rem 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+.post-math .math-article mjx-container[jax="SVG"][display="false"] {
+  padding: 0 0.03em;
+}
+
+.post-math .math-article .ltx_eqn_cell {
+  white-space: nowrap;
+}
+
+.post-math .math-article .texhtml-diagram-display {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+html[data-theme="dark"] .post-math .math-article img.texhtml-diagram,
+html[data-theme="dark"] .post-math .math-article img[src*="/diagrams/"],
+html[data-theme="dark"] .post-math .math-article svg.texhtml-diagram,
+html[data-theme="dark"] .post-math .math-article svg[data-texhtml-diagram] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.post-content .aligncenter,
+.post-content img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content figure.wp-block-image {
+  margin: 1.1rem auto;
+}
+
+.post-content .wp-element-caption {
+  font-size: 0.92rem;
+  color: var(--secondary);
+  text-align: center;
+}
+
+/* Global MathJax polish for WordPress-imported equations and list cards */
+mjx-container[jax="CHTML"] {
+  font-size: 1.04em;
+}
+
+.post-content mjx-container[jax="CHTML"][display="true"] {
+  margin: 0.95rem 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+.post-entry .entry-content mjx-container[jax="CHTML"] {
+  font-size: 1em;
+}
+
+.post-content mjx-container[jax="CHTML"][display="false"],
+.post-entry .entry-content mjx-container[jax="CHTML"][display="false"] {
+  padding: 0 0.03em;
+}
+
+/* Same spacing rules for SVG output (used globally for consistency). */
+mjx-container[jax="SVG"] {
+  font-size: 1.04em;
+}
+
+.post-content mjx-container[jax="SVG"][display="true"] {
+  margin: 0.95rem 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+.post-entry .entry-content mjx-container[jax="SVG"] {
+  font-size: 1em;
+}
+
+.post-content mjx-container[jax="SVG"][display="false"],
+.post-entry .entry-content mjx-container[jax="SVG"][display="false"] {
+  padding: 0 0.03em;
+}

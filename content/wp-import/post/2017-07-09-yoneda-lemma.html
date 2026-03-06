@@ -1,0 +1,74 @@
+---
+title: "Yoneda Lemma"
+slug: "yoneda-lemma"
+date: 2017-07-09T08:06:02
+url: "/2017/07/09/yoneda-lemma/"
+categories: ["Category theory", "Algebraic geometry"]
+tags: ["yoneda-lemma"]
+---
+<strong>Yoneda lemma : </strong>Let \(\mathcal{C}\) be a (locally) small category. Then
+
+<img class=" size-full wp-image-688 aligncenter" src="/wp-media/2017/07/e54e03b561-ql_5d7a52d15b0bc85c34de3666351c92e9_l3.png" alt="ql_5d7a52d15b0bc85c34de3666351c92e9_l3" width="192" height="19" />
+
+naturally in \(A\in \mathcal{C}\) and \(X\in [\mathcal{C}^{\rm{op}},\rm{Set}]\).
+
+<strong>Terminology</strong> :
+<ol>
+	<li> \(\mathcal{C}\) is a category mentioned in the lemma, \(\mathcal{C}^{\rm{op}}\) is the opposite category associated to \(\mathcal{C}\).</li>
+	<li> \(\rm{Set}\) is the category with elements as sets and morphisms as functions.</li>
+	<li> \(X:\mathcal{C}^{op}\rightarrow \rm{Set}\) is a functor.</li>
+	<li> Given \(A\in \mathcal{C}\), \(H_A\) is the functor \(H_A:\mathcal{C}^{\rm{op}}\rightarrow \rm{Set}\) given by $B\mapsto \mathcal{C}(B,A)$.</li>
+	<li> \([\mathcal{C}^{\rm{op}},\rm{Set}]\) is the category with functors from \(\mathcal{C}^{\rm{op}}\) to $\rm{Set}$ as elements and natural transformations between these functors as morphisms.</li>
+	<li> \([\mathcal{C},\rm{Set}]\) is the category with functors from \(\mathcal{C}\) to \(rm{Set}\) as elements and natural transformations between these functors as morphisms.</li>
+</ol>
+Given \(X,A\) as above, \(X(A)\) is a set and \([\mathcal{C}^{\rm{op}},\rm{Set}](H_A,X)\) is a set. Yoneda lemma says that there is a bijection between these sets, natural bijection in both \(A\) and \(X\).
+
+<strong>Natural transformation : </strong>Let \(\mathcal{A},\mathcal{B}\) be two categories and \(F,G:\mathcal{A}\rightarrow \mathcal{B}\) be both contravariant or both covariant functors. A natural transformation \(\eta:F\rightarrow G\) is a family of arrows (morphisms) \(F(A)\xrightarrow{\eta(A)}G(A)\) such that for each \(A\xrightarrow{f}A'\) in \(\mathcal{A}\) the following appropriate diagram commutes.<img class=" size-full wp-image-678 aligncenter" src="/wp-media/2017/07/22e01cc582-ql_f5f1b45cf5b9428b42e7bcfd77134d7e_l3.png" alt="ql_f5f1b45cf5b9428b42e7bcfd77134d7e_l3" width="311" height="94" />
+
+Now that we have defined terminology used in the statement, we will now prove the statement. We will first give a bijection<img class=" size-full wp-image-769 aligncenter" src="/wp-media/2017/07/b08c0f55b6-ql_d75b467242e412c976d496142aba4b20_l3.png" alt="ql_d75b467242e412c976d496142aba4b20_l3" width="225" height="19" />and then prove that it is natural in \(A\) and \(X\).
+
+<strong>Construction of Bijective map : </strong>Let \(\eta\in [\mathcal{C}^{\rm{op}},\rm{Set}](H_A,X)\) i.e., \(\eta:H_A\rightarrow X\) is a natural transformation. We want to assign an element in \(X(A)\) with this \(\eta\). It is only natural to consider the map \(\eta(A):H_A(A)\rightarrow X(A)\). The set \(H_A(A)\) has a special element namely \(1_A\in H_A(A)\), its image \(\eta(A)(1_A)\in X(A)\). Define \(\Phi(\eta)=\eta(A)(1_A)\). This give a map
+<p style="text-align:center;">\(\Phi:[\mathcal{C}^{\rm{op}},\rm{Set}](H_A,X)\rightarrow X(A)\).</p>
+We will now prove that this map is injective and surjective.
+
+<strong>Surjectivity of \(\Phi\)</strong> : Let \(a\in X(A)\). We want to assign a natural trasformation \(\eta:H_A\rightarrow X\) with this \(a\) such that \(\Phi(\eta)=a\). We need to define \(\eta(B):H_A(B)\rightarrow X(B)\) for each \(B\in \rm{Ob}(\mathcal{C})\).
+
+Let \(B\in \rm{Ob}(\mathcal{C})\) be fixed and \(f\in H_A(B)\) i.e., \(f:B\rightarrow A\). The functor \(X:\mathcal{C}^{\rm{op}}\rightarrow \text{Set}\) induces \(X(f):X(A)\rightarrow X(B)\). We have \(X(f)(a)\in X(B)\). Define \(\eta(B)(f)=X(f)(a)\). This gives a natural transformation \(\eta:H_A\rightarrow X\) and
+<p style="text-align:center;">\(\eta(A)(1_A)=X(1_A)(a)=1_{X(A)}(a)=a\).</p>
+<p style="text-align:left;">So, \(\Phi:[\mathcal{C}^{\rm{op}},\rm{Set}](H_A,X)\rightarrow X(A)\) is surjective<strong>.</strong></p>
+<p style="text-align:left;"><strong>Injectivity of \(\Phi\)</strong> : Suppose \(\eta_1,\eta_2\in [\mathcal{C}^{\rm{op}},\rm{Set}](H_A,X)\) be such that \(\Phi(\eta_1)=\Phi(\eta_2)\) i.e., \(\eta_1(A)(1_A)=\eta_2(A)(1_A)\). We prove that $\eta_1=\eta_2$ i.e., \(\eta_1(B)=\eta_2(B)\) for every \(B\in \mathcal{C}\) i.e., \(\eta_1(B)(f)=\eta_2(B)(f)\) for every \(f\in H_A(B)\).</p>
+Fix \(B\in \mathcal{C}\) and \(f\in H_A(B)\) i.e., \(f:B\rightarrow A\) in \(\mathcal{C}\). We then have following commutative diagrams<img class=" size-full wp-image-771 aligncenter" src="/wp-media/2017/07/b0a31fcf78-ql_9ae4d01e872f982000796aef89e2f7d6_l3.png" alt="ql_9ae4d01e872f982000796aef89e2f7d6_l3" width="337" height="94" />
+
+We have<img class=" size-full wp-image-772 aligncenter" src="/wp-media/2017/07/1801db23bd-ql_8dd72c9387c05456c8f6a94ef4bb8635_l3.png" alt="ql_8dd72c9387c05456c8f6a94ef4bb8635_l3" width="330" height="71" />.
+So,<img class=" size-full wp-image-773 aligncenter" src="/wp-media/2017/07/68460d417c-ql_c0e33f46172dff406d44cfb73daa5e8d_l3.png" alt="ql_c0e33f46172dff406d44cfb73daa5e8d_l3" width="490" height="18" />
+
+Thus, \(\Phi:[\mathcal{C}^{\rm{op}},\rm{Set}](H_A,X)\rightarrow X(A)\) is injective.
+
+So, we have bijective correspondence
+<img class=" size-full wp-image-769 aligncenter" src="/wp-media/2017/07/b08c0f55b6-ql_d75b467242e412c976d496142aba4b20_l3.png" alt="ql_d75b467242e412c976d496142aba4b20_l3" width="225" height="19" />
+
+<strong>Bijection is natural in \(A\)</strong> :  We prove that the above bijection is natural in \(A\) i.e., given \(A,B\in \mathcal{C}\) with \(f:B\rightarrow A\) the following diagram is commutative<img class=" size-full wp-image-770 aligncenter" src="/wp-media/2017/07/38761ecbd6-ql_a7dce34a06e3d903e27c7dd5e3e86312_l3.png" alt="ql_a7dce34a06e3d903e27c7dd5e3e86312_l3" width="217" height="92" />where, for \(\eta\in [\mathcal{C}^{\rm{op}},\rm{Set}](H_A,X)\), \(\varphi(f)\) sends \(\eta\) to the composition \(\eta\circ f^*: H_B\xrightarrow{f^*} H_A\xrightarrow{\eta} X\).
+
+For \(\eta\in [\mathcal{C}^{\rm{op}},\rm{Set}](H_A,X)\) we have \(\varphi(f)(\eta) :H_B\rightarrow X\). Let \(C\in \mathcal{C}\) then, we have
+
+<img class=" size-full wp-image-774 aligncenter" src="/wp-media/2017/07/4ab6f9433c-ql_060824c44451a3b04c5bcde7d803071f_l3.png" alt="ql_060824c44451a3b04c5bcde7d803071f_l3" width="339" height="44" />We now prove that<img class=" size-full wp-image-775 aligncenter" src="/wp-media/2017/07/923c357566-ql_9f3bc291ab81ece72b86ee4750e96b4c_l3.png" alt="ql_9f3bc291ab81ece72b86ee4750e96b4c_l3" width="475" height="19" />We have<img class=" size-full wp-image-776 aligncenter" src="/wp-media/2017/07/86e7650e2a-ql_65c2456da3aa09e1f7d87fe4b183e2bf_l3.png" alt="ql_65c2456da3aa09e1f7d87fe4b183e2bf_l3" width="380" height="18" />The following commutative diagram<img class=" size-full wp-image-777 aligncenter" src="/wp-media/2017/07/b858d98add-ql_ec375e8f1d8b7efa8bca8e04d5295373_l3.png" alt="ql_ec375e8f1d8b7efa8bca8e04d5295373_l3" width="163" height="94" />says that \(X(f)(\eta(A)(1_A))=\eta(B)(H_A(f)(1_A))\). As \(H_A(f)(1_A)=f\), we have
+
+<img class=" size-full wp-image-778 aligncenter" src="/wp-media/2017/07/9b013ebfc3-ql_222e9c46a46aba171941c297dcca115a_l3.png" alt="ql_222e9c46a46aba171941c297dcca115a_l3" width="514" height="18" />Now,<img class=" size-full wp-image-779 aligncenter" src="/wp-media/2017/07/e09a5adfc2-ql_de696bbc85f9ee2c9f573ae340f0cb1b_l3.png" alt="ql_de696bbc85f9ee2c9f573ae340f0cb1b_l3" width="384" height="18" />We have defined \(\varphi(f)\) as \(\varphi(f)(\eta)(C)(g)=\eta(C)(f\circ g)\).
+So,<img class=" size-full wp-image-780 aligncenter" src="/wp-media/2017/07/494d257e04-ql_94511882a111b1d933ae899e9e7ce269_l3.png" alt="ql_94511882a111b1d933ae899e9e7ce269_l3" width="593" height="18" />So, we see that
+<img class=" size-full wp-image-775 aligncenter" src="/wp-media/2017/07/923c357566-ql_9f3bc291ab81ece72b86ee4750e96b4c_l3.png" alt="ql_9f3bc291ab81ece72b86ee4750e96b4c_l3" width="475" height="19" />
+
+So, the bijection \(\Phi:[\mathcal{C}^{\rm{op}},\rm{Set}](H_A,X)\rightarrow X(A)\) is natural in \(A\).
+
+<strong>Bijection is natural in \(X\) : </strong>We prove that the above bijection is natural in \(X\) i.e., for functors \(X,Y:\mathcal{C}^{\rm{op}}\rightarrow \rm{Set}\) and a natural transformation \(\tilde{\eta}:X\rightarrow Y\) we prove that the following diagram is commutative<img class=" size-full wp-image-781 aligncenter" src="/wp-media/2017/07/267483a4dd-ql_bcc85b77d21e8dcdb72eac4665076b29_l3.png" alt="ql_bcc85b77d21e8dcdb72eac4665076b29_l3" width="216" height="91" />Let \(\eta:H_A\rightarrow X\) be a natural transformation. Then, \(\varphi(\eta)=\tilde{\eta}\circ \eta:H_A\rightarrow Y\).
+We have<img class=" size-full wp-image-782 aligncenter" src="/wp-media/2017/07/bfa86b0e25-ql_bed391786bb6afe9101e5a5d37298891_l3.png" alt="ql_bed391786bb6afe9101e5a5d37298891_l3" width="249" height="152" />So,<img class=" size-full wp-image-783 aligncenter" src="/wp-media/2017/07/0512febcb3-ql_d30809591411d5775371f5f168aa49c1_l3.png" alt="ql_d30809591411d5775371f5f168aa49c1_l3" width="449" height="19" />So, the bijection \(\Phi:[\mathcal{C}^{\rm{op}},\rm{Set}](H_A,X)\rightarrow X(A)\) is natural in \(X\).
+
+<strong>Special case:</strong>
+We have seen that \(\Phi:[\mathcal{C}^{\rm{op}},\rm{Set}](H_A,X)\rightarrow X(A)\) is natural in \(A\) and \(X\). Let \(X=H_B\) for some \(B\in \mathcal{C}\) then, we have \(\Phi:[\mathcal{C}^{\rm{op}},\rm{Set}](H_A,H_B)\rightarrow H_B(A)=\mathcal{C}(A,B)\). So, let \(\mathcal{D}\) denote the category \([\mathcal{C}^{\rm{op}},\rm{Set}]\). Then,
+<img class=" size-full wp-image-784 aligncenter" src="/wp-media/2017/07/db0182303a-ql_f12de94500b30be43dba0d2c9737f724_l3.png" alt="ql_f12de94500b30be43dba0d2c9737f724_l3" width="175" height="18" />Here \(\mathcal{C}(A,B)\) denotes the collection of morphisms and \(\mathcal{D}(H_A,H_B)\) denotes the collection of all natural transformations.
+We have <img class=" size-full wp-image-785 aligncenter" src="/wp-media/2017/07/df7256dd35-ql_9ac5cde38934e6cbb301e537dcdc5102_l3.png" alt="ql_9ac5cde38934e6cbb301e537dcdc5102_l3" width="211" height="18" />
+<strong>Covariant version of Yoneda lemma : </strong>
+
+Let \(\mathcal{C}\) be a (locally) small category. Then
+<img class=" size-full wp-image-786 aligncenter" src="/wp-media/2017/07/c551349647-ql_7164090df8bba9c38b139d6d84672e03_l3.png" alt="ql_7164090df8bba9c38b139d6d84672e03_l3" width="176" height="22" />naturally in \(A\in \mathcal{C}\) and \(X\in [\mathcal{C},\rm{Set}]\), where \(H^A:\mathcal{C}\rightarrow \rm{Set}\) is given by \(B\mapsto \mathcal{C}(A,B)\).
+As a special case when \(X=H^B\) for some \(B\in \mathcal{C}\) we have
+<img class=" size-full wp-image-787 aligncenter" src="/wp-media/2017/07/24d83a6c25-ql_3ad4986eed17d2a43225e21114020ad8_l3.png" alt="ql_3ad4986eed17d2a43225e21114020ad8_l3" width="281" height="22" />Here \(\mathcal{C}(B,A)\) denotes the collection of morphisms and \(\mathcal{D}(H^A,H^B)\) denotes the collection of all natural transformations. We have <img class=" size-full wp-image-788 aligncenter" src="/wp-media/2017/07/b43d0ce4dc-ql_2ae1f3dad654c466b7ac1339a0849818_l3.png" alt="ql_2ae1f3dad654c466b7ac1339a0849818_l3" width="211" height="21" />

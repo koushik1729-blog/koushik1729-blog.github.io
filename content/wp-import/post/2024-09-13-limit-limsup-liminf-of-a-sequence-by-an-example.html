@@ -1,0 +1,334 @@
+---
+title: "limit/limsup/liminf of a sequence (by an example)"
+slug: "limit-limsup-liminf-of-a-sequence-by-an-example"
+date: 2024-09-13T05:29:07
+url: "/2024/09/13/limit-limsup-liminf-of-a-sequence-by-an-example/"
+categories: ["category-theory", "Analysis"]
+---
+<!-- wp:paragraph -->
+<p>Let us check for limit/limsup/liminf of the sequence \(\frac{n}{10^{\lceil \log_{10}n \rceil}}\), where the notation \(\lceil x \rceil\) means the smallest integer greater than or equal to \(x\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For example, \(\lceil 0.1 \rceil=1, \lceil 0.9 \rceil=1, \lceil -1.2 \rceil=-1, \lceil -2.5 \rceil=-2\)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To compute limit (to have a hope of computing), we need to know it converge (which we can check by checking it is Cauchy sequence).  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>To compute limsup/liminf, we do not need it to be Cauchy or we do not need to know if it is Cauchy. All that matters is if it is bounded. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Is it bounded? </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Bounded below, for sure, as every element is non-negative. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Is it bounded above?</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let's check. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If it is not bounded above, then, for 11924, there exists an \(n\in \mathbb{N}\) with the property that, </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\frac{n}{10^{\lceil \log_{10}n \rceil}}&gt;11924\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which is equivalent to saying (or at least imply that) </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\log_{10}(n)-\log_{10}(10^{\lceil \log_{10}n \rceil})&gt;\log(11924)\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which is equivalent to saying (or at least imply that) </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\log_{10}(n)-\lceil \log_{10}n \rceil&gt;\log(11924)\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which is just not true. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>The difference between \(x\) and \(\lceil x \rceil\) is less than \(1\).  To be precise, \(\lceil x \rceil-x&lt;1\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, we can not have \(\log_{10}(n)-\lceil \log_{10}n \rceil&gt;\log(11924)\) as \(\log_{10}(11924)&gt;0\) where as \(\log_{10}(n)-\lceil \log_{10}n \rceil&lt;0\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Or for that matter, we can not have \(\log_{10}(n)-\lceil \log_{10}n \rceil&gt;\log_{10}(1924)\) as \(\log(1924)&gt;0\) where as \(\log_{10}(n)-\lceil \log_{10}n \rceil&lt;0\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We can not even have \(\log_{10}(n)-\lceil \log_{10}n \rceil&gt;\log_{10}(10)\) as \(\log(1924)&gt;0\) where as \(\log_{10}(n)-\lceil \log_{10}n \rceil&lt;0\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>How about \(\log_{10}(n)-\lceil \log_{10}n \rceil&gt;\log_{10}(1)\)?? </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>That is also not true, as \(\log_{10}(1)\geq 0\) where as \(\log_{10}(n)-\lceil \log_{10}n \rceil&lt;0\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, there is no \(n\in \mathbb{N}\) with the property that \(\log_{10}(n)-\lceil \log_{10}n \rceil&gt;\log_{10}(1)\) which means, for every \(n\in \mathbb{N}\), we have \(\log_{10}(n)-\lceil \log_{10}n \rceil&lt;\log_{10}(1)\)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>which is equivalent to saying (or at least imply that)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\log_{10}(n)&lt;\log_{10}(1)+\lceil \log_{10}n \rceil=\log_{10}(1)+\log_{10}(10^{\lceil \log_{10})n \rceil}=\log_{10}(10^{\lceil \log_{10})n \rceil}\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p><span style="font-family: -webkit-standard;font-size: medium">which is equivalent to saying (or at least imply that)</span>,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[n&lt;10^{\lceil \log_{10}n \rceil}\] for all \(n\in \mathbb{N}\),</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p><span style="font-family: -webkit-standard;font-size: medium">which is equivalent to saying (or at least imply that)</span>,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\frac{n}{10^{\lceil \log_{10}n \rceil}}&lt;1\] for all \(n\in \mathbb{N}\),</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>Thus the sequence \((a_n)\) is bounded above by \(1\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This gives us idea about what to expect as \(\lim(a_n)\) (if someone who we believe tells us that \((a_n)\) converges, but cant say anything more than that). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As \((a_n)\) is bounded above by \(1\), the limit (if it exists) can be almost \(1\). If the limit does not exists, the \(\limsup (a_n)\) is also almost \(1\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>There is a thing about dealing with log base 10. It behaves in a certain way when \(n\) is a power of \(10\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\log_{10}10=1, \log_{10}(10^2)=2, \log_{10}(10^3)=3,\cdots\],</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which assures us that, </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\lceil \log_{10}10 \rceil=1, \lceil \log_{10}(10^2) \rceil=2, \lceil \log_{10}(10^3) \rceil=3,\cdots\],</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which imply that </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[10^{\lceil \log_{10}10 \rceil}=10^1, 10^{\lceil \log_{10}(10^2) \rceil}=10^2, 10^{\lceil \log_{10}(10^3) \rceil}=10^3,\cdots\],</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>or, more generally, \(10^{\lceil \log_{10}(10^k) \rceil}=10^k\) for all \(k\in \mathbb{N}\), which imply that,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\frac{10^k}{10^{\lceil \log_{10}(10^k) \rceil}}=\frac{10^k}{10^k}=1\] for all \(k\in \mathbb{N}\)</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>Great. It is not just that \(1\) is an upper bound for the sequence, but, it actually appears at multiple places. We actually have a subsequence of \((a_n)\) that is just the constant sequence \(1\)</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Boom!!! \(1\) is the limsup of \((a_n)\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If \((a_n)\) is bounded above by \(L\in \mathbb{R}\) and we are able to get a subsequence \((a_{n_k})\) that converges to \(L\), then, \(\limsup(a_n)=L\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>This does not say anything about the non-convergence of the sequence \((a_n)\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It may happen that the sequence converges to \(1\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It would not happen if we are able to find another subsequence that converges to anything else but \(1\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We know the behavior of the subseqeunce \((a_{10^k})\). Keeping it as the reference subsequence, let us check the subsequences to the immediate left and immediate right of \((a_{10^k}\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Consider the subsequence \(a_{10^k-1}\). We have </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[a_{10^k-1}=\frac{10^k-1}{10^{\lceil \log_{10}(10^k-1) \rceil}}\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>As \(10^k-1&lt;10^k\), we would have \(\log_{10}(10^k-1)&lt;\log_{10}(10^k)=k\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As there is not much of a gap between \(10^k-1\) and \(10^k\), we can safely believe (you should prove) that, \(\lceil \log_{10}(10^k-1) \rceil=k\). Thus, </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[a_{10^k-1}=\frac{10^k-1}{10^{\lceil \log_{10}(10^k-1) \rceil}}=\frac{10^k-1}{10^k}=1-\frac{1}{10^k}\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>It is unfortunate that this subsequence also converges to \(1\). So, we can not conclude if \((a_n)\) converges or not. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let's continue with the subsequence that is immediate right to \((a_{10^k})\), the subsequence \(a_{10^k+1}\). We have </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[a_{10^k+1}=\frac{10^k+1}{10^{\lceil \log_{10}(10^k+1) \rceil}}\].</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>Unlike \(10^k-1\), the component \(10^k+1\) behaves in a slightly different way. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>As \(10^k&lt;10^k+1\), we have \(\log_{10}(10^k)&lt;\log_{10}(10^{k}+1)\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Which implies,  \(\lceil \log_{10}(10^k) \rceil&lt;\lceil \log_{10}(10^{k}+1) \rceil\); that is, \(k&lt;\lceil \log_{10}(10^{k}+1) \rceil\), which is same as saying \(\lceil \log_{10}(10^{k}+1) \rceil=k+1\). So, </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[a_{10^k+1}=\frac{10^k+1}{10^{\lceil \log_{10}(10^k+1) \rceil}}=\frac{10^k+1}{10^{k+1}}=\frac{10^k+1}{10^{k+1}}=\frac{1}{10}+\frac{1}{10^k}\].</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>This subsequence converges to \(\frac{1}{10}\) as the sequence \(\frac{1}{10^k}\) converges to \(0\). It gives comfort when we realize there is a subsequence that does not converge to \(1\). This assures the sequence \((a_n)\) is not convergent. We were able to find \(\limsup(a_n)\) just from one subsequence. That is because an upper bound is matching with the limit of subsequence. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We can not conclude \(\liminf\) is \(\frac{1}{10}\) as we may not be able to assure there is no subsequence that converges to an element less than \(\frac{1}{10}\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>We can assure if somehow we can prove that \(\frac{1}{10}\) is a lower bound for the sequence. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If \((a_n)\) is bounded below by \(L\in \mathbb{R}\) and we are able to get a subsequence \((a_{n_k})\) that converges to \(L\), then, \(\liminf(a_n)=L\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It is easy to check if \(\frac{1}{10}\) is a lower bound or nor. All we need to see is if, for all \(n\in \mathbb{N}\), we have </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\frac{1}{10}\leq \frac{n}{10^{\lceil \log_{10}n \rceil}}\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which is same as saying </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[10^{\lceil \log_{10}n \rceil}&lt;10 n\],</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which is same as saying </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\log_{10}(10^{\lceil \log_{10}n \rceil})&lt;\log_{10}(10 n)=\log_{10}10+\log_{10}n\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which is same thing as saying </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\(\lceil \log_{10}n \rceil&lt; 1+\log_{10}n\),</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>which is as true as the statement "sun rises in the east". </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, the sequence \((a_n)\) is bounded below by \(\frac{1}{10}\) and we have a subsequence that converges to \(\frac{1}{10}\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>So, \(\liminf a_n=\frac{1}{10}\). </p>
+<!-- /wp:paragraph -->

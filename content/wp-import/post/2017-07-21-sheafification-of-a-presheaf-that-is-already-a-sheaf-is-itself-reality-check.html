@@ -1,0 +1,25 @@
+---
+title: "Sheafification of a presheaf that is already a sheaf is itself - Reality check"
+slug: "sheafification-of-a-presheaf-that-is-already-a-sheaf-is-itself-reality-check"
+date: 2017-07-21T05:48:15
+url: "/2017/07/21/sheafification-of-a-presheaf-that-is-already-a-sheaf-is-itself-reality-check/"
+categories: ["Algebraic geometry"]
+tags: ["sheaves"]
+---
+let \(\mathcal{F}\) be a presheaf. We define associated presheaf of \(\mathcal{F}\) to be the sheaf given by map \(U\mapsto \widetilde{F}(U)\) where<img class=" size-full wp-image-1064 aligncenter" src="/wp-media/2017/07/595b0383e3-ql_05c03babc4c7f7ad0bae3f0ff48eda81_l3.png" alt="ql_05c03babc4c7f7ad0bae3f0ff48eda81_l3" width="409" height="64" />
+
+where the condition \(^\dagger\) says that \(s(p)\in \mathcal{F}_p\) for every \(p\in U\) and there exists an open subset \(U(p)\subset U\)  containing \(p\) and a section \(t\in \mathcal{F}(U(p))\) such that \(t_q=s(q)\) for every \(q\in U(p)\).
+
+Suppose \(\mathcal{F}\) is actually a sheaf then we will see that \(\widetilde{F}(U)\cong \mathcal{F}(U)\) for every open  \(U\subseteq X\).
+<p style="text-align:justify;">Let \(s\in \widetilde{F}(U)\) i.e., \(s:U\rightarrow \bigsqcup_{i\in \Lambda}\mathcal{F}_{p_i}\) (this notation is just for my comfort, we have \(U=\bigcup_{i\in \Lambda}\{p_i\}\)) satisfying some conditions given above. Given such \(s\) we want to assign an element in \(\mathcal{F}(U)\).</p>
+Given \(s\) we have \(t^{p_i}\in \mathcal{F}(U(p_i))\) for each \(i\in \Lambda\). If we can show that these sections agree on intersections, as \(\{U(p_i)\}_{i\in \Lambda}\) cover \(U\) and as \(\mathcal{F}\) is a sheaf, we get a section \(t\in \mathcal{F}(U)\).
+
+It remains to prove that \(t^{p_i}|_{U(p_i)\bigcap U(q_i)}=t^{p_j}|_{U(p_i)\bigcap U(p_j)}\) for each \(i,j\in \Lambda\). It is equivalent to proving that \(t^{p_i}_q=t^{p_j}_q\) for every \(q\in U(p_i)\cap U(q_j)\).
+
+By definition, as \(q\in U(p_i)\) we have \(t^{p_i}_q=s(q)\), as \(q\in U(p_j)\) we have \(t^{p_j}_q=s(q)\). So, we have \(t^{p_i}_q=t^{p_j}_q\) for every \(q\in U(p_i)\cap U(q_j)\) and this is true for all \(i,j\in \Lambda\). Thus, we can get a section \(t\in \mathcal{F}(U)\) such that \(t|_{U(p_i)}=t^{p_i}\). So, we have a map \(\widetilde{F}(U)\rightarrow F(U)\). It remains to prove that it is one one and onto.
+
+Let \(s_1,s_2\in \mathcal{F}(U)\) be such that \(t_1=t_2\in \mathcal{F}(U)\) i.e., \((t_1)_q=(t_2)_q\) for all \(q\in U\). As \((t_1)_q=s_1(q)\) and \((t_2)_q=s_2(q)\) we have \(s_1(q)=s_2(q)\) for all \(q\in U\). Thus, \(s_1=s_2\), the map is injective.
+
+It remains to prove that it is surjective. Given \(t\in \mathcal{F}(U)\) define \(s:U\rightarrow \bigsqcup_{p\in U}\mathcal{F}_p\) as \(p\mapsto t_p\). By the very definition, it is an element of \(\mathcal{F}(U)\). It goes to \(t\) under the above map. So, \(\widetilde{\mathcal{F}}(U)\rightarrow \mathcal{F}(U)\) defined above is an isomorphism.
+
+Thus, sheafification of a presheaf that is already a sheaf is itself.

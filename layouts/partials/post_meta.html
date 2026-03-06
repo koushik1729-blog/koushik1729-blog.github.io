@@ -1,0 +1,32 @@
+{{- $scratch := newScratch }}
+
+{{- if not .Date.IsZero -}}
+{{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default ":date_long" site.Params.DateFormat)))) }}
+{{- end }}
+
+{{- if (.Param "ShowReadingTime") -}}
+  {{- $readingTime := .ReadingTime -}}
+  {{- if eq .Type (site.Params.mathContentType | default "math") -}}
+    {{- with .Resources.GetMatch "search.txt" -}}
+      {{- $wordCount := len (findRE `\S+` .Content) -}}
+      {{- if gt $wordCount 0 -}}
+        {{- $readingTime = add (div (sub $wordCount 1) 220) 1 -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "read_time" $readingTime | default (printf "%d min" $readingTime)))) }}
+{{- end }}
+
+{{- if (.Param "ShowWordCount") -}}
+{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "words" .WordCount | default (printf "%d words" .WordCount)))) }}
+{{- end }}
+
+{{- if not (.Param "hideAuthor") -}}
+{{- with (partial "author.html" .) }}
+{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" .)) }}
+{{- end }}
+{{- end }}
+
+{{- with ($scratch.Get "meta") }}
+{{- delimit . "&nbsp;&middot;&nbsp;" | safeHTML -}}
+{{- end -}}

@@ -1,0 +1,21 @@
+---
+title: "Maurer-Cartan form on a Lie group"
+slug: "maurer-cartan-form-on-a-lie-group"
+date: 2018-12-29T12:40:04
+url: "/2018/12/29/maurer-cartan-form-on-a-lie-group/"
+categories: ["differential-geometry"]
+tags: ["kobayashi-nomizu"]
+---
+Let \(G\) be a Lie group and \(\mathfrak{g}\) be its Lie algebra. We want to associate a \(\mathfrak{g}\) valued \(1\) form on \(G\).
+
+We define \(\theta:G\rightarrow \Lambda^1_{\mathfrak{g}}T^*G\) as follows. For \(g\in G\), we need \(\theta(g):T_gG\rightarrow \mathfrak{g}=T_eG\).
+
+For manifolds \(M,N\), one natural way to get a map between tangent spaces \(T_mM\) and \(T_nN\) is to think of a smooth map \(f:M\rightarrow N\) such that \(f(m)=n\) and take its differential at \(m\). We get \(f_{*,m}:T_mM\rightarrow T_nN\). To get \(\theta(g):T_gG\rightarrow \mathfrak{g}=T_eG\), we look for a map \(G\rightarrow G\) that takes \(g\) to \(e\). One such map is multiplication by \(g^{-1}\). Consider \(\delta_{g^{-1}}:G\rightarrow G\) given by \(h\mapsto g^{-1}h\). This map takes \(g\) to \(e\) and \(\delta_{*,g^{-1}}:T_gG\rightarrow T_eG=\mathfrak{g}\).  This gives a \(\mathfrak{g}\) valued \(1\)-form on \(G\) which we call to be the Maurer-Cartan form on \(G\)  denoted by \(\theta\) defined as \(\theta(g)=(\delta_{g^{-1}})_{*,g}:T_gG\rightarrow \mathfrak{g}\).
+
+Kobayashi and Nomizu defines Maurer-Cartan form on \(G\) to be "the left-invariant \(\mathfrak{g}\) valued \(1\)-form on \(G\) uniquely determined by the condition that \(\theta(A)=A\) for all \(A\in \mathfrak{g}\). More precisely, this means \(\theta (e) :T_eG\rightarrow T_eG\) is such that \(\theta(e)(A)=A\) for all \(A\in \mathfrak{g}\).  The condition that \(\theta\) is left-invariant means that \(\theta(e):T_eG\rightarrow \mathfrak{g}\) determines what \(\theta(g):T_gG\rightarrow \mathfrak{g}\).  So, the condition \(\theta(e)(A)=A\) for all \(A\in \mathfrak{g}\) along with the condition left-invariant gives unique \(1\)-form \(\theta\) which is called as the Maurer-Cartan form.
+
+Once we unravel how \(\theta(e):T_eG\rightarrow \mathfrak{g}\) determines  \(\theta(g):T_gG\rightarrow \mathfrak{g}\) and that \(\theta(e)(A)=A\) for all \(A\in \mathfrak{g}\) we see that \(\theta(g)(v)=(\delta_{g^{-1}})_{*,g}(v)\) for all \(v\in T_gG\) which is precisely what I have written in the first half of this post.
+
+<a href="https://koushik1729.wordpress.com/2018/12/29/derivative-of-left-invariant-differential-form/">Differentiating</a> this Maurer-Cartan form \(\theta:G\rightarrow \Lambda^1_{\mathfrak{g}}T^*G\) we see that
+<p style="text-align:center;">\(d\theta(X,Y)=-\frac{1}{2}\theta([X,Y])\)</p>
+for vector fields \(X,Y\) on \(G\). In literature, this property is denoted by \(d\theta==\frac{1}{2}[\theta,\theta]\).

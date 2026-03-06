@@ -1,0 +1,22 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- $mathType := site.Params.mathContentType | default "math" -}}
+{{- range site.RegularPages -}}
+  {{- if and (not .Params.searchHidden) (ne .Layout `archives`) (ne .Layout `search`) -}}
+    {{- $content := .Plain -}}
+    {{- if eq .Type $mathType -}}
+      {{- with .Resources.GetMatch "search.txt" -}}
+        {{- $content = .Content -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $.Scratch.Add "index" (dict
+      "title" .Title
+      "content" $content
+      "permalink" .Permalink
+      "summary" .Summary
+      "type" .Type
+      "tags" (.Params.tags | default (slice))
+      "categories" (.Params.categories | default (slice))
+    ) -}}
+  {{- end -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}

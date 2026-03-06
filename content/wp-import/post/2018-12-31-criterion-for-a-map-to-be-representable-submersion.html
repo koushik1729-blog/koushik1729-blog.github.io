@@ -1,0 +1,65 @@
+---
+title: "Criterion for a map to be representable submersion"
+slug: "criterion-for-a-map-to-be-representable-submersion"
+date: 2018-12-31T17:53:25
+url: "/2018/12/31/criterion-for-a-map-to-be-representable-submersion/"
+categories: ["stacks", "Algebraic geometry"]
+tags: ["sheaves", "stacks"]
+---
+A morphism of stacks \(f:\mathcal{D}\rightarrow \mathcal{C}\) is called a  <span style="text-decoration:underline;"><em>representable  submersion</em></span> if, <strong>for every morphism </strong>\(\underline{M}\rightarrow \mathcal{C}\), the fibred product \(\mathcal{D}\times_{\mathcal{C}}\underline{M}\) is representable i.e., isomorphic to a stack coming from a manifold and that the map of <strong>manifolds </strong>\(\mathcal{D}\times_{\mathcal{C}}\underline{M}\rightarrow M\) is a submersion.
+
+Following is a criterion for a map of stacks to be representable submersion. The result says it is enough to check for epimorphisms \(\underline{M}\rightarrow \mathcal{C}\). Precise statement is as follows.
+<blockquote> Let \(f:\mathcal{D}\rightarrow \mathcal{C}\) be a morphism of stacks. Suppose given a manifold \(U\) and a morphism of stacks \(\underline{U}\rightarrow \mathcal{C}\) which is an <strong>epimorphism. </strong>If the  fibered product \(\mathcal{D}\times_{\mathcal{C}}\underline{U}\) is representable i.e., isomorphic to a stack coming from a manifold and that the map of <strong>manifolds </strong>\(\mathcal{D}\times_{\mathcal{C}}\underline{U}\rightarrow U\) is a submersion, then \(f\) is representable submersion.</blockquote>
+Let us see what this means in the set up of manifolds.
+
+<strong> Let \(f:\mathcal{D}\rightarrow \mathcal{C}\) be a morphism of stacks. </strong>
+
+Let \(f:M\rightarrow N\) be a morphism of manifolds (which gives a morphism of stacks \(\underline{M}\rightarrow \underline{N}\)).
+
+<strong>Suppose given a manifold \(U\) and a morphism of stacks \(\underline{U}\rightarrow \mathcal{C}\) which is an epimorphism.</strong>
+
+A representable surjective submersion is an epimorphism. So,  we consider a surjective submersion \(g:U\rightarrow N\) (which gives an epimorphism  \(\underline{U}\rightarrow \underline{N}\) being a representable surjective submersion).
+
+<strong>If the  fibered product \(\mathcal{D}\times_{\mathcal{C}}\underline{U}\) is representable i.e., isomorphic to a stack coming from a manifold and that the map of manifolds \(\mathcal{D}\times_{\mathcal{C}}\underline{U}\rightarrow U\) is a submersion. </strong>
+
+As \(U\rightarrow N\) is submersion, it is anyways true that \(M\times_N U\) is a smooth manifold. What is <strong>extra that we have here</strong> is that \(M\times_NU\rightarrow U\) is a submersion. It is anyways true that \(M\times_NU\rightarrow M\) is a submersion being a pullback of submersion. But it is not true in general that \(M\times_NU\rightarrow U\) is a submersion. Here, we are given that \(M\times_NU\rightarrow U\) is a submersion.
+
+So,
+<blockquote> Let \(f:\mathcal{D}\rightarrow \mathcal{C}\) be a morphism of stacks. Suppose given a manifold \(U\) and a morphism of stacks \(\underline{U}\rightarrow \mathcal{C}\) which is an <strong>epimorphism. </strong>If the  fibered product \(\mathcal{D}\times_{\mathcal{C}}\underline{U}\) is representable i.e., isomorphic to a stack coming from a manifold and that the map of <strong>manifolds </strong>\(\mathcal{D}\times_{\mathcal{C}}\underline{U}\rightarrow U\) is a submersion, then \(f\) is representable submersion.</blockquote>
+turns to
+<blockquote> Let \(f:M\rightarrow N\) be a morphism of manifolds be a morphism of manifolds. Suppose given a manifold \(U\) and a sujective submersion \(\underline{U}\rightarrow N\)<strong>. </strong>If the  fibered product \(M\times_{N}U\) is a manifold and that the map of <strong>manifolds </strong>\(M\times_{N}U\rightarrow U\) is a submersion, then \(f\) is  submersion.</blockquote>
+This is more or less obvious. We have following commutative diagram
+
+<img class="alignnone size-full wp-image-1298" src="/wp-media/2018/12/fada55271c-Screenshot-from-2019-01-02-15-11-38.png" alt="Screenshot from 2019-01-02 15-11-38" width="326" height="213" />
+
+As \(G:U\rightarrow N\) is a submersion (we have started with this) and \(p_2: M\times_N U\rightarrow U\) is a submersion (we are given this), the composition \(G\circ p_2=F\circ p_1\) is a submersion which then imply that \(F:M\rightarrow N\) is a submersion.
+
+Let \(m\in M\). As \(G:U\rightarrow N\) is surjective, so is \(p_1\) (pullback of surjective is surjective) i.e., there exists \((m,u)\in M\times_N U\) such that \(p_1(m,u)=m\).
+
+As \(F\circ p_1\) is submersion, \((F\circ p_1)_{*,(m,u)}(T_{m,u}(M\times_N U))=T_{F(m)}N\). Applying chain rule, we have \(F_{*,m}((p_1)_{*,(m,u)}(T_{m,u}(M\times_N U)))=T_{F(m)}N\), in particular, \(F_{*,m}(T_mM)=T_{F(m)}N\). Thus, \(F\) is submersion. So, we need both surjectivity and submersion of \(U\rightarrow N\).
+
+Now, let us look at more general case. Now, \(U\rightarrow N\) is not a surjective submersion but induces an epimorphism \(U\rightarrow N\). Suppose that the pullback \(M\times_N U\) is a manifold and that the map \(M\times_N U\rightarrow U\) is a submerson.
+
+Let \(W\rightarrow N\) be a map. We need to prove that \(M\times_N W\) is a manifold. We have following diagram <img class="alignnone size-full wp-image-1302" src="/wp-media/2018/12/0906ed9c6b-Screenshot-from-2019-01-02-18-11-05.png" alt="Screenshot from 2019-01-02 18-11-05" width="587" height="328" />
+
+As \(M\times_N U\rightarrow U\) is a submersion, the pullback \((M\times_N U)\times_U W_i=M\times_N W_i\) is a manifold. So, we have an open cover \(\{W_i\rightarrow W\}\) of \(W\) such that the pullbacks \(M\times_N W_i\) are manifolds. I think this should confirm that \(M\times_N W\) is a  manifold and just because \(M\times_N W\rightarrow W_i\) are submersions, so is the map \(M\times_N W\rightarrow W\). Thus, \(f:M\rightarrow N\) is a representable submersion.
+
+The same idea works for an arbitrary map of stacks \(\mathcal{D}\rightarrow \mathcal{C}\).
+
+Let \(\underline{W}\rightarrow \mathcal{C}\) be a map of stacks. We have to prove that \(\mathcal{D}\times_{\mathcal{C}}\underline{W}\) is representable and that the map of manifolds \(\mathcal{D}\times_{\mathcal{W}}\underline{W}\rightarrow W\) is a submersion.
+
+As \(\underline{U}\rightarrow \mathcal{C}\) is epimorphism, for \(\underline{W}\rightarrow \mathcal{C}\) there exists an open cover \(\{W_i\rightarrow W\}\) with commutative diagram as shown below. We have following diagram
+
+<img class="alignnone size-full wp-image-1304" src="/wp-media/2018/12/4003c3ace1-Screenshot-from-2019-01-02-20-24-57.png" alt="Screenshot from 2019-01-02 20-24-57" width="529" height="341" />
+
+As \(\mathcal{D}\times_{\mathcal{C}} \underline{U}\rightarrow U\) is a submersion, the pullback \((\mathcal{D}\times_{\mathcal{C}} \underline{U})\times_U W_i=\mathcal{D}\times_{\mathcal{C}} W_i\) is a manifold.
+
+So, we have an open cover \(\{W_i\rightarrow W\}\) of $ W$ such that the
+<p style="text-align:center;">
+\((\mathcal{D}\times_{\mathcal{C}}W)\times_W W_i=\mathcal{D}\times_{\mathcal{C}} W_i\)</p>
+are manifolds.
+
+By <a href="https://mathoverflow.net/questions/319913/criterion-for-a-sheaf-mathfraksop-rightarrow-set-to-be-representable" target="_blank" rel="noopener">this question</a> it follows that \(\mathcal{D}\times_{\mathcal{C}}\underline{W}\) is a manifold. For similar reason as mentioned in question, the map of manifolds \(\mathcal{D}\times_{\mathcal{C}}\underline{W}\rightarrow W\) is a submersion. Thus, \(\mathcal{D}\rightarrow \mathcal{C}\) is a representable submersion.
+
+Thus, we have following criterion for a map to be a representable submersion.
+<blockquote> Let \(f:\mathcal{D}\rightarrow \mathcal{C}\) be a morphism of stacks. Suppose given a manifold \(U\) and a morphism of stacks \(\underline{U}\rightarrow \mathcal{C}\) which is an <strong>epimorphism. </strong>If the  fibered product \(\mathcal{D}\times_{\mathcal{C}}\underline{U}\) is representable i.e., isomorphic to a stack coming from a manifold and that the map of <strong>manifolds </strong>\(\mathcal{D}\times_{\mathcal{C}}\underline{U}\rightarrow U\) is a submersion, then \(f\) is representable submersion.</blockquote>

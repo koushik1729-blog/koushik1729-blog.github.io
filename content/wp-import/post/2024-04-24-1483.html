@@ -1,0 +1,166 @@
+---
+title: "Lie-Rinehart algebras : Introduction and definition of Lie-Rinehart algebra"
+slug: "1483"
+date: 2024-04-24T06:42:29
+url: "/2024/04/24/1483/"
+categories: ["Differential geometry"]
+---
+<!-- wp:paragraph -->
+<p>Any notion of an "algebra" comes with two binary operations:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>\(A\times A\rightarrow A\), called the addition map,</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(A\times A\rightarrow A\), called the multiplication map.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>Two properties that are assumed for addition map are that of commutativity and associativity. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>By the very definition, we would have \(a+b=b+a\) and \(a+(b+c)=(a+b)+c\) for all \(a,b,c\in A\). </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>These two properties are however not assumed for the multiplicative map. That is where the notion of noncommutative algebras and non associative algebras comes into picture. Note that, "non commutative" means not necessarily commutative and "nonassociative" means not necessarily associative. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>One interesting case of nonassociative algebras is that of a Lie algebra, where, the failure of the associativity is controlled by the Jacobi identity. We have </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\([x,[y,z]]+[y,[z,x]]+[z,[x,y]]=0\)  for all \(x,y,z\in A\).</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>Now comes the notion of Lie-Rinehart algebra. There may be a very intuitive and algebraic way to think about Lie-Rinehart algebra, but, if you are comfortable with the notion of Lie algebroid over a manifold, it is better to approach Lie-Rinehart algebra from Lie algebroid point of view.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Recall that, given a manifold \(M\), a Lie algebroid over \(M\) consists of, </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>a vector bundle \(A\rightarrow M\),</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>a morphism of vector bundles \(\rho:A\rightarrow TM\),</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>a Lie algebra structure on \(\Gamma(M,A)\)</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>satisfying the obvious conditions. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let us seperate out the algebraic ideas here. We have </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>a Lie algebra \(L=\Gamma(M,A)\)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>an algebra \(\mathcal{O}=C^\infty(M)\)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>\(\mathcal{O}\)-module structure on \(L\) given by \((f,s)\mapsto fs\) where \(fs:M\rightarrow A\) is given by \(m\mapsto f(m)s(m)\) for \(m\in M, f\in \mathcal{O}\), and \(s\in L\)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>a map \(L=\Gamma(M,A)\rightarrow Der(C^\infty(M))=\mathfrak{X}(M)\) induced from the anchor map \(A\rightarrow TM\) by taking sections \(\Gamma(M,A)\rightarrow \Gamma(M,TM)=\mathfrak{X}(M)=Der(C^\infty(M))\),</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>satisfying certain conditions.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>With out mentioning the reference to manifold, writing down the above algebraic data, along with "certain conditions" gives the notion of Lie-Rinehart algebra.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Lie-Rinehart algebra </h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>A Lie-Rinehart algebra consists of,</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>a Lie algebra \(L\)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>an associative (some people ask it to be commutative) algebra \(A\),</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>a map \(\tau : A\times L\rightarrow L\) giving an \(A\)-module structure on \(L\),</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>a map \(\rho : L\times A\rightarrow A\) giving an \(L\)-module structure on \(A\),</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>such that the following conditions are satisfied:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>the map \(\rho : L\times A\rightarrow A\) gives a morphism of Lie algebras \(L\rightarrow Der(A)\)</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>the map  \(\tau : A\times L\rightarrow L\) gives a morphism of associative algebras \(A\rightarrow End(L)\),</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>the maps \(\rho,\tau\) are compatible, in the sense that, </li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\([u,\tau(a,v)]=\tau(a,[u,v])+\tau(\rho(u,a),v)\) for all \(u,v\in L\) and \(a\in A\).</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>Given a smooth manifold \(M\), and a Lie algebroid \(A\rightarrow M\), we get a Lie-Rinehart algebra \((C^\infty(M), \Gamma(M,A)\).</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>Question : Given a manifold \(M\), are there any Lie-Rinehart algebras whose associative algebra is \(C^\infty(M)\) and the Lie algebra is not \(\Gamma(M,A)\) for some Lie algebroid \(A\rightarrow M\)?</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

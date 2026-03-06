@@ -1,0 +1,58 @@
+---
+title: "Group as a category with one object"
+slug: "group-as-a-category-with-one-object"
+date: 2017-07-19T09:30:17
+url: "/2017/07/19/group-as-a-category-with-one-object/"
+categories: ["Category theory"]
+tags: ["yoneda-lemma"]
+---
+Let \(G\) be a group. We are going to construct a category with one element whose morphisms are elements of this group \(G\).
+
+<strong>Definition : </strong>A category \(\mathcal{C}\) consists of
+<ul>
+	<li>a collection of objects, \(\text{Ob}(\mathcal{C})\),</li>
+	<li>for each \(A,B\in \text{Ob}(\mathcal{C})\) a collection of maps from \(A\) to \(B\) denoted by \(\mathcal{C}(A,B)\).</li>
+	<li>for each \(A,B,C \in \text{Ob}(\mathcal{C})\) a function \(\mathcal{C}(B,C)\times \mathcal{C}(A,B)\rightarrow \mathcal{C}(A,C)\) with \((g,f)\mapsto g\circ f\) called the composition</li>
+	<li>for each \(A\in \text{Ob}(\mathcal{C})\) an element \(1_A\in \mathcal{C}(A,A)\) called the identity on \(A\)</li>
+</ul>
+satisfying the following conditions
+<ul>
+	<li>Associativity : for each \(f\in \mathcal{C}(A,B), g\in \mathcal{C}(B,C), h\in \mathcal{C}(C,D)\) we have \((h\circ g)\circ f=h\circ (g\circ f)\).</li>
+	<li>Identity law : for each \(f\in \mathcal{C}(A,B)\) we have \(f\circ 1_A=f=1_B\circ f\).</li>
+</ul>
+We are not  constructing a categroy \(\mathcal{C}\) with \(\text{Ob}(\mathcal{C})=G\), we are  constructing a category \(\mathcal{C}\) with \(\text{Ob}(\mathcal{C})=\{A\}\)(one point set) and \(\mathcal{C}(A,A)=G\).
+
+We have defined objects and morphisms collections (here there is only one object so there is only one morphisms collection).
+
+We have to define composition \(\mathcal{C}(A,A)\times \mathcal{C}(A,A)\rightarrow \mathcal{C}(A,A)\) i.e., we have to give a map \(G\times G\rightarrow G\).  There are two natural ways to give this map \((g,h)\mapsto g.h\) or \((g,h)\mapsto h.g\). <strong>We consider the map \((g,h)\mapsto g\circ h:=g.h\) to give composition. </strong>Obvious choice of an identity element in \(\mathcal{C}\) is $llatex 1_A=e$ identity element of the group.
+
+Associativity of group implies associativity of composition
+<p style="text-align:center;">\((g\circ h)\circ f=(g.h)\circ f=(g.h).f=g.(h.f)=g\circ (h\circ f).\)</p>
+We have
+<p style="text-align:center;">\(1_A\circ g=e.g=g\) and \(g\circ 1_A=g.e=g\).</p>
+So, we have a category whose sets of objects contains exactly one element and whose set of morphisms is exactly one set equal to given group \(G\).
+
+Given a category \(\mathcal{C}\) and an element \(A\in\text{Ob}(\mathcal{C})\) we have a functor \(h_A:\mathcal{C}^{\text{op}}\rightarrow \text{Sets}\) defined by \(B\mapsto \mathcal{C}(B,A)\) and given an element \(f\in \mathcal{C}(B,C)\) we have \(h_A(f)\in \text{Mor}((h_A(C),h_A(B))\) given by \(h_A(f)(g)=g\circ f\).
+
+We will see explicitly what is  \(h_A\) in case of group as a category with exactly one object as defined above. We have \(h_A(A)=\mathcal{C}(A,A)=G\).  Let \(h\in \mathcal{C}(A,A)=G\). Then, \(h_A(h):G\rightarrow G\) given by \(g\mapsto g\circ h=g.h\).
+
+Let us see explicitly what are the natural transformations \(\eta:h_A\rightarrow h_A\). This should come up with \(\eta(A):h_A(A)\rightarrow h_A(A)\) i.e., with a map \(\eta(A)=\sigma:G\rightarrow G\) satisfying the naturality condition i.e., for every \(h\in G=\mathcal{C}(A,A)\) the following diagram commutes
+
+<img class=" size-full wp-image-1045 aligncenter" src="/wp-media/2017/07/b3c96b4793-ql_5fecb8d9fff6db2810f2e1d2eec2e7a6_l3.png" alt="ql_5fecb8d9fff6db2810f2e1d2eec2e7a6_l3" width="161" height="85" />
+
+i.e., we want \(\sigma:G\rightarrow G\) to be such that \((h_A(h)\circ \sigma)(g)=(\sigma\circ h_A(h))(g)\) for all \(g\in h_A(A)=G\) i.e., \(h_A(h)(\sigma(g))=\sigma(h_A(h)(g))\) ie., \(\sigma(g)h=\sigma(gh)\) for all $g\in G$.
+
+So, the set of all natural transformations from \(h_A\) to \(h_A\) is given by
+<p style="text-align:center;">\(\text{Nat}(h_A,h_A)=\{\sigma:G\rightarrow G : \sigma(gh)=\sigma(g)h \forall g,h\in G\}\).</p>
+See that every element in \(\text{Nat}(h_A,h_A)\) is an isomorphism, as a set. It is not even necessary that \(\sigma\in \text{Nat}(h_A,h_A)\) is a group homomorphism. See that \(\sigma(h)=\sigma(1.h)=\sigma(1).h ~~\forall h\in G\).
+
+Given \(\sigma\in \text{Nat}(h_A,h_A)\) define \(\tau:G\rightarrow G\) as \(\tau(h)=(\sigma(1))^{-1}h\). Then,
+<ul>
+	<li>\(\sigma(\tau(h))=\sigma(\sigma(1)^{-1}h)=\sigma(1).\sigma(1)^{-1}.h=h\).</li>
+	<li>\(\tau(\sigma(h))=\tau(\sigma(1)h)=\sigma(1)^{-1}.\sigma(1).h=h\).</li>
+</ul>
+So, \(\tau\) is inverse of \(\sigma\). Thus, every element in \(\text{Nat}(h_A,h_A)\) is an isomorphism of sets. Thus, we have
+<p style="text-align:center;">\(\text{Nat}(h_A,h_A)=\{\sigma\in \text{Sym}(G) : \sigma(gh)=\sigma(g)h \forall g,h\in G\}\leq \text{Sym}(G)\).</p>
+Yoneda lemma states that \(\mathcal{C}(A,A)\cong \text{Nat}(h_A,h_A)\) i.e., \(G\cong H\leq \text{Sym}(G)\) which is exactly the statement of Cayley's theorem. So, yoneda lemma does say that any group can be identified with a subgroup of its symmetric group.
+
+&nbsp;

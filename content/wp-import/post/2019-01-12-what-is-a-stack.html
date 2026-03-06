@@ -1,0 +1,65 @@
+---
+title: "What is a Stack?"
+slug: "what-is-a-stack"
+date: 2019-01-12T18:18:08
+url: "/2019/01/12/what-is-a-stack/"
+categories: ["category-theory", "stacks"]
+tags: ["stacks"]
+---
+Given a manifold \(M\) we have the concept of open cover of \(M\). We usually write an open cover of a manifold \(M\) <strong>as a collection of open subsets</strong> \(\{U_i\}\) (such that \(\bigcup U_i=M\)). In this note  we see  an open cover of \(M\) <strong>as a collection of maps</strong> (inclusions)  \(\{U_i\rightarrow M\}\).   Some properties of "open cover" are.
+<ol>
+	<li>(Pull back exists and gives an open cover) Suppose \(\{U_i\rightarrow M\}\) is an open cover for \(M\) and \(\pi:V\rightarrow M\) is a smooth map. Then, \(\{\pi^{-1}(U_i) \rightarrow V\}\) is a cover for \(V\).</li>
+	<li>(Diffeomorphisms gives open cover) For any manifold \(M\), \(M\) itself is considered as an open cover \(\{M\rightarrow M\}\). More generally, for any diffeomorphism \(M'\rightarrow M\), \(\{M'\rightarrow M\}\) is considered as an open cover.</li>
+	<li>(Open cover of open cover is an open cover) Let \(\{U_\alpha\rightarrow U\}\) be an open cover for \(U\) i.e., \(\bigcup_{\alpha} U_\alpha=U\). Suppose \(\{V_{\alpha\beta}\rightarrow U_\alpha\}\) is an open cover for \(U_\alpha\) for each \(\alpha\) i.e., \(\bigcup_{\beta}V_{\alpha\beta}=U_\alpha\). Then, \(\bigcup_{\alpha\beta}V_{\alpha\beta}=U\) i.e., \(\{V_{\alpha\beta}\rightarrow U\}\) is an open cover for \(U\).</li>
+</ol>
+For a category \(\mathcal{C}\) and an object \(U\) of  \(\mathcal{C}\), a collection of arrows \(\{U_i\rightarrow U\}\) is said to be a cover for \(U\).
+
+<strong>Definition</strong> : Let \(\mathcal{C}\) be a category. A Grothendieck topology on \(\mathcal{C}\) is given by a  collection of covers \(\mathcal{W}=\{\{U_i\rightarrow U\}: U\in \mathcal{C}_0\}\) satisfying following conditions.
+<ol>
+	<li>(Pullbacks exists and gives a cover) Suppose  \(\{U_i\rightarrow U\}\in \mathcal{W}\)  and \(\pi:V\rightarrow U\) be an arrow. Then, the pull back \(U_i\times_UV\) exists (as an object in \(\mathcal{C}\)) and  \(\{U_i\times_UV \rightarrow V\}\) is a cover for \(V\).</li>
+	<li>(Isomorphisms  gives an open cover) Suppose \(V\in \mathcal{C}_0\) and \(V\rightarrow U\) is an isomorphism in \(\mathcal{C}\) then, \(\{V\rightarrow U\}\in \mathcal{W}\).</li>
+	<li>(cover of a cover is a cover) Suppose \(\{U_\alpha\rightarrow U\}\in \mathcal{W}\) and \(\{U_{\alpha\beta}\rightarrow U_\alpha\}\in \mathcal{W}\) for each \(\alpha\). Then, the collection of compositions \(\{U_{\alpha\beta}\rightarrow U_\alpha\rightarrow U\}\in \mathcal{W}\).</li>
+</ol>
+To talk about a stack over category \(\mathcal{C}\) we fix a Grothendieck topology \(\mathcal{W}\) on \(\mathcal{C}\). When we say cover, we mean it belongs to \(\mathcal{W}\).
+
+Let \(\mathcal{D}\) be a category fibered in groupoids over \(\mathcal{C}\) i.e., we have a functor \(F:\mathcal{D}\rightarrow \mathcal{C}\) satisfying some conditions.
+<ol>
+	<li>Given an object \(U\) of \(\mathcal{C}\) we have what is called <strong>fibre of \(U\)</strong> in \(\mathcal{D}\) usually denoted by \(\mathcal{D}(U)\).</li>
+	<li>Given an object \(U\) of \(\mathcal{C}\) and a cover \(\{U_i\rightarrow U\}\) (i.e., it belongs to \(\mathcal{W}\)) we have what is called <strong>descent category associated to the cover \(\{U_i\rightarrow U\}\),</strong> usually denoted by \(\mathcal{D}(\{U_i\rightarrow U\})\).</li>
+</ol>
+There is an obvious functor \(\mathcal{D}(U)\rightarrow \mathcal{D}(\{U_i\rightarrow U\})\).
+<h4>Definition : Let \(\mathcal{C}\) be a category with Grothendieck topology \(\mathcal{W}\). A category fibered in groupoids \(\mathcal{D}\rightarrow \mathcal{C}\) is said to be <em>a stack over \(\mathcal{C}\) </em>if, for every object \(U\) of \(\mathcal{C}\) and every cover \(\{U_i\rightarrow U\}\), the functor \(\mathcal{D}(U)\rightarrow \mathcal{D}(\{U_i\rightarrow U\})\) is an equivalence of categories.</h4>
+The fibre categroy \(\mathcal{D}(U)\) is a category whose objects are that of \(\mathcal{D}\) which map to \(U\) under \(F\) i.e.,
+<p style="text-align:center;">\(\mathcal{D}(U)_0=\{V\in \mathcal{D}_0:F(V)=U\}\).</p>
+Given \(V,V'\in \mathcal{D}(U)_0\), a morphism \(V\rightarrow V'\) in \(\mathcal{D}(U)\) is a morphism in \(\mathcal{D}\) that maps to \(id:U\rightarrow U\) under \(F\) i.e.,
+<p style="text-align:center;">\(\mathcal{D}(U)_1=\{V\xrightarrow{f} V\in \mathcal{D}:F(f:V\rightarrow V')=id:U\rightarrow U\}\).</p>
+To define descent category \(\mathcal{D}(\{U_i\xrightarrow{\sigma_i} U\})\) associated to a cover \(\{U_i\xrightarrow{\sigma_i}U\}\) we need to fix some notations. We have already mentioned that, pull backs exists (in the definition of Grothendieck topology). Thus, \(U_i\times_U U_j\) exists and we denote \(U_i\times_U U_j\) by \(U_{ij}\). We have following pull back diagram.<img class=" size-full wp-image-1320 aligncenter" src="/wp-media/2019/01/03cc3609cc-screenshot-from-2019-01-13-14-29-09.png" alt="screenshot from 2019-01-13 14-29-09" width="376" height="206" />We have following diagram for \(U_{ijk}=U_i\times_U U_j\times_U\times_U U_k\).
+<img class=" size-full wp-image-1324 aligncenter" src="/wp-media/2019/01/45ece41eb5-screenshot-from-2019-01-13-16-06-54-1.png" alt="screenshot from 2019-01-13 16-06-54 (1)" width="335" height="264" />Note that  functor \(F:\mathcal{D}\rightarrow \mathcal{C}\) gives a functor \(f^*:\mathcal{D}(V)\rightarrow \mathcal{D}(U)\) for each arrow \(f:U\rightarrow V\) in \(\mathcal{C}\). It is easier to guess what this map has to be than to write down what this map is. So, we skip the description of this functor.  Thus, for \(pr_1:U_{ij}\rightarrow U_i\) we have \(pr_1^*:\mathcal{D}(U_i)\rightarrow \mathcal{D}(U_{ij})\) and for \(pr_2:U_{ij}\rightarrow U_j\) we have functor \(pr_2^*:\mathcal{D}(U_j)\rightarrow \mathcal{D}(U_{ij})\). We have following diagram
+<img class=" size-full wp-image-1323 aligncenter" src="/wp-media/2019/01/874c25ccea-screenshot-from-2019-01-13-15-29-48.png" alt="screenshot from 2019-01-13 15-29-48" width="326" height="211" />The descent category \(\mathcal{D}(\{U_i\xrightarrow{\sigma_i}U\})\) is a category whose objects are a collection \((\{\xi_i\},\{\phi_{ij}\})\) where \(\xi_i\in \mathcal{D}(U_i)\) and \(\phi_{ij}:pr_1^*(\xi_j)\rightarrow pr_2^*(\xi_i)\) is an isomorphism in \(\mathcal{D}(U_{ij})\) satisfying following cocylce condition on \(U_{ijk}\),
+<p style="text-align:center;">\(pr_{13}^*(\phi_{ik})=pr_{12}^*(\phi_{ij})\circ pr_{23}^*(\phi_{j}):pr_3^*(\xi_k)\rightarrow pr_1^*(\xi_i)\).</p>
+This can be seen as following diagram.<img class="alignnone size-full wp-image-1326" src="/wp-media/2019/01/870ed7375a-screenshot-from-2019-01-13-16-11-03.png" alt="screenshot from 2019-01-13 16-11-03" width="674" height="326" />
+
+One must observe that
+<p style="text-align:center;">\(pr_{23}^*(pr_3^*(\xi_k))=pr_3^*(\xi_k), pr_{23}^*(pr_2^*(\xi_j))=pr_2^*(\xi_j)=pr_{12}^*(pr_2^*(\xi_j))\) and \(pr_{12}^*(pr_1^*(\xi_k))=pr_1^*(\xi_i)\).</p>
+For  \((\{\xi_i\},\{\phi_{ij}\}),(\{\eta_i,\psi_{ij}\})\) in \(\mathcal{D}(\{U_i\rightarrow U\})_0\), an arrow \((\{\xi_i\},\{\phi_{ij}\})\xrightarrow{\alpha} (\{\eta_i,\psi_{ij}\})\) is a collection of arrows \(\alpha_i:\xi_i\rightarrow \eta_i\) in \(\mathcal{D}(U_i)\) such that
+<p style="text-align:center;">\(pr_1^*(\alpha_i):pr_1^*(\xi_i)\rightarrow pr_1^*(\eta_i)\) and \(pr_2^*(\alpha_j):pr_2^*(\xi_j)\rightarrow pr_2^*(\eta_j)\)</p>
+are compatible with
+<p style="text-align:center;">\(\phi_{ij}:pr_2^*(\xi_j)\rightarrow pr_1^*(\xi_i)\) and \(\psi_{ij}:pr_2^*(\eta_j)\rightarrow pr_1^*(\eta_i)\)</p>
+giving following commutative diagram.<img class=" size-full wp-image-1328 aligncenter" src="/wp-media/2019/01/2af51829f4-screenshot-from-2019-01-13-16-38-18.png" alt="screenshot from 2019-01-13 16-38-18" width="244" height="186" />Now, we can describe the obvious functor \(\mathcal{D}(U)\rightarrow \mathcal{D}(\{U_i\rightarrow U\})\). An object \(\xi\in \mathcal{D}(U)\) is mapped to \((\{\xi_i\},\{\phi_{ij}\})\) where \(\xi_i=\sigma_i^*(\xi)\). For \(i,j\) we have \(pr_1^*:\mathcal{D}(U_i)\rightarrow \mathcal{D}(U_{ij})\) and \(pr_2^*:\mathcal{D}(U_i)\rightarrow \mathcal{D}(U_{ij})\). See that \(pr_1^*(\xi_i)=pr_1^*(\sigma_i^*(\xi))=(pr_1\circ \sigma)^*(\xi)\) is same as that of (there exists unique isomorphism) \(pr_2^*(\xi_j)=pr_2^*(\sigma_j^*(\xi))=(pr_2\circ \sigma)^*(\xi)\) as \(pr_2\circ \sigma=pr_1\circ \sigma\). Thus, there is a unique isomorphsim \(pr_2^*(\xi_j)\rightarrow pr_1^*(\xi_i)\) which we denote by \(\phi_{ij}:pr_2^*(\xi_j)\rightarrow pr_1^*(\xi_i)\). This gives functor \(\mathcal{D}(U)\rightarrow \mathcal{D}(\{U_i\rightarrow U\})\) at the level of objects. It is not difficult to see the functor at the level of morphisms. We skip that.
+
+The condition for a category fibred in  groupoids \(\mathcal{D}\rightarrow \mathcal{C}\) to be  a stack over \(\mathcal{C}\)  is that the functor \(\mathcal{D}(U)\rightarrow \mathcal{D}(\{U_i\rightarrow U\})\) is an equivalence of categories i.e., it is essentially surjective and the map \(\text{Hom}_{\mathcal{D}(U)}(\xi,\xi')\rightarrow \text{Hom}_{\mathcal{D}(\{U_i\rightarrow U\})}((\xi_i,\phi_{ij}),(\xi_i',\phi_{ij}'))\) is a bijection.
+
+As \(\mathcal{D}(U)\rightarrow \mathcal{D}(\{U_i\rightarrow U\})\) is essentially surjective, it means, given a collection \(\xi_i\in \mathcal{D}(U_i)\) together with isomorphisms \(\phi_{ij}:pr_2^*(\xi_j)\rightarrow pr_1^*(\xi_i)\) satisfying cocylce condition mentioned above, there exists an element \(\xi\in \mathcal{D}(U)\) that maps to (there is an isomorphism to) \((\{\xi_i\},\{\phi_{ij}\})\). <strong>This condition is called as gluing objects. </strong>
+
+The other condition is that for \(\xi,\eta\in \mathcal{D}(U)\) the map
+<p style="text-align:center;">\(\text{Hom}_{\mathcal{D}(U)}(\xi,\eta)\rightarrow \text{Hom}_{\mathcal{D}(\{U_i\rightarrow U\})}((\xi_i,\phi_{ij}),(\xi_i',\phi_{ij}'))\)</p>
+is a bijection.  This means that, given an arrow \(\alpha_i:\xi_i\rightarrow \eta_i\) for each \(i\) such that they are compatible with \(\phi_{ij},\psi_{ij}\) as in above commutative diagram i.e., \(\psi_{ij}\circ pr_2^*(\alpha_j)=pr_1^*(\alpha_i)\circ \phi_{ij}\), then, there exists unique arrow \(\alpha:\xi\rightarrow \eta\) such that \(\sigma_i^*(\alpha)=\alpha_i\) and \(\sigma_i^*(\alpha:\xi\rightarrow \eta)=\alpha_i:\xi_i\rightarrow \eta_i\). <strong>This condition is called Gluing morphisms. </strong>
+
+To summarise this, I will write down the  definition.
+
+Definition : A category fibered in groupoids \(F:\mathcal{D}\rightarrow \mathcal{C}\) is said to be <strong>a stack over \(\mathcal{C}\)</strong> if, for each object \(U\) and a cover \(\{U_i\rightarrow U\}\) the following conditions holds.
+<ol>
+	<li>Gluing objects : Given \(\xi_i \in \mathcal{D}(U_i)\) with compatibility, there exists an object \(\xi\in \mathcal{D}(U)\) such that there is an isomorphism \(\sigma_i^*(x)\rightarrow x_i\) in \(\mathcal{D}(U_i)\) for each \(i\). By compatibility, we mean that there exists isomorphisms \(\phi_{ij}:pr_2^*(\xi_j)\rightarrow pr_1^*(\xi_i)\) in \(\mathcal{D}(U_{ij})\) such that \(\phi_{ik}=\phi_{ij}\circ \phi_{jk}\) on \(U_{ijk}\).</li>
+	<li>Gluing morphisms : Given \(\xi,\eta\in \mathcal{D}(U)\) and a morphism \(\alpha_i:\sigma_i^*(\xi)=\xi_i\rightarrow \eta_i=\sigma_i^*(\eta)\) in \(\mathcal{D}(U_i)\) for each \(i\) and isomorphisms \(\phi_{ij}:pr_2^*(\xi_j)\rightarrow pr_1^*(\xi_i),   \psi_{ij}:pr_2^*(\eta_j)\rightarrow pr_1^*(\eta_i)\) in \(\mathcal{D}(U_{ij})\) such that \(\psi_{ij}\circ pr_2^*(\alpha_j)=pr_1^*(\alpha_i)\circ \phi_{ij}\), there exists unique arrow \(\alpha:\xi\rightarrow \eta\) such that \(\sigma_i^*(\alpha:\xi\rightarrow \eta)=\alpha_i:\xi_i\rightarrow \eta_i\).</li>
+</ol>
+&nbsp;

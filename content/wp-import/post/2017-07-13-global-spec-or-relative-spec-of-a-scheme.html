@@ -1,0 +1,62 @@
+---
+title: "Global Spec Or Relative Spec of a Scheme"
+slug: "global-spec-or-relative-spec-of-a-scheme"
+date: 2017-07-13T09:03:44
+url: "/2017/07/13/global-spec-or-relative-spec-of-a-scheme/"
+categories: ["Sheaves of Modules", "algebraic-geometry"]
+tags: ["schemes", "sheaves"]
+---
+<p style="text-align:justify;">Let \(X=\text{Spec}(R)\) be an affine scheme.</p>
+Let \(X'\) be an affine \(X\) scheme i.e., \(X'=\text{Spec}(R')\) for some ring \(R'\) with a morphism of schemes \(\pi: X'\rightarrow X\).  This \(\pi\) comes with morphism of global sections
+<p style="text-align:center;">\(R=\Gamma(X,\mathcal{O}_X)\rightarrow \Gamma(X',\mathcal{O}_X')=R'\)</p>
+giving \(R'\), structure of an \(R\) algebra. So, any affine scheme over \(X=\text{Spec}(R)\) is simply the specturm of an \(R\) algebra. Conversely, given an \(R\) algebra say \(R'\), we have an affine scheme \(X'=\text{Spec}(R')\) over \(X\) with morphism \(\pi:X'\rightarrow X\). Being a morphism of affine schemes, \(\pi: X\rightarrow X\) is an affine morphism.
+
+Let \(X\) be an arbitrary scheme. We want to associate an \(X\) scheme \(X'\) such that the structure morphism \(\pi:X'\rightarrow X\) is an affine morphism.
+
+To do this in case of \(X=\text{Spec}(R)\) we have fixed an \(R\) algebra and then associated an affine scheme for this.
+
+In case of an arbitrary scheme \(X\) unlike the case of affine scheme \(X=\text{Spec}(R)\) there is no single ring that has all information about  the scheme \(X\). It is only natural to consider the collection \(\{\mathcal{O}_X(U): U\subseteq X\}\) varying over all open subsets of \(X\) to get information about the scheme \(X\). Choosing an \(\mathcal{O}_X(U)\) algebra \(\mathcal{F}(U)\) for each open \(U\subseteq X\) we associate an \(X\) scheme \(X'\) for this collection \(\{\mathcal{F}(U)\}\) of \(\mathcal{O}_X(U)\) algebras. It is only natural to put a condition that this collection \(\{\mathcal{F}(U)\}\) to be compatible with structure sheaf \(\mathcal{O}_X\) i.e., we want \(U\mapsto \mathcal{F}(U)\) to give a structure of  sheaf of \(\mathcal{O}_X\) algebras on \(X\).
+
+So, given an arbitrary scheme \(X\) and a sheaf \(\mathcal{F}\) of \(\mathcal{O}_X\) algebras we associate an \(X\) scheme \(X'\) such that the structure map \(X'\rightarrow X\) is an affine morphism. It is not obvious at this point but we also want \(\mathcal{F}\) to be a quasicoherent sheaf of \(\mathcal{O}_X\) modules. We call this \(X'\),  Global spec or Relative spec of sheaf \(\mathcal{F}\) of \(\mathcal{O}_X\) algebras over \(X\) denoted by \(\textbf{Spec} (\mathcal{F})\).
+
+Here we make two important remarks :
+<ol>
+	<li>The \(\textbf{Spec}\) construction gives an important way to understand affine morphisms. Note that \(\textbf{Spec}(\mathcal{F})\rightarrow X\) is an affine morphism. The converse is also true. <strong>If \(f:X\rightarrow Y\) is an affine morphism then \(\mathcal{A}=f_*\mathcal{O}_X\) is a quasi coherent sheaf of \(\mathcal{O}_Y\) algebras and \(X\cong \text{Spec} (\mathcal{A})\).</strong></li>
+	<li>The \(\textbf{Spec}\) construction is used to assign a geometric vector bundle on a scheme \(Y\) to each locally free sheaf \(\mathcal{E}\) of rank \(n\) on a scheme \(Y\) which gives a bijection between <strong>isomorphism classes of locall free sheaves of rank \(n\) on \(Y\), </strong>and <strong>isomorphism classes of vector bundles of rank \(n\) on \(Y\)</strong>.</li>
+	<li>To define \(\textbf{Spec}(\mathcal{F})\) we do not need \(\mathcal{F}\) to be quasi coherent, but \(\mathcal{F}\) quasi coherent implies the structure map \(\textbf{Spec}(\mathcal{F})\rightarrow X\) is an affine morphism.</li>
+</ol>
+Now, we try to construct \(\textbf{Spec}(\mathcal{F})\) and structure map \(\textbf{Spec}(\mathcal{F})\rightarrow X\). One way to do this is gluing the schemes \(\text{Spec}(\mathcal{F}(U))\) over all open subsets \(U\subseteq X\). Another way is to use universal property of \(\text{Spec}\) of a ring.
+
+We have following result :
+
+<strong>Let \(A\) be a ring and let \((X,\mathcal{O}_X)\) be a scheme. Given a morphism \(f:X\rightarrow \text{Spec}(A)\) we have an associated map on sheaves \(f^{\#}:\mathcal{O}_{\text{Spec}(A)}\rightarrow f_*\mathcal{O}_X\). Taking global sections, we obtain a ring homomorphism \(A\rightarrow \mathcal{O}_X(X)\). Thus there is a natural map</strong>
+<p style="text-align:center;"><strong> \(\alpha: \text{Hom}_{\text{Schemes}}(X,\text{Spec}(A))\rightarrow\text{Hom}_{\text{Rings}}(A,\mathcal{O}_X(X)).\)</strong></p>
+<strong>This map is bijective. So, we have </strong>
+<p style="text-align:center;"><strong> \(\text{Hom}_{\text{Schemes}}(X,\text{Spec}(A))\cong\text{Hom}_{\text{Rings}}(A,\mathcal{O}_X(X)).\)</strong></p>
+We have the similar result for relative schemes over an affine scheme
+
+<strong>Let \(A\) be a ring and \(B\) be an \(A\) algebra. let \((X,\mathcal{O}_X)\) be an \(S=\text{Spec}(A)\) scheme. Given a morphism \(f:X\rightarrow \text{Spec}(B)\) of \(S\) schemes we have an associated map on sheaves \(f^{\#}:\mathcal{O}_{\text{Spec}(B)}\rightarrow f_*\mathcal{O}_X\). Taking global sections, we obtain an \(A\) algebra homomorphism \(B\rightarrow \mathcal{O}_X(X)\). Thus there is a natural map</strong>
+<p style="text-align:center;"><strong> \(\alpha: \text{Hom}_{S -  \text{Schemes}}(X,\text{Spec}(B))\rightarrow\text{Hom}_{A \text{algebra}}(B,\mathcal{O}_X(X)).\)</strong></p>
+<strong>This map is bijective. So, we have </strong>
+<p style="text-align:center;"><strong> \(\text{Hom}_{S-\text{Schemes}}(X,\text{Spec}(B))\cong\text{Hom}_{A \text{algebra}}(B,\mathcal{O}_X(X)).\)</strong></p>
+In terms of commutative diagram we have the following :
+
+<img class=" size-full wp-image-866 aligncenter" src="/wp-media/2017/07/969dc7cc9b-ql_63245f850a823da7f4d9a1430614dc47_l3.png" alt="ql_63245f850a823da7f4d9a1430614dc47_l3" width="429" height="77" />
+
+<img class=" size-full wp-image-867 aligncenter" src="/wp-media/2017/07/8e80ee38ba-ql_442a9448f1314e08b5cdb2b157d49463_l3.png" alt="ql_442a9448f1314e08b5cdb2b157d49463_l3" width="429" height="77" />
+
+Now, for an arbitrary scheme \(X\) (which is generalization of \(S\) above), and a quasi coherent sheaf of \(\mathcal{O}_X\) algebras \(\mathcal{F}\) (which is generalization of \(B\) above), we want to define \(\text{Spec}(\mathcal{F})\)  that comes with a structure map \(\text{Spec}(\mathcal{F})\rightarrow X\) such that given any \(X\) scheme \(f:Y\rightarrow X\) and a morphism of \(X\) schemes \(\alpha :  Y \rightarrow \text{Spec}(\mathcal{F})\) something similar to that of the above situation happens. In terms of commutative diagram, we have
+
+<img class=" size-full wp-image-868 aligncenter" src="/wp-media/2017/07/716b32cfc4-ql_5e62c2113229e226dbeb655ce5d4e9a3_l3.png" alt="ql_5e62c2113229e226dbeb655ce5d4e9a3_l3" width="196" height="78" />As we are generalizing the case of \(S=\text{Spec}(R)\) we expect to have similar commutative diagram as in the case of \(S\) except that in this case commutative diagram not be of ring homomorphism but it would be of sheaves of algebras. We expect to have something like
+
+<img class=" size-full wp-image-869 aligncenter" src="/wp-media/2017/07/d7042d51a8-ql_97afde5a457fb279d3701b254276a3de_l3.png" alt="ql_97afde5a457fb279d3701b254276a3de_l3" width="164" height="79" />As \(\mathcal{F}\) is a sheaf of \(\mathcal{O}_X\) modules and \(\mathcal{O}_Y\) is a sheaf of \(\mathcal{O}_Y\) modules, it does not make sense to talk about morphism between these two, we make a slight change by considering morphsim \(\mathcal{F}\rightarrow f_*\mathcal{O}_Y\) where \(f^*\mathcal{O}_Y\) is the push forward of $\mathcal{O}_Y$ under \(f:Y\rightarrow X\), thus a sheaf of $\mathcal{O}_X$ modules.   So, we want the following commutative diagram
+
+<img class=" size-full wp-image-870 aligncenter" src="/wp-media/2017/07/bc4812b81b-ql_c79f021eb2a75a235bf36ff13a6c3ea5_l3.png" alt="ql_c79f021eb2a75a235bf36ff13a6c3ea5_l3" width="180" height="80" />
+
+So, our definition of \(\textbf{Spec}(\mathcal{F})\) would be such that it satisfy the universal property
+
+<img class=" size-full wp-image-872 aligncenter" src="/wp-media/2017/07/de663a18f3-ql_c8ebcac76ce03d3a0f7f8a55d7fa4127_l3.png" alt="ql_c8ebcac76ce03d3a0f7f8a55d7fa4127_l3" width="442" height="81" />
+
+<img class=" size-full wp-image-873 aligncenter" src="/wp-media/2017/07/b70165e534-ql_d9935afd7b88fce281e750905117ad22_l3.png" alt="ql_d9935afd7b88fce281e750905117ad22_l3" width="443" height="81" />
+
+We will discuss properties of this construction in next blog post. There are still some loose ends here, we will fix that soon.

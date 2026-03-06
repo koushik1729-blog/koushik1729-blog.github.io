@@ -1,0 +1,40 @@
+---
+title: "Derivative of Left invariant differential form"
+slug: "derivative-of-left-invariant-differential-form"
+date: 2018-12-29T18:01:18
+url: "/2018/12/29/derivative-of-left-invariant-differential-form/"
+categories: ["Differential geometry"]
+---
+In this, we see that for a left-invarinat differential form \(\omega\) on $G$,
+<p style="text-align:center;">\(d\omega(X,Y)=-\frac{1}{2}\omega([X,Y])\)</p>
+for vector fields \(X, Y\) in \(G\).
+
+Let \(\omega:G\rightarrow \Lambda^1 T^*G\) be a Left-invariant differential form on \(G\) i.e., \((L_g)^*\omega=\omega\) for all \(g\in G\) i.e.,
+<p style="text-align:center;">\(\omega(g)(v)=\omega(e)((L_{g^{-1}})_{*,g}(v))\)</p>
+for all \(g\in G\) and \(v\in T_gG\).
+
+Given \(A\in \mathfrak{g}\) we have vector field \(A^*:G\rightarrow TG\) defined as \(A^*(g)=(L_g)_{*,e}(A)\). Then, \(\omega(A^*):G\rightarrow \mathbb{R}\) is constant function, \(\omega(A^*)(g)=\omega(e)(A)\) for all \(g\in G\).
+
+As \(\omega(A^*):G\rightarrow \mathbb{R}\) is constant map,  \(X( \omega(A^*))=0\) for any vector field \(X:G\rightarrow TG\) on \(G\).
+
+In particular, \(B^*(X(\omega(A^*)))=0\) for \(B\in \mathfrak{g}\). Interchanging \(A\) and \(B\) we have \(A^*(\omega(B^*))=0\)
+
+As
+<p style="text-align:center;">\((d\omega)(A^*,B^*)=\frac{1}{2}\left[ A^*(\omega(B^*))-B^*(\omega(A^*))-\omega([A^*,B^*])\right]\)</p>
+and \(A^*(\omega(B^*))=0, B^*( \omega(A^*))=0\) we have \((d\omega)(A^*,B^*)=-\frac{1}{2}\omega([A^*,B^*])\).
+
+Let \(X:G\rightarrow TG\) be vector fields on \(G\). Fix a basis  \(\{A_1,\cdots,A_n\}\) for the Lie algebra \(\mathfrak{g}\) of \(G\). Given \(g\in G\) we have \(X(g)\in T_gG\). Given \(v\in T_gG\), we can find \(A\in \mathfrak{g}\) such that \(v=A^*(g)\).  Here, \(X(g)=A^*(g)\). As \(\{A_1,\cdots,A_n\}\) is basis for \(\mathfrak{g}\) and \(A\in \mathfrak{g}\), there exists \(a_i\in \mathbb{R}\) such that \(A=\sum_{i=1}^n a_i A_i\).  Then, \(X(g)=A^*(g)\) says that
+<p style="text-align:center;">\(X(g)=(\sum_{i=1}^n a_i A_i)^*(g)=\sum_{i=1}^n a_i A_i^*(g)\).</p>
+Given \(g\in G\) we have \(a_i\in \mathbb{R}\) such that \(X(g)=\sum_{i=1}^n a_iA_i^*(g)\). Varying \(g\) over \(G\) gives smooth functions \(a_i:G\rightarrow \mathbb{R}\) such that \(X=\sum a_i A_i^*\).
+
+For a vector field \(Y:G\rightarrow TG\) of \(G\), we have \(b_i:G\rightarrow \mathbb{R}\) such that \(Y=\sum b_i A_i^*\).  Then,
+<p style="text-align:center;">\(X(\omega(Y))=\sum_{i,j} a_ib_jA_i^*(\omega(A_j^*))\)</p>
+As \(A_i^*(\omega(A_j^*))=0\) for \(i, j\), we see that \(X(\omega(Y))=0\). Interchanging \(X,Y\) we see that \(Y(\omega(X))=0\).
+
+As
+<p style="text-align:center;">\((d\omega)(X,Y)=\frac{1}{2}\left[ X(\omega(Y))-Y(\omega(X))-\omega([X,Y])\right]\)</p>
+and \(X(\omega(Y))=0=Y(\omega(X))\) we see that
+<p style="text-align:center;">\(d\omega(X,Y)=-\frac{1}{2}\omega([X,Y])\).</p>
+In particular, for <a href="https://koushik1729.wordpress.com/2018/12/29/maurer-cartan-form-on-a-lie-group/">Maurer-Cartan form on a Lie group</a> \(\theta:G\rightarrow TG\) which is a left invarinat \(1\)-form, we see that \(d\theta(X,Y)=-\frac{1}{2}\theta([X,Y])\) for vector fields \(X,Y\) on \(G\).
+
+In literature, this property is denoted by \(d\theta=-\frac{1}{2}[\theta,\theta]\).

@@ -1,0 +1,48 @@
+---
+title: "Model categories : Part 2 (Definitions)"
+slug: "model-categories-part-1"
+date: 2020-05-21T17:59:45
+url: "/2020/05/21/model-categories-part-1/"
+categories: ["category-theory", "Algebraic geometry"]
+tags: ["model-categories"]
+---
+Before we move to the notion of "a model structure on a category", we need to recall (or introduce) some definitions.
+
+Definition : Let \(\mathcal{C}\) be a category. An <em>object \(X\) of \(\mathcal{C}\) is said to be a retract of an object \(\mathcal{C}\)</em> if there exists arrows \(X\xrightarrow{f} Y\xrightarrow{g} X\) such that, the composition \(g\circ f:X\rightarrow X\) is equal to the identity arrow \(1_X:X\rightarrow X\).
+
+Definition : Let \(\mathcal{C}\) be a category. We define <em>the morphism category of \(\mathcal{C}\)</em>, denoted by \(\text{Map}(\mathcal{C})\) whose
+<ul>
+	<li>objects are the arrows of \(\mathcal{C}\),</li>
+	<li>morphisms are commutative diagrams in \(\mathcal{C}\).</li>
+</ul>
+Definition : Let \(\mathcal{C}\) be a category. A morphism \(f\) in \(\mathcal{C}\) is said to be <em>a retract of </em> a morphism \(g\) in \(\mathcal{C}\), if, \(f\) is a retract of \(g\), when both \(f\) and \(g\) are seen as objects of \(\text{Map}(\mathcal{C})\).
+
+Definition : Let \(\mathcal{C}\) be a category. Let \(i:A\rightarrow B\) and \(p:X\rightarrow Y\) be morphisms in \(\mathcal{C}\). We say that <em>\(i\) has the left lifting property with respect to \(p\) </em>or <em>\(p\) has the right lifting property with respect to \(i\)</em> if, for every commutative diagram <img class=" size-full wp-image-1449 aligncenter" src="/wp-media/2020/05/ae22e72990-screenshot-from-2020-05-23-21-11-33.png" alt="Screenshot from 2020-05-23 21-11-33" width="242" height="213" />there exists an arrow \(h:B\rightarrow X\) such that \(h\circ i=f\) and \(p\circ h=g\).
+
+Definition : Let \(\mathcal{C}\) be a category. A <em>model structure</em> on \(\mathcal{C}\) consists of the following data :
+<ol>
+	<li>a subcategory of \(\mathcal{C}\) called “weak equivalences”,</li>
+	<li>a subcategory of \(\mathcal{C}\) called “fibrations”,</li>
+	<li>a subcategory of \(\mathcal{C}\) called “cofibrations”,</li>
+</ol>
+satisfying certain conditions:
+<ol>
+	<li>If \(f,g\) are morphisms of \(\mathcal{C}\) such that \(gf\) is defined and two of \(f,g,gf\) are "weak equivalences" then so is the third.</li>
+	<li>A retract of a "weak equivalece" is a "weak equivalence".</li>
+	<li>A retract of a "fibration" is a "fibration".</li>
+	<li>A retract of a "cofibration" is a "cofibration".</li>
+	<li>factorizing property (part \(1\)) of arrows of \(\mathcal{C}\) : for each \(f\) in \(\text{Mor}(\mathcal{C})\), there exists a cofibration \(i\) and a traivial fibration \(q\) such that \(f=qi\).</li>
+	<li>factorizing property (part \(2\)) of arrows of \(\mathcal{C}\) : for each \(f\) in \(\text{Mor}(\mathcal{C})\), there exists a fibration \(p\) and a trivial cofibration \(j\) such that \(f=pj\).</li>
+	<li>Any commutative diagram of the type <img class="alignnone size-full wp-image-1455" src="/wp-media/2020/05/789d14d26b-screenshot-from-2020-05-24-09-15-26.png" alt="Screenshot from 2020-05-24 09-15-26" width="616" height="217" /> has lifting property if either \(i\) or \(p\) is a "weak equivalence".</li>
+</ol>
+Definition : A <em>model category</em> is defined to be a category that has
+<ol>
+	<li>all small limits,</li>
+	<li>all small colimits,</li>
+	<li>a model structure in \(\mathcal{C}\).</li>
+</ol>
+<b>Construction of new model categories from old model categories:</b>
+<ol>
+	<li>Let \(\mathcal{C}\) and \(\mathcal{D}\) be model categories. Defining the collection of fibrations (cofibrations, weak equivalences) as pairs \((f,g)\) where both \(f\) and \(g\) are fibrations (cofibrations, weak equivalences) defined a model structure on the product category \(\mathcal{C}\times \mathcal{D}\). This model category is called the product model category produced from model categories \(\mathcal{C}\) and \(\mathcal{D}\).</li>
+	<li></li>
+</ol>

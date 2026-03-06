@@ -1,0 +1,88 @@
+---
+title: "Multilinear algebra : an introduction"
+slug: "multilinear-algebra-an-introduction"
+date: 2024-05-12T02:23:31
+url: "/2024/05/12/multilinear-algebra-an-introduction/"
+categories: ["Linear algebra"]
+---
+<!-- wp:paragraph -->
+<p>In group theory, we mainly study maps that preserve the group structures; which goes by the name of group homomorphisms.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In topology, we mainly study maps that preserve the topologies; which goes by the name of continuous functions. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>In theory of vector spaces, we mainly study maps that preserve the vector space structures; which goes by the name of linear maps. Apart from that, there are many interesting maps that comes up when dealing with vector spaces which are not really linear maps. The very first example that comes to mind is the determinant map </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[\det:M_n(\mathbb{R})\rightarrow \mathbb{R}\], in the same lines, \(\det:M_n(\mathbb{C})\rightarrow \mathbb{C}\).</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>There are more such interesting non linear maps that comes up in a linear algebra course. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Let \(V\) be a vector space over \(\mathbb{R}\). Then, we have the notion of evaluation map \(V\times V^*\rightarrow \mathbb{R}\) given by \((v,f)\mapsto f(v)\) for \(v\in V, f\in V^*\). This map is interesting, but it is not linear. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>It looks like, this non linearity has something to do with the domains being "products" of vector spaces, both in the case of \(V\times V^*\) and the case of \(M_n(\mathbb{R})\). This will become more interesting when we have products of more than two vector spaces. The names that appears, in case of product of two vector spaces is "bilinear map", in case of products of three vector spaces is "trilinear map"; more generally, a "multilinear map" in case of product of vector spaces.  </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>For vector spaces \(V,W,T\) (over same base field) we say that a set map \(\varphi:V\times W\rightarrow T\) is a<em> bilinear map</em>, if, the following conditions are satisfied:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>for each \(v\in V\) the map \(\varphi(v,-):W\rightarrow T\) given by \(w\mapsto \varphi(v,w)\) for \(w\in W\) is a linear map,</li>
+<!-- /wp:list-item -->
+
+<!-- wp:list-item -->
+<li>for each \(w\in W\) the map \(\varphi(-,w):V\rightarrow T\) given by \(v\mapsto \varphi(v,w)\) for \(v\in V\) is a linear map.</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:paragraph -->
+<p>For vector spaces \(V_1,V_2,\cdots, V_n, T\) (over same base filed) we say that a set map \(\varphi:V_1\times V_2\times\cdots\times V_n\rightarrow T\) is a multilinear map, if the following conditions are satisfied:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:list -->
+<ul><!-- wp:list-item -->
+<li>for each \(1\leq i\leq n\) and</li>
+<!-- /wp:list-item --></ul>
+<!-- /wp:list -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[(v_1,\cdots,v_{i-1},v_{i+1},\cdots, v_n)\in V_1\times \cdots \times V_{i-1}\times V_{i+1}\times \cdots\times V_n\], </p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>the map \(\varphi(v_1,\cdots,v_{i-1},-,v_{i+1},\cdots,v_n):V_n\rightarrow T\) given by </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><!-- wp:paragraph -->
+<p>\[v\mapsto \varphi(v_1,\cdots,v_{i-1},v,v_{i+1},\cdots, v_n)\]</p>
+<!-- /wp:paragraph --></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p> for \(v\in V_i\) is a linear map.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>If we define linear algebra as study of vetctor spaces and linear maps, we can say multilinear algebra is study of vector spaces and multilinear maps (at the very least). That is all for now. </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

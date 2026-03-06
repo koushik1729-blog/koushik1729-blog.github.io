@@ -1,0 +1,19 @@
+---
+title: "Matrix associated to connection/curvature form"
+slug: "matrix-associated-to-connection-curvature-form"
+date: 2018-12-30T08:43:58
+url: "/2018/12/30/matrix-associated-to-connection-curvature-form/"
+categories: ["differential-geometry"]
+tags: ["connections"]
+---
+Let \(G\) be a Lie group and \(\mathfrak{g}\) be its Lie algebra.
+
+Let \(P\rightarrow M\) be a principal \(G\) bundle. A connection form on \(P\) is a \(\mathfrak{g}\) valued \(1\)-form on \(P\) satisfying some properties.
+
+Suppose \(G=Gl(n,\mathbb{R})\) then \(\mathfrak{g}=M(n,\mathbb{R})\). A connection is given by \(\omega:P\rightarrow \Lambda^1_{\mathfrak{g}}T^*P\).
+
+Given \(p\in P\) we have \(\omega(p):T_pP \rightarrow \mathfrak{g}\). Given \(v\in T_pP\), \(\omega(p)(v)\) is a matrix \((a_{ij})\in M(n,\mathbb{R})\) i.e., given \(v\in T_pP\) we have \(n^2\) real numbers \(a_{ij}\in \mathbb{R}\) associated to it. Varying \(v\) over \(T_pP\) gives \(n^2\) maps \(a_{ij}:T_pP\rightarrow \mathbb{R}\). So, given \(p\in P\), we have \(n^2\) maps \(\omega_{ij}(p):T_pP\rightarrow \mathbb{R}\) where \(\omega_{ij}(p)(v)\) is the \(ij\) th component of \(\omega(p)(v)\).
+
+Fix \(i,j\) then, \(\omega_{ij}:P\rightarrow \Lambda^1 T^*P\) given by \(p\mapsto \omega_{ij}(p)\) is a  <strong>real valued </strong>\(1\)-form  on \(P\). Thus, we denote \(\omega\) by \((\omega_{ij})\) where \(\omega_{ij}\) are  <strong>real valued </strong>\(1\)-forms  on \(P\). This is what it means to see <strong>connection as a matrix of \(1\)-forms</strong>.
+
+The same can be done for Curvature form also. Curvature form \(\Omega:P\rightarrow \Lambda^2_{\mathfrak{g}}TP\) associates for each \(p\in P\) a map \(\Omega(p):T_pP\times T_pP\rightarrow \mathfrak{g}\). Same explanation as above gives \(n^2\)<strong> real valued</strong> \(2\)-forms \(\Omega_{ij}:P\rightarrow \Lambda^2 TP\). We denote Curvature form \(\Omega\) by \((\Omega_{ij})\). This is what it means to see <strong>curvature  as a matrix of \(2\)-forms</strong>.

@@ -1,0 +1,70 @@
+{{- define "main" }}
+
+{{- $body := .Resources.GetMatch "body.html" -}}
+{{- $readingTime := .ReadingTime -}}
+{{- with .Resources.GetMatch "search.txt" -}}
+  {{- $wordCount := len (findRE `\S+` .Content) -}}
+  {{- if gt $wordCount 0 -}}
+    {{- $readingTime = add (div (sub $wordCount 1) 220) 1 -}}
+  {{- end -}}
+{{- end -}}
+<article class="post-single post-math">
+  <header class="post-header">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="post-title entry-hint-parent">{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">{{ .Description }}</div>
+    {{- end }}
+    {{- if not (.Param "hideMeta") }}
+    <div class="post-meta">
+      {{- if not .Date.IsZero -}}
+        {{- .Date | time.Format (site.Params.DateFormat | default "January 2, 2006") -}}
+      {{- end -}}
+      {{- if and (site.Params.ShowReadingTime) (not .Params.disableReadingTime) -}}
+        {{- if not .Date.IsZero }}&nbsp;&middot;&nbsp;{{ end -}}
+        {{- printf "%d min" $readingTime -}}
+      {{- end -}}
+      {{- with (partial "author.html" .) -}}
+        {{- if or (not $.Date.IsZero) (and site.Params.ShowReadingTime (not $.Params.disableReadingTime)) }}&nbsp;&middot;&nbsp;{{ end -}}
+        {{- . -}}
+      {{- end -}}
+      {{- partial "translation_list.html" . -}}
+      {{- partial "edit_post.html" . -}}
+      {{- partial "post_canonical.html" . -}}
+    </div>
+    {{- end }}
+  </header>
+
+  <section class="math-layout">
+    {{- if (.Param "showMathToc") | default true }}
+    <aside class="math-toc-shell" aria-label="Article contents">
+      <h2 class="math-toc-title">Contents</h2>
+      <nav id="math-generated-toc" class="math-generated-toc"></nav>
+    </aside>
+    {{- end }}
+
+    <div class="post-content math-content">
+      <div class="math-article" data-math-article>
+        {{- if $body -}}
+          {{- $body.Content | safeHTML -}}
+        {{- else -}}
+          {{- .Content -}}
+        {{- end -}}
+      </div>
+    </div>
+  </section>
+
+  <footer class="post-footer">
+    {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+    <ul class="post-tags">
+      {{- range ($.GetTerms $tags) }}
+      <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+      {{- end }}
+    </ul>
+    {{- if (.Param "ShowPostNavLinks") }}
+    {{- partial "post_nav_links.html" . }}
+    {{- end }}
+  </footer>
+</article>
+
+{{- end }}

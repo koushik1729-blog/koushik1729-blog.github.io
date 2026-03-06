@@ -1,0 +1,31 @@
+---
+title: "Transition maps for principal bundle are smooth"
+slug: "transition-maps-for-principal-bundle-are-smooth"
+date: 2019-01-26T08:16:48
+url: "/2019/01/26/transition-maps-for-principal-bundle-are-smooth/"
+categories: ["Lie groups", "Differential geometry"]
+---
+Let \(\pi:P\rightarrow M\) be a principal \(G\) bundle.
+
+We choose an open covering \(\{U_\alpha\}\) of \(M\) and trivializations \(\psi_\alpha:\pi^{-1}(U_\alpha)\rightarrow U_\alpha\times G\) defined as \(\psi_\alpha(u)= (\pi(u),\varphi_\alpha(u))\) such that \(\varphi_\alpha(ua)=\varphi_\alpha(u)a\) for all \(u\in \pi^{-1}(U_\alpha)\) and \(a\in G\).
+
+Let \(x\in U_\alpha\cap U_\beta\). Given \(v\in \pi^{-1}(x)\subseteq \pi^{-1}(U_\alpha)\cap \pi^{-1}(U_\beta)\), we have \(\varphi_\alpha(v)\in G\) and \(\varphi_\beta(v)\in G\). For \(v'\in \pi^{-1}(x)\) there exists \(g\in G\) such that \(v'=vg\). Then, we have
+<p style="text-align:center;">\(\varphi_\alpha(v')\varphi_\beta(v')^{-1}= \varphi_\alpha(vg)\varphi_\beta(ua)^{-1}
+=\varphi_\alpha(u)aa^{-1}\varphi_\beta(u)^{-1} =\varphi_\alpha(u)\varphi_\beta(u)^{-1}\)</p>
+Thus, for any \(v,v'\in \pi^{-1}(x)\), we have
+<p style="text-align:center;">\(\varphi_\alpha(v)\varphi_\beta(v)^{-1}=\varphi_\alpha(v')\varphi_\beta(v')^{-1}.\)</p>
+This gives a well defined map \(g_{\alpha\beta}:U_\alpha\cap U_\beta\rightarrow G\) given by  \(g_{\alpha\beta}(x)=\varphi_\alpha(u)\varphi_\beta(u)^{-1}\) where \(u\in P\) is such that \(\pi(u)=x\).
+
+Now, I have to check that this map \(g_{\alpha\beta}\) is smooth.
+
+As \(\pi^{-1}(U_\alpha)\rightarrow U_\alpha\times G\) is smooth, so is its projection to \(G\) i.e., the map \(\pi^{-1}(U_\alpha)\rightarrow G\) given by \(u\mapsto \varphi_\alpha(u)\) is smooth. Similarly the map \(\pi^{-1}(U_\beta)\rightarrow G\) given by \(u\mapsto \varphi_\beta(u)\) is smooth. As inverse map on \(G\) is smooth, so is the composition \(\pi^{-1}(U_\beta)\rightarrow G\rightarrow G\) with \(u\mapsto \varphi_{\beta}(u)^{-1}\).
+
+So, the map \(\pi^{-1}(U_\alpha\cap U_\beta)\rightarrow G\times G\) given by \(u\mapsto (\varphi_{\alpha}(u),\varphi_{\beta}^{-1}(u))\) is smooth. As multiplication map \(G\times G\rightarrow G\) is smooth, so is the compostion \(\pi^{-1}(U_\alpha\cap U_\beta)\rightarrow G\times G\rightarrow G\) given by \(u\mapsto \varphi_{\alpha}(u)\varphi_\beta^{-1}(u)\). Thus, the map \(\pi^{-1}(U_\alpha\cap U_\beta)\rightarrow G\) given by \(u\mapsto \varphi_{\alpha}(u)\varphi_{\alpha}\beta^{-1}(u)\) is smooth.
+
+Proving \(g_{\alpha\beta}:U_\alpha\cap U_\beta\rightarrow G\) is smooth boils down to proving \(U_\alpha\cap U_\beta\rightarrow \pi^{-1}(U_\alpha\cap U_\beta)\) is smooth.
+
+As \(\pi^{-1}(U_\alpha)\rightarrow U_\alpha\times G\) is diffeomorphism, its inverse  \(U_\alpha\times G\rightarrow \pi^{-1}(U_\alpha)\) is smooth and so is its composition with inclusion \(U_\alpha\rightarrow U_\alpha\times G\) given by \(x\mapsto (x,1)\). Thus, we have smooth map \(U_\alpha\rightarrow \pi^{-1}(U)\) given by \(x\mapsto (x,1)\) and so is the map \(U_\alpha\cap U_\beta\rightarrow \pi^{-1}(U_\alpha\cap U_\beta)\). Thus, the map
+<p style="text-align:center;">\(U_\alpha\cap U_\beta\rightarrow \pi^{-1}(U_\alpha\cap U_\beta)\rightarrow G\)</p>
+which is precisely \(g_{\alpha\beta}\) is smooth.
+
+&nbsp;

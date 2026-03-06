@@ -1,0 +1,61 @@
+{{- $mathType := site.Params.mathContentType | default "math" -}}
+{{- if eq .Type $mathType -}}
+  {{- $useEngineStyles := (.Param "useEngineStyles") | default false -}}
+  {{- if $useEngineStyles -}}
+    {{- with .Resources.GetMatch "head-manifest.json" -}}
+      {{- $manifest := . | transform.Unmarshal -}}
+      {{- range $href := ($manifest.styles | default (slice)) -}}
+<link rel="stylesheet" href="{{ $href | safeURL }}">
+      {{- end -}}
+      {{- range $src := ($manifest.scripts | default (slice)) -}}
+<script defer src="{{ $src | safeURL }}"></script>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+<script defer src="/js/math-page.js"></script>
+  {{- if not $useEngineStyles -}}
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      tags: 'none'
+    },
+    mml: {},
+    svg: {
+      fontCache: 'global'
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+  {{- end -}}
+{{- end -}}
+{{- if eq .Type "wp-import" -}}
+<script defer src="/js/math-page.js"></script>
+{{- end -}}
+
+{{- $needsMathJax := or .Params.math (eq .Type "wp-import") .IsHome .IsSection (eq .Kind "taxonomy") (eq .Kind "term") -}}
+{{- if and $needsMathJax (ne .Type $mathType) -}}
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      tags: 'none'
+    },
+    mml: {},
+    svg: {
+      fontCache: 'global'
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+{{- end -}}

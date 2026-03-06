@@ -1,0 +1,85 @@
+baseURL = "https://koushik1729-blog.github.io/"
+languageCode = "en-us"
+title = "Geometry and some category theory"
+theme = "PaperMod"
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  category = "categories"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  author = "Praphulla Koushik"
+  description = "Notes on geometry, stacks, and category theory"
+  mainSections = ["wp-import", "math"]
+  defaultTheme = "light"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowCodeCopyButtons = true
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  disableSpecial1stPost = true
+  mathContentType = "math"
+
+  [params.brand]
+    main = "Praphulla Koushik"
+    sub = ""
+
+  [params.homeInfoParams]
+    Title = "Geometry"
+    TitleMuted = "and some category theory"
+    Content = "Short expository notes and some references"
+
+[params.fuseOpts]
+  isCaseSensitive = false
+  shouldSort = true
+  location = 0
+  distance = 1000
+  threshold = 0.3
+  minMatchCharLength = 2
+  limit = 10
+  keys = ["title", "summary", "content"]
+
+[[menu.main]]
+  identifier = "home"
+  name = "Home"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "library"
+  name = "Reference Links"
+  url = "/library/"
+  weight = 25
+
+[[menu.main]]
+  identifier = "categories"
+  name = "Categories"
+  url = "/categories/"
+  weight = 30
+
+[[menu.main]]
+  identifier = "search"
+  name = "Search"
+  url = "/search/"
+  weight = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 3
+    ordered = false
